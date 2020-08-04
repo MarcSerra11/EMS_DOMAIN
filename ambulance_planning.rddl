@@ -4,7 +4,7 @@
 //																//
 //////////////////////////////////////////////////////////////////
 
-//Data: 2020-07-30
+//Data: 2020-08-04
 //Funciona: No
 //Policy: NoopPolicy?
 //Comentari: Mou ambulància amb un indicador (vàries àrees). Afegim temps. Afegim pacients. Casuística dels pacients. Temps relacionat amb el pacient. 
