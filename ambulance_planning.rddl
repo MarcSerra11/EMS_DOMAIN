@@ -138,60 +138,60 @@ domain EMS_domain {
 			// Update vehicle on course actions
 			v_waiting'(?v) = if (v_attendPatient(?v)~=v_attendPatient.default | v_transferToHospital(?v)~=v_transferToHospital.default | v_travelToBase(?v)~=v_travelToBase.default)
 								then false
-								else if ((v_onTravelToHospital(?v) | v_redeploying(?v) | v_stabilizing(?v) ) ^ v_remainingActionTime(?v)==0 )
+								else if ((v_onTravelToHospital(?v) | v_redeploying(?v) | v_stabilizing(?v) ) & v_remainingActionTime(?v)==0 )
 											then true
 											else v_waiting(?v);
 
 			v_onTravelToPatient'(?v) = if (v_attendPatient(?v)~=v_attendPatient.default) 
 												then true
-												else if (v_onTravelToPatient(?v) ^ v_remainingActionTime(?v)==0 ) 
+												else if (v_onTravelToPatient(?v) & v_remainingActionTime(?v)==0 ) 
 																then false
 																else v_onTravelToPatient(?v);
 
-			v_stabilizing'(?v) = if (v_onTravelToPatient(?v) ^ v_remainingActionTime(?v)==0 )
+			v_stabilizing'(?v) = if (v_onTravelToPatient(?v) & v_remainingActionTime(?v)==0 )
 												then true
-												else if (v_stabilizing(?v) ^ v_remainingActionTime(?v)==0) 
+												else if (v_stabilizing(?v) & v_remainingActionTime(?v)==0) 
 															then false 
 															else v_stabilizing(?v);
 												
 			v_onTravelToHospital'(?v) = if (v_transferToHospital(?v)~=v_transferToHospital.default)
 												then true
-												else if (v_onTravelToHospital(?v) ^ v_remainingActionTime(?v)==0) 
+												else if (v_onTravelToHospital(?v) & v_remainingActionTime(?v)==0) 
 															then false 
 															else v_onTravelToHospital(?v);
 				
 			v_redeploying'(?v) = if (v_travelToBase(?v)~=v_travelToBase.default) 
 												then true
-												else if (v_redeploying(?v) ^ v_remainingActionTime(?v)==0) 
+												else if (v_redeploying(?v) & v_remainingActionTime(?v)==0) 
 															then false 
 															else v_redeploying(?v);
 			
 			
 			// Update vehicle position
-			v_position'(?v) = if (v_onTravelToPatient(?v) ^ v_remainingActionTime(?v)==0)
+			v_position'(?v) = if (v_onTravelToPatient(?v) & v_remainingActionTime(?v)==0)
 									then p_position(v_assignedPatient(?v)) 
-									else if (v_onTravelToHospital(?v) ^ v_remainingActionTime(?v)==0)
+									else if (v_onTravelToHospital(?v) & v_remainingActionTime(?v)==0)
 											then h_position(v_assignedHospital(?v))
-											else if (v_redeploying(?v) ^ v_remainingActionTime(?v)==0)
+											else if (v_redeploying(?v) & v_remainingActionTime(?v)==0)
 													then b_position(v_assignedBase(?v))
 													else v_position(?v);
 
 			// Update vehicle assigned objectives 
 			v_assignedPatient'(?v) = if (v_attendPatient(?v)~=v_attendPatient.default) 
 											then v_attendPatient(?v)
-											else if (v_onTravelToHospital(?v) ^ v_remainingActionTime(?v)==0)
+											else if (v_onTravelToHospital(?v) & v_remainingActionTime(?v)==0)
 														then v_attendPatient.default
 														else v_assignedPatient(?v);			
 			
-			v_assignedHospital'(?v)= if (v_transferToHospital(?v)~=v_transferToHospital.default) 
+			v_assignedHospital'(?v)= if (v_transferToHospital(?v)~=v_transferToHospital.default)
 											then v_transferToHospital(?v)
-											else if (v_onTravelToHospital(?v) ^ v_remainingActionTime(?v)==0)
+											else if (v_onTravelToHospital(?v) & v_remainingActionTime(?v)==0)
 														then v_transferToHospital.default
 														else v_assignedHospital(?v);	
 	
 			v_assignedBase'(?v)= if (v_travelToBase(?v)~=v_travelToBase.default) 
 											then v_travelToBase(?v)
-											else if (v_redeploying(?v) ^ v_remainingActionTime(?v)==0)
+											else if (v_redeploying(?v) & v_remainingActionTime(?v)==0)
 														then v_travelToBase.default
 														else v_assignedBase(?v);
 
@@ -200,7 +200,7 @@ domain EMS_domain {
 											then v_remainingActionTime(?v)-1
 											else if (v_attendPatient(?v)~=v_attendPatient.default) 
 													then aa_travelTime(v_position(?v),p_position(v_attendPatient(?v)))
-													else if (v_onTravelToPatient(?v) ^ v_remainingActionTime(?v)==0 )
+													else if (v_onTravelToPatient(?v) & v_remainingActionTime(?v)==0 )
 															then STABILIZATION_TIME
 															else if (v_transferToHospital(?v)~=v_transferToHospital.default) 
 																	then aa_travelTime(v_position(?v),h_position(v_transferToHospital(?v)))
@@ -218,18 +218,18 @@ domain EMS_domain {
 										else p_waitingTime(?p);
 
 			// Patient rescued
-			p_rescued'(?p) = if (exists_{?v : vehicle} [v_assignedPatient(?v)==?p ^ v_onTravelToHospital(?v) ^ v_remainingActionTime(?v)==0 ] )
+			p_rescued'(?p) = if (exists_{?v : vehicle} [v_assignedPatient(?v)==?p & v_onTravelToHospital(?v) & v_remainingActionTime(?v)==0 ] )
 									then false
 									else p_rescued(?p);
 			
 			// Patient stabilized
-			p_stabilized'(?p) = if (exists_{?v : vehicle} [v_assignedPatient(?v)==?p ^ v_stabilizing(?v) ^ v_remainingActionTime(?v)==0 ] )
+			p_stabilized'(?p) = if (exists_{?v : vehicle} [v_assignedPatient(?v)==?p & v_stabilizing(?v) & v_remainingActionTime(?v)==0 ] )
 									then false
 									else p_stabilized(?p);
 					
 			// Patient active				
 			p_active'(?p) =  if ( (p_id(?p) > a_previousPatients(p_position(?p))) 
-									^ ( p_id(?p) <=(a_newPatients(p_position(?p))+a_previousPatients(p_position(?p))) ) 
+									& ( p_id(?p) <=(a_newPatients(p_position(?p))+a_previousPatients(p_position(?p))) ) 
 									)
 									then true
 									else p_active(?p);
@@ -267,10 +267,10 @@ domain EMS_domain {
 	action-preconditions {
 
 		//Vehicles can only begin an action if they are waiting
-		forall_{?v : vehicle} ~[(~v_waiting(?v) ^ v_attendPatient(?v)~=v_attendPatient.default) | (~v_waiting(?v) ^ v_transferToHospital(?v)~=v_transferToHospital.default) | (~v_waiting(?v) ^ v_travelToBase(?v)~=v_travelToBase.default) ];
+		forall_{?v : vehicle} ~[(~v_waiting(?v) & v_attendPatient(?v)~=v_attendPatient.default) | (~v_waiting(?v) & v_transferToHospital(?v)~=v_transferToHospital.default) | (~v_waiting(?v) & v_travelToBase(?v)~=v_travelToBase.default) ];
 		
 		//Vehicles can only take an action at a time
-		forall_{?v : vehicle} ~[(v_attendPatient(?v)~=v_attendPatient.default ^ v_transferToHospital(?v)~=v_transferToHospital.default) | (v_attendPatient(?v)~=v_attendPatient.default ^ v_travelToBase(?v)~=v_travelToBase.default) | (v_travelToBase(?v)~=v_travelToBase.default ^ v_attendPatient(?v)~=v_attendPatient.default) ];
+		forall_{?v : vehicle} ~[(v_attendPatient(?v)~=v_attendPatient.default & v_transferToHospital(?v)~=v_transferToHospital.default) | (v_attendPatient(?v)~=v_attendPatient.default & v_travelToBase(?v)~=v_travelToBase.default) | (v_travelToBase(?v)~=v_travelToBase.default & v_attendPatient(?v)~=v_attendPatient.default) ];
 		
 	};
 	
