@@ -10,7 +10,7 @@
 //Comentari: Mou ambulància amb un indicador (només una àrea). Afegim temps.
 
 
-domain EMS_domain {
+domain ems_operational_response_mdp_02 {
 
 	requirements {
 		reward-deterministic,
@@ -76,22 +76,4 @@ domain EMS_domain {
 		
 
 
-instance EMS_instance {
 
-	domain = EMS_domain;
-	
-	objects { 
-		vehicle : {v1};
-		area : {a1, a2};
-	};
-  
-	init-state { 
-		position(v1)=a1;
-		
-	};
-  
-  	
-  
-	horizon  = 10;
-	discount = 0.9;
-}

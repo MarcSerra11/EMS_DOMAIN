@@ -1,4 +1,4 @@
-domain ems_operational_response_mdp_00.rddl {
+domain ems_operational_response_mdp_00 {
 
 	types {
 		vehicle : object;

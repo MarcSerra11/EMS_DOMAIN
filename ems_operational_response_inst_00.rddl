@@ -1,6 +1,6 @@
-instance ems_operational_response_inst_00.rddl {
+instance ems_operational_response_inst_00 {
 
-	domain = ems_operational_response_mdp_01.rddl;
+	domain = ems_operational_response_mdp_00;
 	
 
 

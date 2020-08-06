@@ -1,0 +1,33 @@
+//////////////////////////////////////////////////////////////////
+//																//	
+//         EMS Response Operational Planner - v2				//
+//																//
+//////////////////////////////////////////////////////////////////
+
+//Data: 2020-07-27 
+//Funciona: Si
+//Policy: RandomConcurrentPolicy, NoopPolicy, FixedBoolPolicy
+//Comentari: Mou ambulància amb un indicador (només una àrea). Afegim temps.
+
+
+
+
+instance ems_operational_response_inst_02 {
+
+	domain = ems_operational_response_mdp_02;
+	
+	objects { 
+		vehicle : {v1};
+		area : {a1, a2};
+	};
+  
+	init-state { 
+		position(v1)=a1;
+		
+	};
+  
+  	
+  
+	horizon  = 10;
+	discount = 0.9;
+}
