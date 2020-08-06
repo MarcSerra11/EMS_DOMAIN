@@ -1,0 +1,97 @@
+//////////////////////////////////////////////////////////////////
+//																//	
+//         EMS Response Operational Planner - v2				//
+//																//
+//////////////////////////////////////////////////////////////////
+
+//Data: 2020-07-27 
+//Funciona: Si
+//Policy: RandomConcurrentPolicy, NoopPolicy, FixedBoolPolicy
+//Comentari: Mou ambulància amb un indicador (només una àrea). Afegim temps.
+
+
+domain EMS_domain {
+
+	requirements {
+		reward-deterministic,
+		integer-valued
+	
+	};
+	
+	types {
+		vehicle : object;
+		area : object;
+	};
+	
+	
+	pvariables { 
+			
+		//////////////////// non-fluents ////////////////////
+		WAIT      : { non-fluent, real, default = 0.5  };
+		
+		
+		//////////////////// interm-fluents ////////////////////
+
+
+		//////////////////// state-fluents ////////////////////
+		
+		//Vehicle position
+		position(vehicle) : { state-fluent, area, default = a1 };
+		
+		//Vehicle time
+		time(vehicle) : { state-fluent, int, default = 0 };
+		
+		
+			
+		//////////////////// action-fluents ////////////////////
+
+		// the only available action is to move a vehicle 
+		move(vehicle) : { action-fluent, bool, default = false };
+
+
+	};
+	
+	cpfs {
+
+		//Update vehicle position
+		position'(?v) = if (move(?v)==true) 
+						then position(?v)
+						else position(?v) ;
+						
+		//Update time
+		time'(?v) = time(?v)+1;
+		
+		
+		
+		
+	};
+  
+	
+	reward = 	sum_{?v : vehicle} [1];
+	
+	
+
+}
+        
+		
+
+
+instance EMS_instance {
+
+	domain = EMS_domain;
+	
+	objects { 
+		vehicle : {v1};
+		area : {a1, a2};
+	};
+  
+	init-state { 
+		position(v1)=a1;
+		
+	};
+  
+  	
+  
+	horizon  = 10;
+	discount = 0.9;
+}
