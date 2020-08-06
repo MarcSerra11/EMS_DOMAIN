@@ -1,0 +1,123 @@
+//////////////////////////////////////////////////////////////////
+//																//	
+//         EMS Response Operational Planner - v6				//
+//																//
+//////////////////////////////////////////////////////////////////
+
+//Data: 2020-07-28
+//Funciona: No
+//Policy: NoopPolicy?
+//Comentari: Mou ambulància amb un indicador (vàries àrees). Afegim temps. Afegim pacients. Casuística dels pacients. Temps d'espera del pacient. 
+
+
+domain EMS_domain {
+
+	requirements {
+		reward-deterministic,
+		integer-valued
+	
+	};
+	
+	types {
+		vehicle : object;
+		area : object;
+		patient : object;
+	};
+	
+	objects { 
+		vehicle : {v1};
+		area : {a1, a2};
+		patient : {p1};
+	};
+	
+	
+	pvariables { 
+			
+		//////////////////// non-fluents ////////////////////
+		WAIT      : { non-fluent, real, default = 0.5  };
+		
+		//Patient position
+		p_position(patient) : { non-fluent, area, default = a1 };
+		
+		
+		//////////////////// interm-fluents ////////////////////
+
+
+		//////////////////// state-fluents ////////////////////
+		
+		//Vehicle position
+		v_position(vehicle) : { state-fluent, area, default = a1 };
+		
+		//Patient waiting time
+		time(patient) : { state-fluent, int, default = 0 };
+
+		//Patient active
+		active(patient) : { state-fluent, bool, default = true };
+		
+			
+		//////////////////// action-fluents ////////////////////
+
+		// the only available action is to move a vehicle to an area
+		move(vehicle) : { action-fluent, area, default = a2 };
+
+
+	};
+	
+	cpfs {
+
+		//Update vehicle position
+		v_position'(?v) = move(?v);
+						
+		//Update patient waiting time
+		time'(?p) = if (active(?p) == true)
+							then time(?p)+1
+							else time(?p);
+		
+		//Update patient activity
+		active'(?patient) = if (active(?patient) == false) 
+									then false
+									else if (exists_{?v : vehicle} [v_position(?v) == p_position(?patient)])
+												then false
+												else true;
+		
+		
+		
+	};
+  
+	
+	reward = sum_{?v : vehicle} [sum_{?p : patient} [ if (v_position(?v)==p_position(?p)) 
+															then 1
+															else 0 
+													]	
+								];
+	
+
+	
+	
+
+}
+        
+		
+
+
+instance EMS_instance {
+
+	domain = EMS_domain;
+	
+	objects { 
+		vehicle : {v1};
+		area : {a1, a2};
+		patient : {p1};
+	};
+  
+	init-state { 
+		v_position(v1)=a2;
+
+		
+	};
+  
+  	
+  
+	horizon  = 10;
+	discount = 0.9;
+}

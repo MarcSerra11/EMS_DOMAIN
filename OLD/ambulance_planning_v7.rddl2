@@ -1,0 +1,164 @@
+//////////////////////////////////////////////////////////////////
+//																//	
+//         EMS Response Operational Planner - v7				//
+//																//
+//////////////////////////////////////////////////////////////////
+
+//Data: 2020-07-28
+//Funciona: Si
+//Policy: NoopPolicy?
+//Comentari: Mou ambulància amb un indicador (vàries àrees). Afegim temps. Afegim pacients. Casuística dels pacients. Temps relacionat amb el pacient. 
+//			Temps de viatge (únic);
+
+
+domain EMS_domain {
+
+	requirements {
+		reward-deterministic,
+		integer-valued
+	};
+	
+	types {
+		vehicle : object;
+		area : object;
+		patient : object;
+	};
+	
+	objects { 
+		vehicle : {v1};
+		area : {a0, a1, a2};
+		patient : {p1};
+	};
+	
+	
+	pvariables { 
+			
+		//////////////////// non-fluents ////////////////////
+		WAIT : { non-fluent, real, default = 0.5  };
+		TRAVEL_TIME : { non-fluent, int, default = 3  };
+		
+		//Patient position
+		p_position(patient) : { non-fluent, area, default = a1 };
+		
+		
+		
+		//////////////////// interm-fluents ////////////////////
+
+
+
+		//////////////////// state-fluents ////////////////////
+		
+		//Vehicle states
+			//Vehicle position
+			v_position(vehicle) : { state-fluent, area, default = a1 };
+			
+			//Vehicle on travel
+			v_onTravel(vehicle) : { state-fluent, bool, default = false };
+			
+			//Vehicle destination
+			v_destination(vehicle) : { state-fluent, area, default = a0 };
+			
+			//Vehicle remaining travel time
+			v_remainingTravelTime(vehicle) : { state-fluent, int, default = 0 };
+		
+		//Patient states
+			//Patient waiting time
+			p_waitingTime(patient) : { state-fluent, int, default = 0 };
+
+			//Patient p_active
+			p_active(patient) : { state-fluent, bool, default = true };
+		
+			
+			
+		//////////////////// action-fluents ////////////////////
+
+		//Vehicle actions
+			//Order to move
+			move(vehicle) : { action-fluent, area, default = a2 };
+
+
+	};
+	
+	cpfs {
+
+
+		//Vehicle states update
+			//Update vehicle position
+			v_position'(?v) = if (v_remainingTravelTime(?v)==0 ^ v_onTravel(?v) )
+									then v_destination(?v)
+									else v_position(?v);
+			
+			v_remainingTravelTime'(?v) = if (v_remainingTravelTime(?v)>=1)
+											then v_remainingTravelTime(?v)-1
+											else 0;
+											
+			v_onTravel'(?v)= if (v_remainingTravelTime(?v)==0 ^ v_onTravel(?v)==true)
+											then false
+											else if (move(?v)~=move.default)
+														then true
+														else false;
+														
+			v_destination'(?v) = if (move(?v)~=move.default) 
+										then move(?v)
+										else v_destination.default;
+			
+		//Patients states update
+			//Update patient waiting p_waitingTime
+			p_waitingTime'(?p) = if (p_active(?p) == true)
+								then p_waitingTime(?p)+1
+								else p_waitingTime(?p);
+			
+			//Update patient activity
+			p_active'(?patient) = if (p_active(?patient) == false) 
+										then false
+										else if (exists_{?v : vehicle} [v_position(?v) == p_position(?patient)])
+													then false
+													else true;
+		
+		
+		
+	};
+  
+	
+	reward = sum_{?v : vehicle} [sum_{?p : patient} [ if (v_position(?v)==p_position(?p)) 
+															then 1
+															else 0 
+													]	
+								];
+	
+
+	action-preconditions {
+
+		//A vehicle can only move if it is static
+		//forall_{?v : vehicle} ~[v_onTravel(?v) ^ (move(?v) ~= move.default)];
+		
+	};
+	
+	
+
+}
+        
+		
+
+
+instance EMS_instance {
+
+	domain = EMS_domain;
+	
+	objects { 
+		vehicle : {v1};
+		area : {a1, a2};
+		patient : {p1};
+	};
+  
+	init-state { 
+		v_position(v1)=a1;
+
+		
+	};
+  
+  	
+  
+	horizon  = 10;
+	discount = 0.9;
+}
