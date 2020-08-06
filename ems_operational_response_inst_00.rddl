@@ -1,0 +1,20 @@
+instance ems_operational_response_inst_00.rddl {
+
+	domain = ems_operational_response_mdp_01.rddl;
+	
+
+
+	objects { 
+		vehicle : {v1};
+	};
+  
+	init-state { 
+		activated(v1)=false;
+		
+	};
+  
+  	
+  
+	horizon  = 10;
+	discount = 0.9;
+}

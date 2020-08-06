@@ -1,0 +1,49 @@
+domain ems_operational_response_mdp_00.rddl {
+
+	types {
+		vehicle : object;
+	};
+	
+	pvariables { 
+			
+		//////////////////// non-fluents ////////////////////
+		WAIT      : { non-fluent, real, default = 0.5  };
+		
+		
+		//////////////////// interm-fluents ////////////////////
+
+
+		//////////////////// state-fluents ////////////////////
+		
+		//Vehicle position
+		activated(vehicle) : { state-fluent, bool, default = false };
+		
+		
+			
+		//////////////////// action-fluents ////////////////////
+
+		// the only available action is to assign a vehicle to a patient
+		activate(vehicle) : { action-fluent, bool, default = false };
+
+
+	};
+	
+	cpfs {
+
+		//Update vehicle position
+		activated'(?v) = activate(?v);
+		
+		
+		
+	};
+  
+	
+	reward = 	sum_{?v : vehicle} [ 
+					if (activated(?v)==true) 
+						then 1.0
+						else 0.0 
+				];
+	
+	
+
+}
