@@ -1,0 +1,85 @@
+//////////////////////////////////////////////////////////////////
+//																//	
+//         EMS Response Operational Planner - v1				//
+//																//
+//////////////////////////////////////////////////////////////////
+
+//Data: 2020-07-27 
+//Funciona: Si
+//Policy: RandomConcurrentPolicy
+//Comentari: Activa i desactiva ambulància. 
+
+
+domain EMS_domain {
+
+	types {
+		vehicle : object;
+	};
+	
+	pvariables { 
+			
+		//////////////////// non-fluents ////////////////////
+		WAIT      : { non-fluent, real, default = 0.5  };
+		
+		
+		//////////////////// interm-fluents ////////////////////
+
+
+		//////////////////// state-fluents ////////////////////
+		
+		//Vehicle position
+		activated(vehicle) : { state-fluent, bool, default = false };
+		
+		
+			
+		//////////////////// action-fluents ////////////////////
+
+		// the only available action is to assign a vehicle to a patient
+		activate(vehicle) : { action-fluent, bool, default = false };
+
+
+	};
+	
+	cpfs {
+
+		//Update vehicle position
+		activated'(?v) = activate(?v);
+		
+		
+		
+	};
+  
+	
+	reward = 	sum_{?v : vehicle} [ 
+					if (activated(?v)==true) 
+						then 1.0
+						else 0.0 
+				];
+	
+	
+
+}
+        
+		
+
+
+instance EMS_instance {
+
+	domain = EMS_domain;
+	
+
+
+	objects { 
+		vehicle : {v1};
+	};
+  
+	init-state { 
+		activated(v1)=false;
+		
+	};
+  
+  	
+  
+	horizon  = 10;
+	discount = 0.9;
+}
