@@ -1,0 +1,19 @@
+instance ems_operational_response_inst_01 {
+
+	domain = ems_operational_response_mdp_01;
+
+	
+	objects { 
+		vehicle : {v1};
+	};
+  
+	init-state { 
+		position(v1)=@a1;
+		
+	};
+  
+  	
+  
+	horizon  = 10;
+	discount = 0.9;
+}

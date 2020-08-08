@@ -1,0 +1,59 @@
+domain ems_operational_response_mdp_01 {
+
+	requirements {
+		reward-deterministic,
+		integer-valued,
+		continuous,
+		intermediate-nodes
+	};
+
+	types {
+		vehicle : object;
+		area : { @a1, @a2};
+	};
+	
+	
+	
+	pvariables { 
+			
+		//////////////////// non-fluents ////////////////////
+		WAIT      : { non-fluent, real, default = 0.5  };
+		
+		
+		//////////////////// interm-fluents ////////////////////
+
+
+		//////////////////// state-fluents ////////////////////
+		
+		//Vehicle position
+		position(vehicle) : { state-fluent, area, default = @a1 };
+		
+		
+			
+		//////////////////// action-fluents ////////////////////
+
+		// the only available action is to move a vehicle 
+		move(vehicle) : { action-fluent, bool, default = false };
+
+
+	};
+	
+	cpfs {
+
+		//Update vehicle position
+		position'(?v) = if (move(?v)==true) 
+						then @a1
+						else @a2;
+		
+		
+		
+	};
+  
+	
+	reward = 	sum_{?v : vehicle} [if (move(?v)==true) 
+						then 1.0
+						else 0.0 ];
+	
+	
+
+}

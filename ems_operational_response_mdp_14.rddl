@@ -11,7 +11,7 @@
 //			Temps de viatge (únic). Acció vehicle: rescatar pacient;
 //Falta: Gravetat dels pacients,  funció de cost. 
 
-domain ems_operational_response_mdp_01 {
+domain ems_operational_response_mdp_14 {
 
 	requirements {
 		reward-deterministic,
