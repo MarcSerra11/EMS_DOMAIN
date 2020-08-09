@@ -1,0 +1,218 @@
+domain ems_operational_response_mdp_17 {
+
+	requirements {
+		reward-deterministic,
+		integer-valued,
+		continuous,
+		intermediate-nodes
+	};
+
+	types {
+		vehicle : object;
+		area : { @a1, @a2};
+		patient : {@p1, @p2};
+		hospital : {@h1, @h2};
+		base : {@b1, @b2};
+	};
+	
+	
+	
+	pvariables { 
+			
+		//////////////////// non-fluents ////////////////////
+		
+		// CONSTANTS
+		WAIT : { non-fluent, real, default = 0.5  };
+		STABILIZATION_TIME : { non-fluent, int, default = 5  };
+		
+		// Hopital position
+		h_position(hospital) : { non-fluent, area, default = @a1 };
+		
+		// Base position
+		b_position(base) : { non-fluent, area, default = @a1 };
+		
+		// TRAVEL TIME
+		aa_travelTime(area, area) : { non-fluent, int, default = 3  };
+		
+		// PoissonLambda
+		a_poissonLambda(area) : { non-fluent, real, default = 0.5  };
+		
+		
+		//////////////////// interm-fluents ////////////////////
+
+
+		//////////////////// state-fluents ////////////////////
+		
+		
+		// Vehicle states
+		
+			// Vehicle executing action
+			v_waiting(vehicle) : { state-fluent, bool, default = true };
+			v_onTravelToPatient(vehicle) : { state-fluent, bool, default = false };
+			v_stabilizing(vehicle) : { state-fluent, bool, default = false };
+			v_onTravelToHospital(vehicle) : { state-fluent, bool, default = false };
+			v_redeploying(vehicle) : { state-fluent, bool, default = false };
+		
+			// Vehicle position
+			v_position(vehicle) : { state-fluent, area, default = @a1 };
+			
+			// Vehicle objectives 
+			v_assignedPatient(vehicle) : { state-fluent, patient, default = @p1 };
+			v_assignedHospital(vehicle) : { state-fluent, hospital, default = @h1 };
+			v_assignedBase(vehicle) : { state-fluent, base, default = @b1 };
+			
+			// Vehicle remaining action time
+			v_remainingActionTime(vehicle) : { state-fluent, int, default = 0 };
+		
+		// Patient states
+		
+			// Patient id
+			p_id(patient) : { non-fluent, int, default = 0};
+			
+			// Patient position
+			p_position(patient) : { non-fluent, area, default = @a1 };
+						
+			// Patient waiting time
+			//p_waitingTime(patient) : { state-fluent, int, default = 0 };
+
+			// Patient active
+			//p_active(patient) : { state-fluent, bool, default = false };
+			
+			// Patient stabilized
+			//p_stabilized(patient) : { state-fluent, bool, default = false };
+			
+			// Patient solved
+			//p_rescued(patient) : { state-fluent, bool, default = false };
+		
+		
+		// Area states
+		
+			// New patients
+			//a_newPatients(area) : { state-fluent, int, default = 0 };
+			
+			// Patients previously generated
+			//a_previousPatients(area) : { state-fluent, int, default = 0 };
+			
+			
+		//////////////////// action-fluents ////////////////////
+
+		//Vehicle actions
+			//Attend a patient
+			v_attendPatient(vehicle, patient) : { action-fluent, bool, default = false };
+			
+			//Transfer to hospital
+			v_transferToHospital(vehicle, hospital) : { action-fluent, bool, default = false };
+			
+			//Travel to ambulance base
+			v_travelToBase(vehicle, base) : { action-fluent, bool, default = false };
+
+
+	};
+	
+	cpfs {
+	
+		// Vehicle states
+		
+			// Update vehicle executing action
+			v_waiting'(?v) = if ( exists_{?p : patient} [ v_attendPatient(?v, ?p) ] | exists_{?h : hospital} [ v_transferToHospital(?v, ?h) ] | exists_{?b : base} [ v_travelToBase(?v, ?b) ] )
+						then false
+						else if ((v_onTravelToHospital(?v) | v_redeploying(?v) | v_stabilizing(?v) ) & v_remainingActionTime(?v)==0 )
+							then true
+							else v_waiting(?v);
+
+			v_onTravelToPatient'(?v) = if (exists_{?p : patient} [ v_attendPatient(?v, ?p) ]) 
+							then true
+							else if (v_onTravelToPatient(?v) & v_remainingActionTime(?v)==0 ) 
+								then false
+								else v_onTravelToPatient(?v);
+
+			v_stabilizing'(?v) = if (v_onTravelToPatient(?v) & v_remainingActionTime(?v)==0 )
+						then true
+						else if (v_stabilizing(?v) & v_remainingActionTime(?v)==0) 
+							then false 
+							else v_stabilizing(?v);
+												
+			v_onTravelToHospital'(?v) = if (exists_{?h : hospital} [ v_transferToHospital(?v, ?h) ]) 
+							then true
+							else if (v_onTravelToHospital(?v) & v_remainingActionTime(?v)==0) 
+								then false 
+								else v_onTravelToHospital(?v);
+				
+			v_redeploying'(?v) = if (exists_{?b : base} [ v_travelToBase(?v, ?b) ]) 
+						then true
+						else if (v_redeploying(?v) & v_remainingActionTime(?v)==0) 
+							then false 
+							else v_redeploying(?v);
+		
+		
+	
+			//Update vehicle objectives 
+			v_assignedPatient'(?v) = if (v_attendPatient(?v, @p1)) then @p1
+						else if (v_attendPatient(?v, @p2)) then @p2
+						else v_assignedPatient(?v);
+						
+			v_assignedHospital'(?v) = if (v_transferToHospital(?v, @h1)) then @h1
+						else if (v_transferToHospital(?v, @h2)) then @h2
+						else v_assignedHospital(?v);
+						
+			v_assignedBase'(?v) = if (v_travelToBase(?v, @b1)) then @b1
+						else if (v_travelToBase(?v, @b2)) then @b2
+						else v_assignedBase(?v);
+						
+			
+
+			//Update vehicle position
+			v_position'(?v) = if (v_attendPatient(?v, @p1) == true) 
+							then @a1
+							else @a2;
+			//v_position'(?v) = if (v_onTravelToPatient(?v) & v_remainingActionTime(?v)==0)
+			//			then p_position(v_assignedPatient(?v)) 
+			//			else @a1;
+						
+						//if (v_onTravelToHospital(?v) & v_remainingActionTime(?v)==0)
+						//	then h_position(v_assignedHospital(?v))
+						//	else if (v_redeploying(?v) & v_remainingActionTime(?v)==0)
+						//		then b_position(v_assignedBase(?v))
+						//		else v_position(?v);
+							
+
+							
+			// Vehicle remaining action time
+			v_remainingActionTime'(?v) = if (v_remainingActionTime(?v)>=1)
+							then v_remainingActionTime(?v)-1
+							else 0;
+
+		//else if (v_attendPatient(?v)~=v_attendPatient.default) 
+		//	then aa_travelTime(v_position(?v),p_position(v_attendPatient(?v)))
+		//	else if (v_onTravelToPatient(?v) & v_remainingActionTime(?v)==0 )
+		//		then STABILIZATION_TIME
+		//		else if (v_transferToHospital(?v)~=v_transferToHospital.default) 
+		//			then aa_travelTime(v_position(?v),h_position(v_transferToHospital(?v)))
+		//			else if (v_travelToBase(?v)~=v_travelToBase.default)
+		//				then aa_travelTime(v_position(?v), b_position(v_travelToBase(?v)))
+		//				else v_remainingActionTime(?v);
+						
+		
+			
+		
+		
+		
+	};
+  
+	
+	reward = 	sum_{?v : vehicle} [if (v_attendPatient(?v, @p1) == true)
+						then 1.0
+						else 0.0 ];
+						
+	action-preconditions {
+	
+		//Vehicles can begin only one action
+		forall_{?v : vehicle} [ (sum_{?p : patient} [v_attendPatient(?v, ?p)])  
+						+ (sum_{?h : hospital} [v_transferToHospital(?v, ?h)]) 
+						+ (sum_{?b : base} [v_travelToBase(?v, ?b)]) <= 1] ;		
+	
+	};
+	
+
+}
+
