@@ -1,0 +1,65 @@
+
+
+instance ems_operational_response_inst_16 {
+
+    domain = ems_operational_response_mdp_16;
+
+	
+	objects { 
+		vehicle : {v1};
+		area : {a3};
+		patient : {p1_a1, p2_a1, p3_a1, p4_a1, p5_a1, p6_a1,
+				   p1_a2, p2_a2, p3_a2, p4_a2, p5_a2, p6_a2	};
+	};
+	
+	non-fluents { 
+	
+		aa_travelTime(@a1, @a2)=3;
+		a_poissonLambda(@a1)=2;
+		
+		// Initialization of patients
+		
+			// Patient position
+			p_position(p1_a1)=@a1;
+			p_position(p2_a1)=@a1;
+			p_position(p3_a1)=@a1;
+			p_position(p4_a1)=@a1;
+			p_position(p5_a1)=@a1;
+			p_position(p6_a1)=@a1;
+			
+			p_position(p1_a2)=@a2;
+			p_position(p2_a2)=@a2;
+			p_position(p3_a2)=@a2;
+			p_position(p4_a2)=@a2;
+			p_position(p5_a2)=@a2;
+			p_position(p6_a2)=@a2;
+		
+			// Patient id
+			p_id(p1_a1)=1;
+			p_id(p2_a1)=2;
+			p_id(p3_a1)=3;
+			p_id(p4_a1)=4;
+			p_id(p5_a1)=5;
+			p_id(p6_a1)=6;
+			
+			p_id(p1_a2)=1;
+			p_id(p2_a2)=2;
+			p_id(p3_a2)=3;
+			p_id(p4_a2)=4;
+			p_id(p5_a2)=5;
+			p_id(p6_a2)=6;
+		
+	};
+
+  
+	init-state { 
+		v_position(v1)=@a1;
+		
+	};
+  
+
+	
+    horizon = 6;
+
+    discount = 1.0;
+}

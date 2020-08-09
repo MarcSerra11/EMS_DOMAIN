@@ -1,0 +1,84 @@
+domain ems_operational_response_mdp_15 {
+
+	requirements {
+		reward-deterministic,
+		integer-valued,
+		continuous,
+		intermediate-nodes
+	};
+
+	types {
+		vehicle : object;
+		area : { @a1, @a2};
+		patient : {@p1};
+		hospital : {@h1};
+		base : {@b1};
+	};
+	
+	
+	
+	pvariables { 
+			
+		//////////////////// non-fluents ////////////////////
+		
+		// CONSTANTS
+		WAIT : { non-fluent, real, default = 0.5  };
+		STABILIZATION_TIME : { non-fluent, int, default = 5  };
+		
+		// Hopital position
+		h_position(hospital) : { non-fluent, area, default = @a1 };
+		
+		// Base position
+		b_position(base) : { non-fluent, area, default = @a1 };
+		
+		// TRAVEL TIME
+		aa_travelTime(area, area) : { non-fluent, int, default = 3  };
+		
+		// PoissonLambda
+		a_poissonLambda(area) : { non-fluent, real, default = 0.5  };
+		
+		
+		//////////////////// interm-fluents ////////////////////
+
+
+		//////////////////// state-fluents ////////////////////
+		
+		//Vehicle position
+		position(vehicle) : { state-fluent, area, default = @a1 };
+		
+		// Patient states
+		
+			// Patient id
+			p_id(patient) : { non-fluent, int, default = 0};
+			
+			// Patient position
+			p_position(patient) : { non-fluent, area, default = @a1 };
+		
+			
+		//////////////////// action-fluents ////////////////////
+
+		// the only available action is to move a vehicle 
+		move(vehicle) : { action-fluent, bool, default = false };
+
+
+	};
+	
+	cpfs {
+
+		//Update vehicle position
+		position'(?v) = if (move(?v)==true) 
+						then @a1
+						else @a2;
+		
+		
+		
+	};
+  
+	
+	reward = 	sum_{?v : vehicle} [if (move(?v)==true) 
+						then 1.0
+						else 0.0 ];
+	
+
+}
+
