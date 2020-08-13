@@ -1,8 +1,8 @@
 
 
-instance ems_operational_response_inst_22 {
+instance ems_operational_response_inst_23 {
 
-    domain = ems_operational_response_mdp_22;
+    domain = ems_operational_response_mdp_23;
 
 	
 	objects { 
@@ -35,5 +35,5 @@ instance ems_operational_response_inst_22 {
 	
     horizon = 40;
 
-    discount = 0.7;
+    discount = 1.0;
 }
