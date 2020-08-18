@@ -1,0 +1,39 @@
+instance ems_inst {
+
+    domain = ems_mdp;
+
+	
+	objects { 
+		vehicle :
+
+	};
+	
+	non-fluents { 
+	
+		//Hospital location
+		a_hospital
+				
+		//Base location
+		a_base
+		
+		//Travel time
+		aa_travelTime
+
+			
+		
+	};
+
+  
+	init-state { 
+		v_position
+		
+		
+		
+	};
+  
+
+	
+    horizon = 40;
+
+    discount = 1.0;
+}

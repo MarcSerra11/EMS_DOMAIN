@@ -1,0 +1,244 @@
+domain ems_mdp {
+
+	requirements {
+		reward-deterministic,
+		integer-valued,
+		continuous,
+		intermediate-nodes
+	};
+
+	types {
+		vehicle : object;
+		area :
+		number :
+		severity : {@s1, @s2, @s3};
+
+	};
+	
+	
+	
+	pvariables { 
+			
+		//////////////////// non-fluents ////////////////////
+		
+		// Area non-fluents
+		a_hospital(area) : { non-fluent, bool, default = false };
+		a_base(area) : { non-fluent, bool, default = false };
+		
+		//Emergencies probability
+		a_emergencyProbability(area) : { non-fluent, real, default = 0.02 };
+		a_severityProbability(area, severity) : { non-fluent, real, default = 0.3333333333 };
+		
+		
+		// TRAVEL TIME
+		aa_travelTime(area, area) : { non-fluent, number, default = @5  };
+		
+		//REWARDS
+		n_PreStabilization(number, severity) : { non-fluent, real, default = -100  };
+		n_PreHospitalization(number, severity) : { non-fluent, real, default = -100  };
+		
+		
+
+
+		//////////////////// state-fluents ////////////////////
+			
+		// VEHICLE STATES
+		
+		// Vehicle on course task
+		v_waiting(vehicle) : 			{ state-fluent, bool, default = true };
+		v_attendingPatient(vehicle) : 	{ state-fluent, bool, default = false };
+		v_waitingHospitalAssign(vehicle):     { state-fluent, bool, default = false };
+		v_travelingToHospital(vehicle) : 	{ state-fluent, bool, default = false };
+		v_travelingToBase(vehicle) : 		{ state-fluent, bool, default = false };
+		
+		// Vehicle objective 
+		v_assignedPatient(vehicle) : 		{ state-fluent, area, default = @a1 };
+		v_assignedHospital(vehicle) : 	{ state-fluent, area, default = @a1 };
+		v_assignedBase(vehicle) : 		{ state-fluent, area, default = @a1 };
+		
+		// Vehicle position
+		v_position(vehicle) : 			{ state-fluent, area, default = @a1 };		
+		
+		// Vehicle remaining action time
+		v_remainingActionTime(vehicle) : 	{ state-fluent, number, default = @0 };
+		
+		
+		// AREA STATES
+		a_patientGenerate(area) : 		{ state-fluent, bool, default = false };
+		a_patientActive(area) : 		{ state-fluent, bool, default = false };
+		a_patientStabilized(area) : 		{ state-fluent, bool, default = false };
+		a_patientWaitingTime(area) :  	{ state-fluent, number, default = @0 };
+		a_patientSeverity(area) :  		{ state-fluent, severity, default = @s1 };
+		
+					
+			
+		//////////////////// action-fluents ////////////////////
+
+		//VEHICLE ACTIONS
+		v_attendPatient(vehicle, area) : { action-fluent, bool, default = false };
+		v_travelToHsopital(vehicle, area) : { action-fluent, bool, default = false };
+		v_travelToBase(vehicle, area) : { action-fluent, bool, default = false };
+
+
+	};
+	
+	cpfs {
+	
+
+		// VEHICLE STATES
+		
+		// Vehicle on course task
+		v_waiting'(?v) = if ( exists_{?a : area} [ v_attendPatient(?v, ?a) | v_travelToHsopital(?v, ?a) | v_travelToBase(?v, ?a) ] )
+					then false
+					else if ( (v_travelingToHospital(?v) | v_travelingToBase(?v) ) & v_remainingActionTime(?v)==@0 )
+						then true
+						else v_waiting(?v);
+
+		v_attendingPatient'(?v) = if ( exists_{?a : area} [ v_attendPatient(?v, ?a) ] )
+						then true
+						else if (v_attendingPatient(?v) & v_remainingActionTime(?v)==@0 ) 
+							then false
+							else v_attendingPatient(?v);
+							
+							
+		v_waitingHospitalAssign'(?v) = if (v_attendingPatient(?v) & v_remainingActionTime(?v)==@0 )
+							then true
+							else if ( exists_{?a : area} [ v_travelToHsopital(?v, ?a) ] )
+								then false
+								else v_waitingHospitalAssign(?v);
+								
+		v_travelingToHospital'(?v) = if (exists_{?a : area} [ v_travelToHsopital(?v, ?a) ])	
+							then true
+							else if (v_travelingToHospital(?v) & v_remainingActionTime(?v)==@0)	
+								then false
+								else v_travelingToHospital(?v);
+		
+		v_travelingToBase'(?v) = if ( exists_{?a : area} [v_travelToBase(?v, ?a)] )
+					then true
+					else if (v_travelingToBase(?v) & v_remainingActionTime(?v)==@0) 
+						then false 
+						else v_travelingToBase(?v);
+	
+	
+		//Update vehicle objectives 
+		v_assignedPatient'(?v) = 	if (v_attendPatient(?v, @a0)) then @a0
+						else if (v_attendPatient(?v, @a1)) then @a1
+						//...
+						else v_assignedPatient(?v);
+					
+		v_assignedHospital'(?v) = 	if (v_travelToHsopital(?v, @a0)) then @a0
+						else if (v_travelToHsopital(?v, @a1)) then @a1
+						//...
+						else v_assignedHospital(?v);
+					
+		v_assignedBase'(?v) = 	if (v_travelToBase(?v, @a0)) then @a0
+					else if (v_travelToBase(?v, @a1)) then @a1
+					//...
+					else v_assignedBase(?v);
+					
+
+		//Update vehicle position
+		v_position'(?v) = 	if (v_attendingPatient(?v) & v_remainingActionTime(?v)==@0 ) then v_assignedPatient(?v)
+					else if (v_travelingToHospital(?v) & v_remainingActionTime(?v)==@0 ) then v_assignedHospital(?v)
+					else if (v_travelingToBase(?v) & v_remainingActionTime(?v)==@0 ) then v_assignedBase(?v)
+					else v_position(?v);
+		
+						
+		// Vehicle remaining action time
+		v_remainingActionTime'(?v) = 	//Decrease of executing action time
+						if (v_remainingActionTime(?v)==@1) then @0
+						else if (v_remainingActionTime(?v)==@2) then @1
+						
+						//New action
+						else if (v_position(?v)==@a0 & (v_attendPatient(?v, @a0) | v_travelToHsopital(?v, @a0) | v_travelToBase(?v, @a0) ) ) then ( aa_travelTime(@a0, @a0) )
+						
+						//...
+						
+						else @0; 			
+						
+		
+		//UPDATE AREA STATES 
+		
+		a_patientGenerate'(?a) = if ( ~ a_patientActive(?a) ) then Bernoulli( a_emergencyProbability(?a) )
+					else false;
+		
+		a_patientActive'(?a) = if (a_patientGenerate(?a)) then true
+					else if ( exists_{?v : vehicle} [ v_assignedPatient(?v)==?a & v_travelingToHospital(?v) & v_remainingActionTime(?v)==@0 ] ) then false
+					else a_patientActive(?a); 
+		
+		
+		a_patientStabilized'(?a) = if (a_patientGenerate(?a)) then false
+					   	else if ( exists_{?v : vehicle} [ v_assignedPatient(?v)==?a & v_attendingPatient(?v) & v_remainingActionTime(?v)==@0 ] ) then true
+						else a_patientStabilized(?a);	
+		
+		
+		a_patientWaitingTime'(?a) = 	if (a_patientGenerate(?a)) then @0
+						else if (a_patientActive(?a) & a_patientWaitingTime(?a)==@0) then @1
+												
+						//...
+						else a_patientWaitingTime(?a); 
+						
+		a_patientSeverity'(?a) = if (a_patientGenerate(?a)) 
+						then Discrete(severity,
+		                  			@s1 : a_severityProbability(?a, @s1),
+		                  			@s2 : a_severityProbability(?a, @s2),
+		                  			@s3 : a_severityProbability(?a, @s3))
+		                  		else a_patientSeverity(?a);
+		                                  			                                                                              
+		
+		
+	};
+  
+	
+	reward = 	(sum_{?a : area} [ ( if ( a_patientActive(?a) ) 
+						then sum_{?n : number} [ (a_patientWaitingTime(?a)==?n) * (if ( a_patientStabilized(?a) )
+									then 
+										sum_{?s : severity} [(a_patientSeverity(?a)==?s)*n_PreHospitalization(?n, ?s)]
+	
+									else 
+										sum_{?s : severity} [(a_patientSeverity(?a)==?s)*n_PreStabilization(?n, ?s)])
+								
+							]
+						else 0)
+			]);
+	
+	
+	
+
+	
+	state-invariants {
+		
+		(forall_{?v : vehicle} [v_waiting(?v) | v_attendingPatient(?v) | v_waitingHospitalAssign(?v) | v_travelingToHospital(?v) | v_travelingToBase(?v) ] );
+	
+	};
+	
+	
+						
+	action-preconditions {
+	
+		//Execute only one action
+		(forall_{?v : vehicle} [ (sum_{?a : area} [v_attendPatient(?v, ?a)+v_travelToHsopital(?v, ?a)+v_travelToBase(?v, ?a)])  <= 1] );
+
+		//Actions preconditions		
+		( forall_{?v : vehicle} [  forall_{?a : area} [ v_attendPatient(?v, ?a) => ((v_waiting(?v) | v_travelingToBase(?v)) & a_patientActive(?a)) ] ]);
+		( forall_{?v : vehicle} [  forall_{?a : area} [ v_travelToHsopital(?v, ?a) => (v_waitingHospitalAssign(?v) & a_hospital(?a)) ] ]);
+		( forall_{?v : vehicle} [  forall_{?a : area} [ v_travelToBase(?v, ?a) => (v_waiting(?v) & a_base(?a)) ] ]);
+		
+		//Only one ambulance can be assigned to a patient at the same time
+		( forall_{?a : area} [	 (sum_{?v : vehicle} [v_attendPatient(?v, ?a)]) <=1  ] );
+		
+		//If an ambulance is assigned to a patient, another can not be assigned in the future
+		( forall_{?a : area} [	 (exists_{?v : vehicle} [v_attendPatient(?v, ?a)]) =>  ~(exists_{?v : vehicle} [v_assignedPatient(?v)==?a & v_attendingPatient(?v) ]) ] );
+		
+		//Once a patient is stabilised must be trasferred to a hospital
+		( forall_{?v : vehicle} [ v_waitingHospitalAssign(?v) => (exists_{?a : area} [v_travelToHsopital(?v, ?a)]) ]);	
+		
+		//An ambulance waiting in a base can not be redeployed in the same base
+		( forall_{?a : area} [	 (forall_{?v : vehicle} [v_travelToBase(?v, ?a) => (v_position(?v)~=?a) ]) ] ); 
+		
+	
+	};
+	
+
+}
+
