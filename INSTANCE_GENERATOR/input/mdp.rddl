@@ -11,7 +11,7 @@ domain ems_mdp {
 		vehicle : object;
 		area :
 		number :
-		severity : {@s1, @s2, @s3};
+		priority : {@p1, @p2, @p3};
 
 	};
 	
@@ -27,15 +27,15 @@ domain ems_mdp {
 		
 		//Emergencies probability
 		a_emergencyProbability(area) : { non-fluent, real, default = 0.02 };
-		a_severityProbability(area, severity) : { non-fluent, real, default = 0.3333333333 };
+		a_priorityProbability(area, priority) : { non-fluent, real, default = 0.3333333333 };
 		
 		
 		// TRAVEL TIME
 		aa_travelTime(area, area) : { non-fluent, number, default = @5  };
 		
 		//REWARDS
-		n_PreStabilization(number, severity) : { non-fluent, real, default = -100  };
-		n_PreHospitalization(number, severity) : { non-fluent, real, default = -90  };
+		n_PreStabilisation(number, priority) : { non-fluent, real, default = -100  };
+		n_PreHospitalisation(number, priority) : { non-fluent, real, default = -90  };
 		
 		
 
@@ -68,7 +68,7 @@ domain ems_mdp {
 		a_patientActive(area) : 		{ state-fluent, bool, default = false };
 		a_patientStabilized(area) : 		{ state-fluent, bool, default = false };
 		a_patientWaitingTime(area) :  	{ state-fluent, number, default = @0 };
-		a_patientSeverity(area) :  		{ state-fluent, severity, default = @s1 };
+		a_patientPriority(area) :  		{ state-fluent, priority, default = @p1 };
 		
 					
 			
@@ -178,12 +178,12 @@ domain ems_mdp {
 						//...
 						else a_patientWaitingTime(?a); 
 						
-		a_patientSeverity'(?a) = if (a_patientGenerate(?a)) 
-						then Discrete(severity,
-		                  			@s1 : a_severityProbability(?a, @s1),
-		                  			@s2 : a_severityProbability(?a, @s2),
-		                  			@s3 : a_severityProbability(?a, @s3))
-		                  		else a_patientSeverity(?a);
+		a_patientPriority'(?a) = if (a_patientGenerate(?a)) 
+						then Discrete(priority,
+		                  			@p1 : a_priorityProbability(?a, @p1),
+		                  			@p2 : a_priorityProbability(?a, @p2),
+		                  			@p3 : a_priorityProbability(?a, @p3))
+		                  		else a_patientPriority(?a);
 		                                  			                                                                              
 		
 		
@@ -193,10 +193,10 @@ domain ems_mdp {
 	reward = 	(sum_{?a : area} [ ( if ( a_patientActive(?a) ) 
 						then sum_{?n : number} [ (a_patientWaitingTime(?a)==?n) * (if ( a_patientStabilized(?a) )
 									then 
-										sum_{?s : severity} [(a_patientSeverity(?a)==?s)*n_PreHospitalization(?n, ?s)]
+										sum_{?p : priority} [(a_patientPriority(?a)==?p)*n_PreHospitalisation(?n, ?p)]
 	
 									else 
-										sum_{?s : severity} [(a_patientSeverity(?a)==?s)*n_PreStabilization(?n, ?s)])
+										sum_{?p : priority} [(a_patientPriority(?a)==?p)*n_PreStabilisation(?n, ?p)])
 								
 							]
 						else 0)

@@ -13,23 +13,38 @@ int main () {
 	//VARIABLES DECLARATION
 	
 	std::string line;
-	int number, area, vehicle, hospital, base, x, y, std_time;
-	
+	int number, area, vehicle, hospital, base, x, y, std_time, on_site_time, drop_off_time;
+	double stabilisation_p1, stabilisation_p2, stabilisation_p3, hospitalisation_p1, hospitalisation_p2, hospitalisation_p3;  	
 	
 	//INPUT VARIABLES
-	x=5;
-	y=3;
+	x=2;
+	y=2;
 
 	number=19;
 	vehicle=1;
-	hospital=2;
+	hospital=1;
 	base=1;
-	std_time=1;
+	
+	on_site_time=1; 
+	drop_off_time=1;
+	
+	stabilisation_p1=0.01; 
+	stabilisation_p2=0.01;
+	stabilisation_p3=0.01; 
+	
+	hospitalisation_p1=0.01; 
+	hospitalisation_p2=0.01; 
+	hospitalisation_p3=0.01;
 	
 	
-	//CONSTANTS SETTING
+	
+	
+	
+	//CONSTANTS SET
 	area=x*y;	
 	srand (time(NULL));
+	std_time=(on_site_time+drop_off_time)/2;
+	if (std_time==0) {std_time=1;} 
 	
 	
 	//GENERATION OF MDP FILE
@@ -51,7 +66,7 @@ int main () {
 		 if (line == "		number :" ) {
 		 	replace=true;
 		 	mdp << "		number : { @0";
-		 	for (int i=1; i<number; i++) { mdp<<", @"<<i; }
+		 	for (int i=1; i<=number; i++) { mdp<<", @"<<i; }
 		 	mdp<<"};"<<'\n';
 		 };
 		 
@@ -198,6 +213,68 @@ int main () {
 		 		b++;
 		 		if (b==base) {b=0;}
 		 	}
+		 };
+		 
+		 
+		 if (line == "		n_PreStabilisation" ) {
+		 	replace=true;
+		 	
+		 	double punishment=hospitalisation_p3;
+		 	double previous_punishment=0;
+		 	
+		 	for (int i=1; i<=number; i++) { 
+		 	
+		 		inst<<"		n_PreHospitalisation(@"<<i<<", @p3)=-"<<punishment<<";"<<'\n'; 
+		 		previous_punishment=previous_punishment+punishment;
+		 		punishment=previous_punishment+1;
+		 	}
+		 	inst<<'\n';
+		 	
+		 	if (hospitalisation_p2 != 0) {punishment=hospitalisation_p2; previous_punishment=0;}
+		 	for (int i=1; i<=number; i++) { 
+		 	
+		 		inst<<"		n_PreHospitalisation(@"<<i<<", @p2)=-"<<punishment<<";"<<'\n'; 
+		 		previous_punishment=previous_punishment+punishment;
+		 		punishment=previous_punishment+1;
+		 	}
+		 	inst<<'\n';
+		 	
+		 	if (hospitalisation_p1 != 0) {punishment=hospitalisation_p1; previous_punishment=0;}
+		 	for (int i=1; i<=number; i++) { 
+		 	
+		 		inst<<"		n_PreHospitalisation(@"<<i<<", @p1)=-"<<punishment<<";"<<'\n'; 
+		 		previous_punishment=previous_punishment+punishment;
+		 		punishment=previous_punishment+1;
+		 	}
+		 	inst<<'\n';
+		 	
+		 	if (stabilisation_p3 != 0) {punishment=stabilisation_p3; previous_punishment=0;}
+		 	for (int i=1; i<=number; i++) { 
+		 	
+		 		inst<<"		n_PreStabilisation(@"<<i<<", @p3)=-"<<punishment<<";"<<'\n'; 
+		 		previous_punishment=previous_punishment+punishment;
+		 		punishment=previous_punishment+1;
+		 	}
+		 	inst<<'\n';
+		 	
+		 	if (stabilisation_p2 != 0) {punishment=stabilisation_p2; previous_punishment=0;}
+		 	for (int i=1; i<=number; i++) { 
+		 	
+		 		inst<<"		n_PreStabilisation(@"<<i<<", @p2)=-"<<punishment<<";"<<'\n'; 
+		 		previous_punishment=previous_punishment+punishment;
+		 		punishment=previous_punishment+1;
+		 	}
+		 	inst<<'\n';
+		 	
+		 	if (stabilisation_p1 != 0) {punishment=stabilisation_p1; previous_punishment=0;}
+		 	for (int i=1; i<=number; i++) { 
+		 	
+		 		inst<<"		n_PreStabilisation(@"<<i<<", @p1)=-"<<punishment<<";"<<'\n'; 
+		 		previous_punishment=previous_punishment+punishment;
+		 		punishment=previous_punishment+1;
+		 	}
+		 	inst<<'\n';
+		 	
 		 };
 		
 		

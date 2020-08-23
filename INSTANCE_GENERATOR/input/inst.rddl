@@ -18,6 +18,10 @@ instance ems_inst {
 		
 		//Travel time
 		aa_travelTime
+		
+		//Punishments
+		n_PreStabilisation
+		
 
 			
 		
