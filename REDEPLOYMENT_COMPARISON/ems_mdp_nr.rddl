@@ -1,4 +1,4 @@
-domain ems_mdp {
+domain ems_mdp_nr {
 
 	requirements {
 		reward-deterministic,

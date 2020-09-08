@@ -1,0 +1,271 @@
+non-fluents ems-nf {
+
+    domain = ems_mdp;
+
+	objects { 
+		vehicle : { v0, v1, v2};
+
+	};
+	
+	non-fluents { 
+	
+		//Hospital location
+		a_hospital(@a2)=true;
+		a_hospital(@a5)=true;
+				
+		//Base location
+		a_base(@a11)=true;
+		a_base(@a5)=true;
+		
+		//Travel time
+		aa_travelTime(@a0, @a0)=@3;
+		aa_travelTime(@a0, @a1)=@4;
+		aa_travelTime(@a0, @a2)=@5;
+		aa_travelTime(@a0, @a3)=@4;
+		aa_travelTime(@a0, @a4)=@5;
+		aa_travelTime(@a0, @a5)=@6;
+		aa_travelTime(@a0, @a6)=@5;
+		aa_travelTime(@a0, @a7)=@6;
+		aa_travelTime(@a0, @a8)=@7;
+		aa_travelTime(@a0, @a9)=@6;
+		aa_travelTime(@a0, @a10)=@7;
+		aa_travelTime(@a0, @a11)=@8;
+		aa_travelTime(@a1, @a0)=@4;
+		aa_travelTime(@a1, @a1)=@3;
+		aa_travelTime(@a1, @a2)=@4;
+		aa_travelTime(@a1, @a3)=@5;
+		aa_travelTime(@a1, @a4)=@4;
+		aa_travelTime(@a1, @a5)=@5;
+		aa_travelTime(@a1, @a6)=@6;
+		aa_travelTime(@a1, @a7)=@5;
+		aa_travelTime(@a1, @a8)=@6;
+		aa_travelTime(@a1, @a9)=@7;
+		aa_travelTime(@a1, @a10)=@6;
+		aa_travelTime(@a1, @a11)=@7;
+		aa_travelTime(@a2, @a0)=@5;
+		aa_travelTime(@a2, @a1)=@4;
+		aa_travelTime(@a2, @a2)=@3;
+		aa_travelTime(@a2, @a3)=@6;
+		aa_travelTime(@a2, @a4)=@5;
+		aa_travelTime(@a2, @a5)=@4;
+		aa_travelTime(@a2, @a6)=@7;
+		aa_travelTime(@a2, @a7)=@6;
+		aa_travelTime(@a2, @a8)=@5;
+		aa_travelTime(@a2, @a9)=@8;
+		aa_travelTime(@a2, @a10)=@7;
+		aa_travelTime(@a2, @a11)=@6;
+		aa_travelTime(@a3, @a0)=@4;
+		aa_travelTime(@a3, @a1)=@5;
+		aa_travelTime(@a3, @a2)=@6;
+		aa_travelTime(@a3, @a3)=@3;
+		aa_travelTime(@a3, @a4)=@4;
+		aa_travelTime(@a3, @a5)=@5;
+		aa_travelTime(@a3, @a6)=@4;
+		aa_travelTime(@a3, @a7)=@5;
+		aa_travelTime(@a3, @a8)=@6;
+		aa_travelTime(@a3, @a9)=@5;
+		aa_travelTime(@a3, @a10)=@6;
+		aa_travelTime(@a3, @a11)=@7;
+		aa_travelTime(@a4, @a0)=@5;
+		aa_travelTime(@a4, @a1)=@4;
+		aa_travelTime(@a4, @a2)=@5;
+		aa_travelTime(@a4, @a3)=@4;
+		aa_travelTime(@a4, @a4)=@3;
+		aa_travelTime(@a4, @a5)=@4;
+		aa_travelTime(@a4, @a6)=@5;
+		aa_travelTime(@a4, @a7)=@4;
+		aa_travelTime(@a4, @a8)=@5;
+		aa_travelTime(@a4, @a9)=@6;
+		aa_travelTime(@a4, @a10)=@5;
+		aa_travelTime(@a4, @a11)=@6;
+		aa_travelTime(@a5, @a0)=@6;
+		aa_travelTime(@a5, @a1)=@5;
+		aa_travelTime(@a5, @a2)=@4;
+		aa_travelTime(@a5, @a3)=@5;
+		aa_travelTime(@a5, @a4)=@4;
+		aa_travelTime(@a5, @a5)=@3;
+		aa_travelTime(@a5, @a6)=@6;
+		aa_travelTime(@a5, @a7)=@5;
+		aa_travelTime(@a5, @a8)=@4;
+		aa_travelTime(@a5, @a9)=@7;
+		aa_travelTime(@a5, @a10)=@6;
+		aa_travelTime(@a5, @a11)=@5;
+		aa_travelTime(@a6, @a0)=@5;
+		aa_travelTime(@a6, @a1)=@6;
+		aa_travelTime(@a6, @a2)=@7;
+		aa_travelTime(@a6, @a3)=@4;
+		aa_travelTime(@a6, @a4)=@5;
+		aa_travelTime(@a6, @a5)=@6;
+		aa_travelTime(@a6, @a6)=@3;
+		aa_travelTime(@a6, @a7)=@4;
+		aa_travelTime(@a6, @a8)=@5;
+		aa_travelTime(@a6, @a9)=@4;
+		aa_travelTime(@a6, @a10)=@5;
+		aa_travelTime(@a6, @a11)=@6;
+		aa_travelTime(@a7, @a0)=@6;
+		aa_travelTime(@a7, @a1)=@5;
+		aa_travelTime(@a7, @a2)=@6;
+		aa_travelTime(@a7, @a3)=@5;
+		aa_travelTime(@a7, @a4)=@4;
+		aa_travelTime(@a7, @a5)=@5;
+		aa_travelTime(@a7, @a6)=@4;
+		aa_travelTime(@a7, @a7)=@3;
+		aa_travelTime(@a7, @a8)=@4;
+		aa_travelTime(@a7, @a9)=@5;
+		aa_travelTime(@a7, @a10)=@4;
+		aa_travelTime(@a7, @a11)=@5;
+		aa_travelTime(@a8, @a0)=@7;
+		aa_travelTime(@a8, @a1)=@6;
+		aa_travelTime(@a8, @a2)=@5;
+		aa_travelTime(@a8, @a3)=@6;
+		aa_travelTime(@a8, @a4)=@5;
+		aa_travelTime(@a8, @a5)=@4;
+		aa_travelTime(@a8, @a6)=@5;
+		aa_travelTime(@a8, @a7)=@4;
+		aa_travelTime(@a8, @a8)=@3;
+		aa_travelTime(@a8, @a9)=@6;
+		aa_travelTime(@a8, @a10)=@5;
+		aa_travelTime(@a8, @a11)=@4;
+		aa_travelTime(@a9, @a0)=@6;
+		aa_travelTime(@a9, @a1)=@7;
+		aa_travelTime(@a9, @a2)=@8;
+		aa_travelTime(@a9, @a3)=@5;
+		aa_travelTime(@a9, @a4)=@6;
+		aa_travelTime(@a9, @a5)=@7;
+		aa_travelTime(@a9, @a6)=@4;
+		aa_travelTime(@a9, @a7)=@5;
+		aa_travelTime(@a9, @a8)=@6;
+		aa_travelTime(@a9, @a9)=@3;
+		aa_travelTime(@a9, @a10)=@4;
+		aa_travelTime(@a9, @a11)=@5;
+		aa_travelTime(@a10, @a0)=@7;
+		aa_travelTime(@a10, @a1)=@6;
+		aa_travelTime(@a10, @a2)=@7;
+		aa_travelTime(@a10, @a3)=@6;
+		aa_travelTime(@a10, @a4)=@5;
+		aa_travelTime(@a10, @a5)=@6;
+		aa_travelTime(@a10, @a6)=@5;
+		aa_travelTime(@a10, @a7)=@4;
+		aa_travelTime(@a10, @a8)=@5;
+		aa_travelTime(@a10, @a9)=@4;
+		aa_travelTime(@a10, @a10)=@3;
+		aa_travelTime(@a10, @a11)=@4;
+		aa_travelTime(@a11, @a0)=@8;
+		aa_travelTime(@a11, @a1)=@7;
+		aa_travelTime(@a11, @a2)=@6;
+		aa_travelTime(@a11, @a3)=@7;
+		aa_travelTime(@a11, @a4)=@6;
+		aa_travelTime(@a11, @a5)=@5;
+		aa_travelTime(@a11, @a6)=@6;
+		aa_travelTime(@a11, @a7)=@5;
+		aa_travelTime(@a11, @a8)=@4;
+		aa_travelTime(@a11, @a9)=@5;
+		aa_travelTime(@a11, @a10)=@4;
+		aa_travelTime(@a11, @a11)=@3;
+		
+		//Punishments
+		n_PreHospitalisation(@0, @p3)=-0.000000;
+		n_PreHospitalisation(@1, @p3)=-0.000001;
+		n_PreHospitalisation(@2, @p3)=-0.000002;
+		n_PreHospitalisation(@3, @p3)=-0.000004;
+		n_PreHospitalisation(@4, @p3)=-0.000009;
+		n_PreHospitalisation(@5, @p3)=-0.000018;
+		n_PreHospitalisation(@6, @p3)=-0.000035;
+		n_PreHospitalisation(@7, @p3)=-0.000070;
+		n_PreHospitalisation(@8, @p3)=-0.000141;
+		n_PreHospitalisation(@9, @p3)=-0.000282;
+		n_PreHospitalisation(@10, @p3)=-0.000563;
+
+		n_PreHospitalisation(@0, @p2)=-0.001126;
+		n_PreHospitalisation(@1, @p2)=-0.002253;
+		n_PreHospitalisation(@2, @p2)=-0.004506;
+		n_PreHospitalisation(@3, @p2)=-0.009011;
+		n_PreHospitalisation(@4, @p2)=-0.018022;
+		n_PreHospitalisation(@5, @p2)=-0.036045;
+		n_PreHospitalisation(@6, @p2)=-0.072090;
+		n_PreHospitalisation(@7, @p2)=-0.144179;
+		n_PreHospitalisation(@8, @p2)=-0.288358;
+		n_PreHospitalisation(@9, @p2)=-0.576717;
+		n_PreHospitalisation(@10, @p2)=-1.153434;
+
+		n_PreHospitalisation(@0, @p1)=-2.306867;
+		n_PreHospitalisation(@1, @p1)=-4.613734;
+		n_PreHospitalisation(@2, @p1)=-9.227469;
+		n_PreHospitalisation(@3, @p1)=-18.454938;
+		n_PreHospitalisation(@4, @p1)=-36.909875;
+		n_PreHospitalisation(@5, @p1)=-73.819750;
+		n_PreHospitalisation(@6, @p1)=-147.639501;
+		n_PreHospitalisation(@7, @p1)=-295.279002;
+		n_PreHospitalisation(@8, @p1)=-590.558003;
+		n_PreHospitalisation(@9, @p1)=-1181.116006;
+		n_PreHospitalisation(@10, @p1)=-2362.232013;
+
+		n_PreStabilisation(@0, @p3)=-4724.464026;
+		n_PreStabilisation(@1, @p3)=-9448.928051;
+		n_PreStabilisation(@2, @p3)=-18897.856102;
+		n_PreStabilisation(@3, @p3)=-37795.712205;
+		n_PreStabilisation(@4, @p3)=-75591.424410;
+		n_PreStabilisation(@5, @p3)=-151182.848819;
+		n_PreStabilisation(@6, @p3)=-302365.697638;
+		n_PreStabilisation(@7, @p3)=-604731.395277;
+		n_PreStabilisation(@8, @p3)=-1209462.790554;
+		n_PreStabilisation(@9, @p3)=-2418925.581107;
+		n_PreStabilisation(@10, @p3)=-4837851.162214;
+
+		n_PreStabilisation(@0, @p2)=-9675702.324429;
+		n_PreStabilisation(@1, @p2)=-19351404.648858;
+		n_PreStabilisation(@2, @p2)=-38702809.297715;
+		n_PreStabilisation(@3, @p2)=-77405618.595430;
+		n_PreStabilisation(@4, @p2)=-154811237.190861;
+		n_PreStabilisation(@5, @p2)=-309622474.381722;
+		n_PreStabilisation(@6, @p2)=-619244948.763443;
+		n_PreStabilisation(@7, @p2)=-1238489897.526886;
+		n_PreStabilisation(@8, @p2)=-2476979795.053773;
+		n_PreStabilisation(@9, @p2)=-4953959590.107546;
+		n_PreStabilisation(@10, @p2)=-9907919180.215094;
+
+		n_PreStabilisation(@0, @p1)=-19815838360.430183;
+		n_PreStabilisation(@1, @p1)=-39631676720.860367;
+		n_PreStabilisation(@2, @p1)=-79263353441.720734;
+		n_PreStabilisation(@3, @p1)=-158526706883.441467;
+		n_PreStabilisation(@4, @p1)=-317053413766.882935;
+		n_PreStabilisation(@5, @p1)=-634106827533.765869;
+		n_PreStabilisation(@6, @p1)=-1268213655067.531738;
+		n_PreStabilisation(@7, @p1)=-2536427310135.063477;
+		n_PreStabilisation(@8, @p1)=-5072854620270.126953;
+		n_PreStabilisation(@9, @p1)=-10145709240540.253906;
+		n_PreStabilisation(@10, @p1)=-20291418481080.507812;
+
+		
+
+			
+		
+	};
+
+}
+
+
+
+
+instance ems_inst {
+
+    domain = ems_mdp;
+    non-fluents = ems-nf; 
+
+  
+	init-state { 
+		v_position(v0)=@a11;
+		v_position(v1)=@a5;
+		v_position(v2)=@a11;
+		
+		
+		
+	};
+  
+
+	max-nondef-actions = 3;
+		
+    horizon = 40;
+
+    discount = 1.0;
+}

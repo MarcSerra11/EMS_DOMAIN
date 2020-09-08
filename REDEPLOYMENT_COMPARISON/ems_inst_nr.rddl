@@ -1,6 +1,6 @@
-non-fluents ems-nf {
+non-fluents ems-nf_nr {
 
-    domain = ems_mdp;
+    domain = ems_mdp_nr;
 
 	objects { 
 		vehicle : { v0, v1, v2};
@@ -14,8 +14,8 @@ non-fluents ems-nf {
 		a_hospital(@a15)=true;
 				
 		//Base location
-		a_base(@a7)=true;
-		a_base(@a11)=true;
+		//a_base(@a7)=true;
+		//a_base(@a11)=true;
 		
 		//Travel time
 		aa_travelTime(@a0, @a0)=@3;
@@ -359,10 +359,10 @@ non-fluents ems-nf {
 
 
 
-instance ems_inst {
+instance ems_inst_nr {
 
-    domain = ems_mdp;
-    non-fluents = ems-nf; 
+    domain = ems_mdp_nr;
+    non-fluents = ems-nf_nr; 
 
   
 	init-state { 

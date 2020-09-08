@@ -17,24 +17,24 @@ int main () {
 	double stabilisation_p1, stabilisation_p2, stabilisation_p3, hospitalisation_p1, hospitalisation_p2, hospitalisation_p3;  	
 	
 	//INPUT VARIABLES
-	x=2;
-	y=2;
+	x=4;
+	y=4;
 
-	number=19;
-	vehicle=1;
-	hospital=1;
-	base=1;
+	number=10;
+	vehicle=3;
+	hospital=2;
+	base=2;
 	
-	on_site_time=1; 
+	on_site_time=5; 
 	drop_off_time=1;
 	
-	stabilisation_p1=0.01; 
-	stabilisation_p2=0.01;
-	stabilisation_p3=0.01; 
+	stabilisation_p1=0; 
+	stabilisation_p2=0;
+	stabilisation_p3=0; 
 	
-	hospitalisation_p1=0.01; 
-	hospitalisation_p2=0.01; 
-	hospitalisation_p3=0.01;
+	hospitalisation_p1=0; 
+	hospitalisation_p2=0; 
+	hospitalisation_p3=0.0000001;
 	
 	
 	
@@ -106,7 +106,7 @@ int main () {
 		 
 		 if (line == "						else if (a_patientActive(?a) & a_patientWaitingTime(?a)==@0) then @1" ) {
 		 	replace=true;
-		 	for (int i=2; i<number; i++) { mdp<<"						else if (a_patientActive(?a) & a_patientWaitingTime(?a)==@"<<i-1<<") then @"<<i<<'\n'; }
+		 	for (int i=1; i<number; i++) { mdp<<"						else if (a_patientActive(?a) & a_patientWaitingTime(?a)==@"<<i-1<<") then @"<<i<<'\n'; }
 		 };
 		 
 		 
@@ -156,6 +156,14 @@ int main () {
 	while ( getline (o_inst,line) ) {
 	
 		bool replace = false;
+		
+		if (line == "	max-nondef-actions =" ) {
+		 	replace=true;
+		 	inst << "	max-nondef-actions = "<<vehicle<<";"<<'\n';
+	
+		 };
+		
+		
 		
 		if (line == "		vehicle :" ) {
 		 	replace=true;
@@ -221,57 +229,59 @@ int main () {
 		 	
 		 	double punishment=hospitalisation_p3;
 		 	double previous_punishment=0;
+		 	double min=0.000001;
+		 	inst<< std::fixed;
 		 	
-		 	for (int i=1; i<=number; i++) { 
+		 	for (int i=0; i<=number; i++) { 
 		 	
 		 		inst<<"		n_PreHospitalisation(@"<<i<<", @p3)=-"<<punishment<<";"<<'\n'; 
 		 		previous_punishment=previous_punishment+punishment;
-		 		punishment=previous_punishment+1;
+		 		punishment=previous_punishment+min;
 		 	}
 		 	inst<<'\n';
 		 	
 		 	if (hospitalisation_p2 != 0) {punishment=hospitalisation_p2; previous_punishment=0;}
-		 	for (int i=1; i<=number; i++) { 
+		 	for (int i=0; i<=number; i++) { 
 		 	
 		 		inst<<"		n_PreHospitalisation(@"<<i<<", @p2)=-"<<punishment<<";"<<'\n'; 
 		 		previous_punishment=previous_punishment+punishment;
-		 		punishment=previous_punishment+1;
+		 		punishment=previous_punishment+min;
 		 	}
 		 	inst<<'\n';
 		 	
 		 	if (hospitalisation_p1 != 0) {punishment=hospitalisation_p1; previous_punishment=0;}
-		 	for (int i=1; i<=number; i++) { 
+		 	for (int i=0; i<=number; i++) { 
 		 	
 		 		inst<<"		n_PreHospitalisation(@"<<i<<", @p1)=-"<<punishment<<";"<<'\n'; 
 		 		previous_punishment=previous_punishment+punishment;
-		 		punishment=previous_punishment+1;
+		 		punishment=previous_punishment+min;
 		 	}
 		 	inst<<'\n';
 		 	
 		 	if (stabilisation_p3 != 0) {punishment=stabilisation_p3; previous_punishment=0;}
-		 	for (int i=1; i<=number; i++) { 
+		 	for (int i=0; i<=number; i++) { 
 		 	
 		 		inst<<"		n_PreStabilisation(@"<<i<<", @p3)=-"<<punishment<<";"<<'\n'; 
 		 		previous_punishment=previous_punishment+punishment;
-		 		punishment=previous_punishment+1;
+		 		punishment=previous_punishment+min;
 		 	}
 		 	inst<<'\n';
 		 	
 		 	if (stabilisation_p2 != 0) {punishment=stabilisation_p2; previous_punishment=0;}
-		 	for (int i=1; i<=number; i++) { 
+		 	for (int i=0; i<=number; i++) { 
 		 	
 		 		inst<<"		n_PreStabilisation(@"<<i<<", @p2)=-"<<punishment<<";"<<'\n'; 
 		 		previous_punishment=previous_punishment+punishment;
-		 		punishment=previous_punishment+1;
+		 		punishment=previous_punishment+min;
 		 	}
 		 	inst<<'\n';
 		 	
 		 	if (stabilisation_p1 != 0) {punishment=stabilisation_p1; previous_punishment=0;}
-		 	for (int i=1; i<=number; i++) { 
+		 	for (int i=0; i<=number; i++) { 
 		 	
 		 		inst<<"		n_PreStabilisation(@"<<i<<", @p1)=-"<<punishment<<";"<<'\n'; 
 		 		previous_punishment=previous_punishment+punishment;
-		 		punishment=previous_punishment+1;
+		 		punishment=previous_punishment+min;
 		 	}
 		 	inst<<'\n';
 		 	

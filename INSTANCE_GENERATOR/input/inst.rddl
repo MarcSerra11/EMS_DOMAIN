@@ -1,8 +1,7 @@
-instance ems_inst {
+non-fluents ems-nf {
 
     domain = ems_mdp;
 
-	
 	objects { 
 		vehicle :
 
@@ -27,6 +26,16 @@ instance ems_inst {
 		
 	};
 
+}
+
+
+
+
+instance ems_inst {
+
+    domain = ems_mdp;
+    non-fluents = ems-nf; 
+
   
 	init-state { 
 		v_position
@@ -36,7 +45,8 @@ instance ems_inst {
 	};
   
 
-	
+	max-nondef-actions =
+		
     horizon = 40;
 
     discount = 1.0;

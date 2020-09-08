@@ -1,4 +1,4 @@
-domain ems_mdp {
+domain ems_mdp_v2 {
 
 	requirements {
 		reward-deterministic,
@@ -9,8 +9,8 @@ domain ems_mdp {
 
 	types {
 		vehicle : object;
-		area :
-		number :
+		area : { @a0, @a1, @a2, @a3};
+		number : { @0, @1, @2, @3, @4, @5, @6, @7, @8, @9, @10};
 		priority : {@p1, @p2, @p3};
 
 	};
@@ -26,7 +26,7 @@ domain ems_mdp {
 		a_base(area) : { non-fluent, bool, default = false };
 		
 		//Emergencies probability
-		a_emergencyProbability(area) : { non-fluent, real, default = 0.04 };
+		a_emergencyProbability(area) : { non-fluent, real, default = 0.02 };
 		a_priorityProbability(area, priority) : { non-fluent, real, default = 0.3333333333 };
 		
 		
@@ -123,16 +123,22 @@ domain ems_mdp {
 		//Update vehicle objectives 
 		v_assignedPatient'(?v) = 	if (v_attendPatient(?v, @a0)) then @a0
 						else if (v_attendPatient(?v, @a1)) then @a1
+						else if (v_attendPatient(?v, @a2)) then @a2
+						else if (v_attendPatient(?v, @a3)) then @a3
 						//...
 						else v_assignedPatient(?v);
 					
 		v_assignedHospital'(?v) = 	if (v_travelToHsopital(?v, @a0)) then @a0
 						else if (v_travelToHsopital(?v, @a1)) then @a1
+						else if (v_travelToHsopital(?v, @a2)) then @a2
+						else if (v_travelToHsopital(?v, @a3)) then @a3
 						//...
 						else v_assignedHospital(?v);
 					
 		v_assignedBase'(?v) = 	if (v_travelToBase(?v, @a0)) then @a0
-					else if (v_travelToBase(?v, @a1)) then @a1
+						else if (v_travelToBase(?v, @a1)) then @a1
+						else if (v_travelToBase(?v, @a2)) then @a2
+						else if (v_travelToBase(?v, @a3)) then @a3
 					//...
 					else v_assignedBase(?v);
 					
@@ -148,9 +154,35 @@ domain ems_mdp {
 		v_remainingActionTime'(?v) = 	//Decrease of executing action time
 						if (v_remainingActionTime(?v)==@1) then @0
 						else if (v_remainingActionTime(?v)==@2) then @1
+						else if (v_remainingActionTime(?v)==@3) then @2
+						else if (v_remainingActionTime(?v)==@4) then @3
+						else if (v_remainingActionTime(?v)==@5) then @4
+						else if (v_remainingActionTime(?v)==@6) then @5
+						else if (v_remainingActionTime(?v)==@7) then @6
+						else if (v_remainingActionTime(?v)==@8) then @7
+						else if (v_remainingActionTime(?v)==@9) then @8
 						
 						//New action
 						else if (v_position(?v)==@a0 & (v_attendPatient(?v, @a0) | v_travelToHsopital(?v, @a0) | v_travelToBase(?v, @a0) ) ) then ( aa_travelTime(@a0, @a0) )
+						else if (v_position(?v)==@a0 & (v_attendPatient(?v, @a1) | v_travelToHsopital(?v, @a1) | v_travelToBase(?v, @a1) ) ) then ( aa_travelTime(@a0, @a1) )
+						else if (v_position(?v)==@a0 & (v_attendPatient(?v, @a2) | v_travelToHsopital(?v, @a2) | v_travelToBase(?v, @a2) ) ) then ( aa_travelTime(@a0, @a2) )
+						else if (v_position(?v)==@a0 & (v_attendPatient(?v, @a3) | v_travelToHsopital(?v, @a3) | v_travelToBase(?v, @a3) ) ) then ( aa_travelTime(@a0, @a3) )
+
+						else if (v_position(?v)==@a1 & (v_attendPatient(?v, @a0) | v_travelToHsopital(?v, @a0) | v_travelToBase(?v, @a0) ) ) then ( aa_travelTime(@a1, @a0) )
+						else if (v_position(?v)==@a1 & (v_attendPatient(?v, @a1) | v_travelToHsopital(?v, @a1) | v_travelToBase(?v, @a1) ) ) then ( aa_travelTime(@a1, @a1) )
+						else if (v_position(?v)==@a1 & (v_attendPatient(?v, @a2) | v_travelToHsopital(?v, @a2) | v_travelToBase(?v, @a2) ) ) then ( aa_travelTime(@a1, @a2) )
+						else if (v_position(?v)==@a1 & (v_attendPatient(?v, @a3) | v_travelToHsopital(?v, @a3) | v_travelToBase(?v, @a3) ) ) then ( aa_travelTime(@a1, @a3) )
+
+						else if (v_position(?v)==@a2 & (v_attendPatient(?v, @a0) | v_travelToHsopital(?v, @a0) | v_travelToBase(?v, @a0) ) ) then ( aa_travelTime(@a2, @a0) )
+						else if (v_position(?v)==@a2 & (v_attendPatient(?v, @a1) | v_travelToHsopital(?v, @a1) | v_travelToBase(?v, @a1) ) ) then ( aa_travelTime(@a2, @a1) )
+						else if (v_position(?v)==@a2 & (v_attendPatient(?v, @a2) | v_travelToHsopital(?v, @a2) | v_travelToBase(?v, @a2) ) ) then ( aa_travelTime(@a2, @a2) )
+						else if (v_position(?v)==@a2 & (v_attendPatient(?v, @a3) | v_travelToHsopital(?v, @a3) | v_travelToBase(?v, @a3) ) ) then ( aa_travelTime(@a2, @a3) )
+
+						else if (v_position(?v)==@a3 & (v_attendPatient(?v, @a0) | v_travelToHsopital(?v, @a0) | v_travelToBase(?v, @a0) ) ) then ( aa_travelTime(@a3, @a0) )
+						else if (v_position(?v)==@a3 & (v_attendPatient(?v, @a1) | v_travelToHsopital(?v, @a1) | v_travelToBase(?v, @a1) ) ) then ( aa_travelTime(@a3, @a1) )
+						else if (v_position(?v)==@a3 & (v_attendPatient(?v, @a2) | v_travelToHsopital(?v, @a2) | v_travelToBase(?v, @a2) ) ) then ( aa_travelTime(@a3, @a2) )
+						else if (v_position(?v)==@a3 & (v_attendPatient(?v, @a3) | v_travelToHsopital(?v, @a3) | v_travelToBase(?v, @a3) ) ) then ( aa_travelTime(@a3, @a3) )
+
 						
 						//...
 						
@@ -174,6 +206,14 @@ domain ems_mdp {
 		
 		a_patientWaitingTime'(?a) = 	if (a_patientGenerate(?a)) then @0
 						else if (a_patientActive(?a) & a_patientWaitingTime(?a)==@0) then @1
+						else if (a_patientActive(?a) & a_patientWaitingTime(?a)==@1) then @2
+						else if (a_patientActive(?a) & a_patientWaitingTime(?a)==@2) then @3
+						else if (a_patientActive(?a) & a_patientWaitingTime(?a)==@3) then @4
+						else if (a_patientActive(?a) & a_patientWaitingTime(?a)==@4) then @5
+						else if (a_patientActive(?a) & a_patientWaitingTime(?a)==@5) then @6
+						else if (a_patientActive(?a) & a_patientWaitingTime(?a)==@6) then @7
+						else if (a_patientActive(?a) & a_patientWaitingTime(?a)==@7) then @8
+						else if (a_patientActive(?a) & a_patientWaitingTime(?a)==@8) then @9
 												
 						//...
 						else a_patientWaitingTime(?a); 

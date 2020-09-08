@@ -1,0 +1,129 @@
+instance ems_inst_v1 {
+
+    domain = ems_mdp_v1;
+
+	
+	objects { 
+		vehicle : { v0};
+
+	};
+	
+	non-fluents { 
+	
+		//Hospital location
+		a_hospital(@a2)=true;
+				
+		//Base location
+
+		
+		//Travel time
+		aa_travelTime(@a0, @a0)=@1;
+		aa_travelTime(@a0, @a1)=@2;
+		aa_travelTime(@a0, @a2)=@2;
+		aa_travelTime(@a0, @a3)=@3;
+		aa_travelTime(@a1, @a0)=@2;
+		aa_travelTime(@a1, @a1)=@1;
+		aa_travelTime(@a1, @a2)=@3;
+		aa_travelTime(@a1, @a3)=@2;
+		aa_travelTime(@a2, @a0)=@2;
+		aa_travelTime(@a2, @a1)=@3;
+		aa_travelTime(@a2, @a2)=@1;
+		aa_travelTime(@a2, @a3)=@2;
+		aa_travelTime(@a3, @a0)=@3;
+		aa_travelTime(@a3, @a1)=@2;
+		aa_travelTime(@a3, @a2)=@2;
+		aa_travelTime(@a3, @a3)=@1;
+		
+		//Punishments
+		n_PreHospitalisation(@0, @p3)=-0.000001;
+		n_PreHospitalisation(@1, @p3)=-0.000002;
+		n_PreHospitalisation(@2, @p3)=-0.000004;
+		n_PreHospitalisation(@3, @p3)=-0.000008;
+		n_PreHospitalisation(@4, @p3)=-0.000016;
+		n_PreHospitalisation(@5, @p3)=-0.000032;
+		n_PreHospitalisation(@6, @p3)=-0.000064;
+		n_PreHospitalisation(@7, @p3)=-0.000128;
+		n_PreHospitalisation(@8, @p3)=-0.000256;
+		n_PreHospitalisation(@9, @p3)=-0.000512;
+		n_PreHospitalisation(@10, @p3)=-0.001024;
+
+		n_PreHospitalisation(@0, @p2)=-0.000001;
+		n_PreHospitalisation(@1, @p2)=-0.000002;
+		n_PreHospitalisation(@2, @p2)=-0.000004;
+		n_PreHospitalisation(@3, @p2)=-0.000008;
+		n_PreHospitalisation(@4, @p2)=-0.000016;
+		n_PreHospitalisation(@5, @p2)=-0.000032;
+		n_PreHospitalisation(@6, @p2)=-0.000064;
+		n_PreHospitalisation(@7, @p2)=-0.000128;
+		n_PreHospitalisation(@8, @p2)=-0.000256;
+		n_PreHospitalisation(@9, @p2)=-0.000512;
+		n_PreHospitalisation(@10, @p2)=-0.001024;
+
+		n_PreHospitalisation(@0, @p1)=-0.000001;
+		n_PreHospitalisation(@1, @p1)=-0.000002;
+		n_PreHospitalisation(@2, @p1)=-0.000004;
+		n_PreHospitalisation(@3, @p1)=-0.000008;
+		n_PreHospitalisation(@4, @p1)=-0.000016;
+		n_PreHospitalisation(@5, @p1)=-0.000032;
+		n_PreHospitalisation(@6, @p1)=-0.000064;
+		n_PreHospitalisation(@7, @p1)=-0.000128;
+		n_PreHospitalisation(@8, @p1)=-0.000256;
+		n_PreHospitalisation(@9, @p1)=-0.000512;
+		n_PreHospitalisation(@10, @p1)=-0.001024;
+
+		n_PreStabilisation(@0, @p3)=-0.000100;
+		n_PreStabilisation(@1, @p3)=-0.000101;
+		n_PreStabilisation(@2, @p3)=-0.000202;
+		n_PreStabilisation(@3, @p3)=-0.000404;
+		n_PreStabilisation(@4, @p3)=-0.000808;
+		n_PreStabilisation(@5, @p3)=-0.001616;
+		n_PreStabilisation(@6, @p3)=-0.003232;
+		n_PreStabilisation(@7, @p3)=-0.006464;
+		n_PreStabilisation(@8, @p3)=-0.012928;
+		n_PreStabilisation(@9, @p3)=-0.025856;
+		n_PreStabilisation(@10, @p3)=-0.051712;
+
+		n_PreStabilisation(@0, @p2)=-0.000100;
+		n_PreStabilisation(@1, @p2)=-0.000101;
+		n_PreStabilisation(@2, @p2)=-0.000202;
+		n_PreStabilisation(@3, @p2)=-0.000404;
+		n_PreStabilisation(@4, @p2)=-0.000808;
+		n_PreStabilisation(@5, @p2)=-0.001616;
+		n_PreStabilisation(@6, @p2)=-0.003232;
+		n_PreStabilisation(@7, @p2)=-0.006464;
+		n_PreStabilisation(@8, @p2)=-0.012928;
+		n_PreStabilisation(@9, @p2)=-0.025856;
+		n_PreStabilisation(@10, @p2)=-0.051712;
+
+		n_PreStabilisation(@0, @p1)=-0.000100;
+		n_PreStabilisation(@1, @p1)=-0.000101;
+		n_PreStabilisation(@2, @p1)=-0.000202;
+		n_PreStabilisation(@3, @p1)=-0.000404;
+		n_PreStabilisation(@4, @p1)=-0.000808;
+		n_PreStabilisation(@5, @p1)=-0.001616;
+		n_PreStabilisation(@6, @p1)=-0.003232;
+		n_PreStabilisation(@7, @p1)=-0.006464;
+		n_PreStabilisation(@8, @p1)=-0.012928;
+		n_PreStabilisation(@9, @p1)=-0.025856;
+		n_PreStabilisation(@10, @p1)=-0.051712;
+
+		
+
+			
+		
+	};
+
+  
+	init-state { 
+		v_position(v0)=@a1;
+		
+		
+		
+	};
+  
+
+	
+    horizon = 60;
+
+    discount = 1.0;
+}

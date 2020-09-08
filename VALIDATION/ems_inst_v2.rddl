@@ -1,0 +1,129 @@
+instance ems_inst_v2 {
+
+    domain = ems_mdp_v2;
+
+	
+	objects { 
+		vehicle : { v0};
+
+	};
+	
+	non-fluents { 
+	
+		//Hospital location
+		a_hospital(@a0)=true;
+				
+		//Base location
+		//a_base(@a2)=true;
+		
+		//Travel time
+		aa_travelTime(@a0, @a0)=@1;
+		aa_travelTime(@a0, @a1)=@2;
+		aa_travelTime(@a0, @a2)=@2;
+		aa_travelTime(@a0, @a3)=@3;
+		aa_travelTime(@a1, @a0)=@2;
+		aa_travelTime(@a1, @a1)=@1;
+		aa_travelTime(@a1, @a2)=@3;
+		aa_travelTime(@a1, @a3)=@2;
+		aa_travelTime(@a2, @a0)=@2;
+		aa_travelTime(@a2, @a1)=@3;
+		aa_travelTime(@a2, @a2)=@1;
+		aa_travelTime(@a2, @a3)=@2;
+		aa_travelTime(@a3, @a0)=@3;
+		aa_travelTime(@a3, @a1)=@2;
+		aa_travelTime(@a3, @a2)=@2;
+		aa_travelTime(@a3, @a3)=@1;
+		
+		//Punishments
+		n_PreHospitalisation(@0, @p3)=-0.000000;
+		n_PreHospitalisation(@1, @p3)=-0.000001;
+		n_PreHospitalisation(@2, @p3)=-0.000002;
+		n_PreHospitalisation(@3, @p3)=-0.000004;
+		n_PreHospitalisation(@4, @p3)=-0.000009;
+		n_PreHospitalisation(@5, @p3)=-0.000018;
+		n_PreHospitalisation(@6, @p3)=-0.000035;
+		n_PreHospitalisation(@7, @p3)=-0.000070;
+		n_PreHospitalisation(@8, @p3)=-0.000141;
+		n_PreHospitalisation(@9, @p3)=-0.000282;
+		n_PreHospitalisation(@10, @p3)=-0.000563;
+
+		n_PreHospitalisation(@0, @p2)=-0.001126;
+		n_PreHospitalisation(@1, @p2)=-0.002253;
+		n_PreHospitalisation(@2, @p2)=-0.004506;
+		n_PreHospitalisation(@3, @p2)=-0.009011;
+		n_PreHospitalisation(@4, @p2)=-0.018022;
+		n_PreHospitalisation(@5, @p2)=-0.036045;
+		n_PreHospitalisation(@6, @p2)=-0.072090;
+		n_PreHospitalisation(@7, @p2)=-0.144179;
+		n_PreHospitalisation(@8, @p2)=-0.288358;
+		n_PreHospitalisation(@9, @p2)=-0.576717;
+		n_PreHospitalisation(@10, @p2)=-1.153434;
+
+		n_PreHospitalisation(@0, @p1)=-2.306867;
+		n_PreHospitalisation(@1, @p1)=-4.613734;
+		n_PreHospitalisation(@2, @p1)=-9.227469;
+		n_PreHospitalisation(@3, @p1)=-18.454938;
+		n_PreHospitalisation(@4, @p1)=-36.909875;
+		n_PreHospitalisation(@5, @p1)=-73.819750;
+		n_PreHospitalisation(@6, @p1)=-147.639501;
+		n_PreHospitalisation(@7, @p1)=-295.279002;
+		n_PreHospitalisation(@8, @p1)=-590.558003;
+		n_PreHospitalisation(@9, @p1)=-1181.116006;
+		n_PreHospitalisation(@10, @p1)=-2362.232013;
+
+		n_PreStabilisation(@0, @p3)=-4724.464026;
+		n_PreStabilisation(@1, @p3)=-9448.928051;
+		n_PreStabilisation(@2, @p3)=-18897.856102;
+		n_PreStabilisation(@3, @p3)=-37795.712205;
+		n_PreStabilisation(@4, @p3)=-75591.424410;
+		n_PreStabilisation(@5, @p3)=-151182.848819;
+		n_PreStabilisation(@6, @p3)=-302365.697638;
+		n_PreStabilisation(@7, @p3)=-604731.395277;
+		n_PreStabilisation(@8, @p3)=-1209462.790554;
+		n_PreStabilisation(@9, @p3)=-2418925.581107;
+		n_PreStabilisation(@10, @p3)=-4837851.162214;
+
+		n_PreStabilisation(@0, @p2)=-9675702.324429;
+		n_PreStabilisation(@1, @p2)=-19351404.648858;
+		n_PreStabilisation(@2, @p2)=-38702809.297715;
+		n_PreStabilisation(@3, @p2)=-77405618.595430;
+		n_PreStabilisation(@4, @p2)=-154811237.190861;
+		n_PreStabilisation(@5, @p2)=-309622474.381722;
+		n_PreStabilisation(@6, @p2)=-619244948.763443;
+		n_PreStabilisation(@7, @p2)=-1238489897.526886;
+		n_PreStabilisation(@8, @p2)=-2476979795.053773;
+		n_PreStabilisation(@9, @p2)=-4953959590.107546;
+		n_PreStabilisation(@10, @p2)=-9907919180.215094;
+
+		n_PreStabilisation(@0, @p1)=-19815838360.430183;
+		n_PreStabilisation(@1, @p1)=-39631676720.860367;
+		n_PreStabilisation(@2, @p1)=-79263353441.720734;
+		n_PreStabilisation(@3, @p1)=-158526706883.441467;
+		n_PreStabilisation(@4, @p1)=-317053413766.882935;
+		n_PreStabilisation(@5, @p1)=-634106827533.765869;
+		n_PreStabilisation(@6, @p1)=-1268213655067.531738;
+		n_PreStabilisation(@7, @p1)=-2536427310135.063477;
+		n_PreStabilisation(@8, @p1)=-5072854620270.126953;
+		n_PreStabilisation(@9, @p1)=-10145709240540.253906;
+		n_PreStabilisation(@10, @p1)=-20291418481080.507812;
+
+		
+
+			
+		
+	};
+
+  
+	init-state { 
+		v_position(v0)=@a2;
+		
+		
+		
+	};
+  
+
+	
+    horizon = 60;
+
+    discount = 1.0;
+}
