@@ -1,0 +1,372 @@
+arc@marc-VirtualBox:~/Desktop/Prost$ ./prost.py ems_inst "[Prost -s 1 -se [THTS -act [BFS] -out [UMC] -t 0.5 -backup [PB] -init [Expand -h [IDS]]]]"
+./search-release ems_inst "[Prost -s 1 -se [THTS -act [BFS] -out [UMC] -t 0.5 -backup [PB] -init [Expand -h [IDS]]]]"
+Parsing...
+...finished (0.00339413s).
+instantiating...
+    Instantiating variables...
+    ...finished (0.000250816)
+    Instantiating CPFs...
+    ...finished (0.00253701)
+    Instantiating preconditions...
+    ...finished (0.000202179)
+...finished (0.00643706s).
+preprocessing...
+    Preparing evaluatables...
+    ...finished (0.00116205)
+    Preparing actions...
+    ...finished (0.00101686)
+    Calculating CPF domain...
+State-fluent v_assignedHospital(v0) has a domain size of 2 and a max val of 2
+Inserting values into domain of state-fluent v_assignedHospital(v0)
+    ...finished (0.0183089)
+    Finalizing evaluatables...
+    ...finished (0.00104094)
+    Computing determinization...
+    ...finished (6.00815e-05)
+    Determining task properties...
+    ...finished (3.19481e-05)
+    Preparing hash keys...
+    ...finished (0.000275135)
+    Precomputing evaluatables...
+    ...finished (0.00482988)
+    Calculating min and max reward...
+    ...finished (0.000221014)
+...finished (0.0286121s).
+analyzing task...
+Creating training set with 272 candidates.
+...finished (0.678589s).
+writing output for instance ems_inst to ./parser_out_4593 ...
+...finished (0.0257621s).
+PROST parser complete running time: 0.751219s
+THTS heuristic IDS: Setting max search depth to: 30
+--------------------------------------------
+>>> STARTING ROUND 1 -- REMAINING TIME 1077s
+--------------------------------------------
+Planning step 1/30 in round 1/1
+Current state: 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 0 0 0 0 0 1 0 | 0 0 0 0 0 0 0 0 
+Used RAM: 402036
+
+Policy unique due to single reasonable action
+Submitted actiones: noop()
+Immediate reward: 0.000000
+--------------------------------------------
+Planning step 2/30 in round 1/1
+Current state: 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 0 0 0 0 0 1 0 | 0 0 0 0 0 0 0 0 
+Used RAM: 402036
+
+Policy unique due to single reasonable action
+Submitted actiones: noop()
+Immediate reward: 0.000000
+--------------------------------------------
+Planning step 3/30 in round 1/1
+Current state: 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 0 0 0 0 0 1 0 | 0 0 0 0 0 0 0 0 
+Used RAM: 402036
+
+Policy unique due to single reasonable action
+Submitted actiones: noop()
+Immediate reward: 0.000000
+--------------------------------------------
+Planning step 4/30 in round 1/1
+Current state: 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 0 0 0 0 0 1 0 | 0 0 0 0 0 0 0 0 
+Used RAM: 402036
+
+Policy unique due to single reasonable action
+Submitted actiones: noop()
+Immediate reward: 0.000000
+--------------------------------------------
+Planning step 5/30 in round 1/1
+Current state: 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 0 0 0 0 0 1 0 | 0 0 0 0 0 0 0 0 
+Used RAM: 402036
+
+Policy unique due to single reasonable action
+Submitted actiones: noop()
+Immediate reward: 0.000000
+--------------------------------------------
+Planning step 6/30 in round 1/1
+Current state: 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 0 0 0 0 0 1 0 | 0 0 0 0 0 0 0 0 
+Used RAM: 402036
+
+Policy unique due to single reasonable action
+Submitted actiones: noop()
+Immediate reward: 0.000000
+--------------------------------------------
+Planning step 7/30 in round 1/1
+Current state: 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 0 0 0 0 0 1 0 | 0 0 0 0 0 0 0 0 
+Used RAM: 402036
+
+Policy unique due to single reasonable action
+Submitted actiones: noop()
+Immediate reward: 0.000000
+--------------------------------------------
+Planning step 8/30 in round 1/1
+Current state: 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 0 0 0 0 0 1 0 | 0 0 0 0 0 0 0 0 
+Used RAM: 402036
+
+Policy unique due to single reasonable action
+Submitted actiones: noop()
+Immediate reward: 0.000000
+--------------------------------------------
+Planning step 9/30 in round 1/1
+Current state: 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 0 0 0 0 0 1 0 | 0 0 0 0 0 0 0 0 
+Used RAM: 402036
+
+Policy unique due to single reasonable action
+Submitted actiones: noop()
+Immediate reward: 0.000000
+--------------------------------------------
+Planning step 10/30 in round 1/1
+Current state: 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 0 0 0 0 0 1 0 | 1 0 0 0 0 0 0 0 
+Used RAM: 402036
+
+Policy unique due to single reasonable action
+Submitted actiones: noop()
+Immediate reward: 0.000000
+--------------------------------------------
+Planning step 11/30 in round 1/1
+Current state: 1 0 0 0 0 0 0 0 0 0 0 0 1 1 1 0 0 0 0 0 1 0 | 0 0 0 0 0 0 0 0 
+Used RAM: 536676
+
+THTS step statistics:
+  Performed trials: 2390
+  Created search nodes: 8941
+  Search time: 0.500028
+  THTS heuristic IDS step statistics:
+    Number of runs: 1165
+    Average search depth: 10.520172
+Submitted actiones: noop()
+Immediate reward: -1208925819614628864.000000
+--------------------------------------------
+Planning step 12/30 in round 1/1
+Current state: 1 0 0 0 0 0 0 0 1 0 0 0 1 1 1 0 0 0 0 0 1 0 | 0 0 0 0 0 0 0 0 
+Used RAM: 657324
+
+THTS step statistics:
+  Performed trials: 3728
+  Created search nodes: 13567
+  Search time: 0.500026
+  THTS heuristic IDS step statistics:
+    Number of runs: 1198
+    Average search depth: 9.449082
+Submitted actiones: v_attendPatient(v0, @a0) 
+Immediate reward: -2417851639229257728.000000
+--------------------------------------------
+Planning step 13/30 in round 1/1
+Current state: 1 0 0 0 0 0 0 0 2 0 0 0 1 1 0 1 0 1 0 0 0 0 | 0 0 0 0 0 0 0 0 
+Used RAM: 657324
+
+Policy unique due to single reasonable action
+Submitted actiones: noop()
+Immediate reward: -4835703278458515456.000000
+--------------------------------------------
+Planning step 14/30 in round 1/1
+Current state: 1 0 0 0 0 0 0 0 3 0 0 0 1 1 0 1 0 0 0 0 0 0 | 0 0 0 0 0 0 0 0 
+Used RAM: 657324
+
+Policy unique due to single reasonable action
+Submitted actiones: noop()
+Immediate reward: -9671406556917030912.000000
+--------------------------------------------
+Planning step 15/30 in round 1/1
+Current state: 1 0 0 0 1 0 0 0 4 0 0 0 1 1 0 0 0 0 0 0 0 1 | 0 0 0 0 0 0 0 0 
+Used RAM: 657324
+
+Policy unique due to single reasonable action
+Submitted actiones: v_travelToHsopital(v0, @a2) 
+Immediate reward: -68719.476736
+--------------------------------------------
+Planning step 16/30 in round 1/1
+Current state: 1 0 0 0 1 0 0 0 5 0 0 0 1 2 0 0 0 2 0 1 0 0 | 0 0 0 0 0 0 0 0 
+Used RAM: 657324
+
+Policy unique due to single reasonable action
+Submitted actiones: noop()
+Immediate reward: -137438.953472
+--------------------------------------------
+Planning step 17/30 in round 1/1
+Current state: 1 0 0 0 1 0 0 0 6 0 0 0 1 2 0 0 0 1 0 1 0 0 | 0 0 0 0 0 0 0 0 
+Used RAM: 657324
+
+Policy unique due to single reasonable action
+Submitted actiones: noop()
+Immediate reward: -274877.906944
+--------------------------------------------
+Planning step 18/30 in round 1/1
+Current state: 1 0 0 0 1 0 0 0 7 0 0 0 1 2 0 0 0 0 0 1 0 0 | 0 0 0 0 0 0 0 0 
+Used RAM: 657324
+
+Policy unique due to single reasonable action
+Submitted actiones: noop()
+Immediate reward: -549755.813888
+--------------------------------------------
+Planning step 19/30 in round 1/1
+Current state: 0 0 0 0 1 0 0 0 8 0 0 0 1 2 0 0 2 0 0 0 1 0 | 0 0 0 0 0 0 0 0 
+Used RAM: 711444
+
+THTS step statistics:
+  Performed trials: 27216
+  Created search nodes: 69681
+  Search time: 0.500008
+  THTS heuristic IDS step statistics:
+    Number of runs: 2560
+    Average search depth: 4.828516
+Submitted actiones: noop()
+Immediate reward: 0.000000
+--------------------------------------------
+Planning step 20/30 in round 1/1
+Current state: 0 0 0 0 1 0 0 0 8 0 0 0 1 2 0 0 2 0 0 0 1 0 | 0 0 0 0 0 0 0 0 
+Used RAM: 735092
+
+THTS step statistics:
+  Performed trials: 30029
+  Created search nodes: 71829
+  Search time: 0.500002
+  THTS heuristic IDS step statistics:
+    Number of runs: 956
+    Average search depth: 4.526151
+Submitted actiones: noop()
+Immediate reward: 0.000000
+--------------------------------------------
+Planning step 21/30 in round 1/1
+Current state: 0 0 0 0 1 0 0 0 8 0 0 0 1 2 0 0 2 0 0 0 1 0 | 0 0 0 0 0 0 0 0 
+Used RAM: 754628
+
+THTS step statistics:
+  Performed trials: 44033
+  Created search nodes: 95908
+  Search time: 0.500001
+  THTS heuristic IDS step statistics:
+    Number of runs: 1108
+    Average search depth: 3.959386
+Submitted actiones: noop()
+Immediate reward: 0.000000
+--------------------------------------------
+Planning step 22/30 in round 1/1
+Current state: 0 0 0 0 1 0 0 0 8 0 0 0 1 2 0 0 2 0 0 0 1 0 | 0 0 0 0 0 0 0 0 
+Used RAM: 768356
+
+THTS step statistics:
+  Performed trials: 50902
+  Created search nodes: 103473
+  Search time: 0.500004
+  THTS heuristic IDS step statistics:
+    Number of runs: 934
+    Average search depth: 3.493576
+Submitted actiones: noop()
+Immediate reward: 0.000000
+--------------------------------------------
+Planning step 23/30 in round 1/1
+Current state: 0 0 0 0 1 0 0 0 8 0 0 0 1 2 0 0 2 0 0 0 1 0 | 0 0 0 0 0 0 0 0 
+Used RAM: 779180
+
+THTS step statistics:
+  Performed trials: 54218
+  Created search nodes: 102001
+  Search time: 0.500003
+  THTS heuristic IDS step statistics:
+    Number of runs: 625
+    Average search depth: 3.254400
+Submitted actiones: noop()
+Immediate reward: 0.000000
+--------------------------------------------
+Planning step 24/30 in round 1/1
+Current state: 0 0 0 0 1 0 0 0 8 0 0 0 1 2 0 0 2 0 0 0 1 0 | 0 0 0 0 0 0 0 0 
+Used RAM: 793172
+
+THTS step statistics:
+  Performed trials: 54643
+  Created search nodes: 97413
+  Search time: 0.500005
+  THTS heuristic IDS step statistics:
+    Number of runs: 575
+    Average search depth: 2.660870
+Submitted actiones: noop()
+Immediate reward: 0.000000
+--------------------------------------------
+Planning step 25/30 in round 1/1
+Current state: 0 0 0 0 1 0 0 0 8 0 0 0 1 2 0 0 2 0 0 0 1 0 | 0 0 0 0 0 0 0 0 
+Used RAM: 811388
+
+THTS step statistics:
+  Performed trials: 69748
+  Created search nodes: 115389
+  Search time: 0.500006
+  THTS heuristic IDS step statistics:
+    Number of runs: 513
+    Average search depth: 2.288499
+Submitted actiones: v_travelToBase(v0, @a0) 
+Immediate reward: 0.000000
+--------------------------------------------
+Planning step 26/30 in round 1/1
+Current state: 0 0 0 0 1 0 0 0 8 0 0 0 0 2 0 0 2 2 1 0 0 0 | 0 0 0 0 0 0 0 0 
+Used RAM: 811388
+
+Policy unique due to single reasonable action
+Submitted actiones: noop()
+Immediate reward: 0.000000
+--------------------------------------------
+Planning step 27/30 in round 1/1
+Current state: 0 0 0 0 1 0 0 0 8 0 0 0 0 2 0 0 2 1 1 0 0 0 | 0 0 0 0 0 0 0 0 
+Used RAM: 811388
+
+Policy unique due to single reasonable action
+Submitted actiones: noop()
+Immediate reward: 0.000000
+--------------------------------------------
+Planning step 28/30 in round 1/1
+Current state: 0 0 0 0 1 0 0 0 8 0 0 0 0 2 0 0 2 0 1 0 0 0 | 0 0 0 0 0 0 0 0 
+Used RAM: 811388
+
+Policy unique due to single reasonable action
+Submitted actiones: noop()
+Immediate reward: 0.000000
+--------------------------------------------
+Planning step 29/30 in round 1/1
+Current state: 0 0 0 0 1 0 0 0 8 0 0 0 0 2 0 0 0 0 0 0 1 0 | 0 0 0 0 0 0 0 0 
+Used RAM: 811388
+
+Policy unique due to single reasonable action
+Submitted actiones: noop()
+Immediate reward: 0.000000
+--------------------------------------------
+Planning step 30/30 in round 1/1
+Current state: 0 0 0 0 1 0 0 0 8 0 0 0 0 2 0 0 0 0 0 0 1 0 | 0 0 0 0 0 0 0 0 
+Used RAM: 811388
+
+Policy unique due to optimal last action
+Submitted actiones: noop()
+Immediate reward: 0.000000
+
+--------------------------------------------
+>>> END OF ROUND 1 -- REWARD RECEIVED: -18133887294220462080.000000
+----------------------
+THTS round statistics:
+  Entries in probabilistic state value cache: 1743
+  Buckets in probabilistic state value cache: 62233
+  Entries in probabilistic applicable actions cache: 78020
+  Buckets in probabilistic applicable actions cache: 520241
+  Number of remaining steps in first solved state: 1
+  Number of trials in first relevant state: 2390
+  Number of search nodes in first relevant state: 8941
+  Number of reward lock states: 0
+  Number of states with only one applicable action: 20
+  BFS action selection round statistics:
+    Percentage exploration in first relevant state: 0.499163
+  THTS heuristic IDS round statistics:
+    Entries in deterministic state value cache: 544404
+    Buckets in deterministic state value cache: 1056323
+    Entries in deterministic applicable actions cache: 125991
+    Buckets in deterministic applicable actions cache: 520241
+    Entries in IDS reward cache: 9634
+    Buckets in IDS reward cache: 520241
+    Average search depth in first relevant state: 10.520172
+    Total number of runs: 9634
+    Total average search depth: 5.465227
+
+
+--------------------------------------------
+>>> END OF SESSION  -- TOTAL REWARD: -18133887294220462080.000000
+>>> END OF SESSION  -- AVERAGE REWARD: -18133887294220462080.000000
+PROST complete running time: 7.729273
+marc@marc-VirtualBox:~/Desktop/Prost$ 
+
+
