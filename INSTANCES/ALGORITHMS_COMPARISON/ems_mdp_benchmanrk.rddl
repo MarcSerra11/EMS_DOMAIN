@@ -1,4 +1,4 @@
-domain ems_mdp {
+domain ems_mdp_b {
 
 	requirements {
 		reward-deterministic,
@@ -9,7 +9,7 @@ domain ems_mdp {
 
 	types {
 		vehicle : object;
-		area : { @a0, @a1, @a2, @a3, @a4, @a5, @a6, @a7};
+		area : { @a0, @a1, @a2, @a3, @a4, @a5, @a6, @a7, @a8, @a9, @a10, @a11};
 		number : { @0, @1, @2, @3, @4, @5, @6, @7, @8, @9, @10};
 		priority : {@p1, @p2, @p3};
 
@@ -129,6 +129,10 @@ domain ems_mdp {
 						else if (v_attendPatient(?v, @a5)) then @a5
 						else if (v_attendPatient(?v, @a6)) then @a6
 						else if (v_attendPatient(?v, @a7)) then @a7
+						else if (v_attendPatient(?v, @a8)) then @a8
+						else if (v_attendPatient(?v, @a9)) then @a9
+						else if (v_attendPatient(?v, @a10)) then @a10
+						else if (v_attendPatient(?v, @a11)) then @a11
 						//...
 						else v_assignedPatient(?v);
 					
@@ -140,6 +144,10 @@ domain ems_mdp {
 						else if (v_travelToHsopital(?v, @a5)) then @a5
 						else if (v_travelToHsopital(?v, @a6)) then @a6
 						else if (v_travelToHsopital(?v, @a7)) then @a7
+						else if (v_travelToHsopital(?v, @a8)) then @a8
+						else if (v_travelToHsopital(?v, @a9)) then @a9
+						else if (v_travelToHsopital(?v, @a10)) then @a10
+						else if (v_travelToHsopital(?v, @a11)) then @a11
 						//...
 						else v_assignedHospital(?v);
 					
@@ -151,6 +159,10 @@ domain ems_mdp {
 						else if (v_travelToBase(?v, @a5)) then @a5
 						else if (v_travelToBase(?v, @a6)) then @a6
 						else if (v_travelToBase(?v, @a7)) then @a7
+						else if (v_travelToBase(?v, @a8)) then @a8
+						else if (v_travelToBase(?v, @a9)) then @a9
+						else if (v_travelToBase(?v, @a10)) then @a10
+						else if (v_travelToBase(?v, @a11)) then @a11
 					//...
 					else v_assignedBase(?v);
 					
@@ -183,6 +195,10 @@ domain ems_mdp {
 						else if (v_position(?v)==@a0 & (v_attendPatient(?v, @a5) | v_travelToHsopital(?v, @a5) | v_travelToBase(?v, @a5) ) ) then ( aa_travelTime(@a0, @a5) )
 						else if (v_position(?v)==@a0 & (v_attendPatient(?v, @a6) | v_travelToHsopital(?v, @a6) | v_travelToBase(?v, @a6) ) ) then ( aa_travelTime(@a0, @a6) )
 						else if (v_position(?v)==@a0 & (v_attendPatient(?v, @a7) | v_travelToHsopital(?v, @a7) | v_travelToBase(?v, @a7) ) ) then ( aa_travelTime(@a0, @a7) )
+						else if (v_position(?v)==@a0 & (v_attendPatient(?v, @a8) | v_travelToHsopital(?v, @a8) | v_travelToBase(?v, @a8) ) ) then ( aa_travelTime(@a0, @a8) )
+						else if (v_position(?v)==@a0 & (v_attendPatient(?v, @a9) | v_travelToHsopital(?v, @a9) | v_travelToBase(?v, @a9) ) ) then ( aa_travelTime(@a0, @a9) )
+						else if (v_position(?v)==@a0 & (v_attendPatient(?v, @a10) | v_travelToHsopital(?v, @a10) | v_travelToBase(?v, @a10) ) ) then ( aa_travelTime(@a0, @a10) )
+						else if (v_position(?v)==@a0 & (v_attendPatient(?v, @a11) | v_travelToHsopital(?v, @a11) | v_travelToBase(?v, @a11) ) ) then ( aa_travelTime(@a0, @a11) )
 
 						else if (v_position(?v)==@a1 & (v_attendPatient(?v, @a0) | v_travelToHsopital(?v, @a0) | v_travelToBase(?v, @a0) ) ) then ( aa_travelTime(@a1, @a0) )
 						else if (v_position(?v)==@a1 & (v_attendPatient(?v, @a1) | v_travelToHsopital(?v, @a1) | v_travelToBase(?v, @a1) ) ) then ( aa_travelTime(@a1, @a1) )
@@ -192,6 +208,10 @@ domain ems_mdp {
 						else if (v_position(?v)==@a1 & (v_attendPatient(?v, @a5) | v_travelToHsopital(?v, @a5) | v_travelToBase(?v, @a5) ) ) then ( aa_travelTime(@a1, @a5) )
 						else if (v_position(?v)==@a1 & (v_attendPatient(?v, @a6) | v_travelToHsopital(?v, @a6) | v_travelToBase(?v, @a6) ) ) then ( aa_travelTime(@a1, @a6) )
 						else if (v_position(?v)==@a1 & (v_attendPatient(?v, @a7) | v_travelToHsopital(?v, @a7) | v_travelToBase(?v, @a7) ) ) then ( aa_travelTime(@a1, @a7) )
+						else if (v_position(?v)==@a1 & (v_attendPatient(?v, @a8) | v_travelToHsopital(?v, @a8) | v_travelToBase(?v, @a8) ) ) then ( aa_travelTime(@a1, @a8) )
+						else if (v_position(?v)==@a1 & (v_attendPatient(?v, @a9) | v_travelToHsopital(?v, @a9) | v_travelToBase(?v, @a9) ) ) then ( aa_travelTime(@a1, @a9) )
+						else if (v_position(?v)==@a1 & (v_attendPatient(?v, @a10) | v_travelToHsopital(?v, @a10) | v_travelToBase(?v, @a10) ) ) then ( aa_travelTime(@a1, @a10) )
+						else if (v_position(?v)==@a1 & (v_attendPatient(?v, @a11) | v_travelToHsopital(?v, @a11) | v_travelToBase(?v, @a11) ) ) then ( aa_travelTime(@a1, @a11) )
 
 						else if (v_position(?v)==@a2 & (v_attendPatient(?v, @a0) | v_travelToHsopital(?v, @a0) | v_travelToBase(?v, @a0) ) ) then ( aa_travelTime(@a2, @a0) )
 						else if (v_position(?v)==@a2 & (v_attendPatient(?v, @a1) | v_travelToHsopital(?v, @a1) | v_travelToBase(?v, @a1) ) ) then ( aa_travelTime(@a2, @a1) )
@@ -201,6 +221,10 @@ domain ems_mdp {
 						else if (v_position(?v)==@a2 & (v_attendPatient(?v, @a5) | v_travelToHsopital(?v, @a5) | v_travelToBase(?v, @a5) ) ) then ( aa_travelTime(@a2, @a5) )
 						else if (v_position(?v)==@a2 & (v_attendPatient(?v, @a6) | v_travelToHsopital(?v, @a6) | v_travelToBase(?v, @a6) ) ) then ( aa_travelTime(@a2, @a6) )
 						else if (v_position(?v)==@a2 & (v_attendPatient(?v, @a7) | v_travelToHsopital(?v, @a7) | v_travelToBase(?v, @a7) ) ) then ( aa_travelTime(@a2, @a7) )
+						else if (v_position(?v)==@a2 & (v_attendPatient(?v, @a8) | v_travelToHsopital(?v, @a8) | v_travelToBase(?v, @a8) ) ) then ( aa_travelTime(@a2, @a8) )
+						else if (v_position(?v)==@a2 & (v_attendPatient(?v, @a9) | v_travelToHsopital(?v, @a9) | v_travelToBase(?v, @a9) ) ) then ( aa_travelTime(@a2, @a9) )
+						else if (v_position(?v)==@a2 & (v_attendPatient(?v, @a10) | v_travelToHsopital(?v, @a10) | v_travelToBase(?v, @a10) ) ) then ( aa_travelTime(@a2, @a10) )
+						else if (v_position(?v)==@a2 & (v_attendPatient(?v, @a11) | v_travelToHsopital(?v, @a11) | v_travelToBase(?v, @a11) ) ) then ( aa_travelTime(@a2, @a11) )
 
 						else if (v_position(?v)==@a3 & (v_attendPatient(?v, @a0) | v_travelToHsopital(?v, @a0) | v_travelToBase(?v, @a0) ) ) then ( aa_travelTime(@a3, @a0) )
 						else if (v_position(?v)==@a3 & (v_attendPatient(?v, @a1) | v_travelToHsopital(?v, @a1) | v_travelToBase(?v, @a1) ) ) then ( aa_travelTime(@a3, @a1) )
@@ -210,6 +234,10 @@ domain ems_mdp {
 						else if (v_position(?v)==@a3 & (v_attendPatient(?v, @a5) | v_travelToHsopital(?v, @a5) | v_travelToBase(?v, @a5) ) ) then ( aa_travelTime(@a3, @a5) )
 						else if (v_position(?v)==@a3 & (v_attendPatient(?v, @a6) | v_travelToHsopital(?v, @a6) | v_travelToBase(?v, @a6) ) ) then ( aa_travelTime(@a3, @a6) )
 						else if (v_position(?v)==@a3 & (v_attendPatient(?v, @a7) | v_travelToHsopital(?v, @a7) | v_travelToBase(?v, @a7) ) ) then ( aa_travelTime(@a3, @a7) )
+						else if (v_position(?v)==@a3 & (v_attendPatient(?v, @a8) | v_travelToHsopital(?v, @a8) | v_travelToBase(?v, @a8) ) ) then ( aa_travelTime(@a3, @a8) )
+						else if (v_position(?v)==@a3 & (v_attendPatient(?v, @a9) | v_travelToHsopital(?v, @a9) | v_travelToBase(?v, @a9) ) ) then ( aa_travelTime(@a3, @a9) )
+						else if (v_position(?v)==@a3 & (v_attendPatient(?v, @a10) | v_travelToHsopital(?v, @a10) | v_travelToBase(?v, @a10) ) ) then ( aa_travelTime(@a3, @a10) )
+						else if (v_position(?v)==@a3 & (v_attendPatient(?v, @a11) | v_travelToHsopital(?v, @a11) | v_travelToBase(?v, @a11) ) ) then ( aa_travelTime(@a3, @a11) )
 
 						else if (v_position(?v)==@a4 & (v_attendPatient(?v, @a0) | v_travelToHsopital(?v, @a0) | v_travelToBase(?v, @a0) ) ) then ( aa_travelTime(@a4, @a0) )
 						else if (v_position(?v)==@a4 & (v_attendPatient(?v, @a1) | v_travelToHsopital(?v, @a1) | v_travelToBase(?v, @a1) ) ) then ( aa_travelTime(@a4, @a1) )
@@ -219,6 +247,10 @@ domain ems_mdp {
 						else if (v_position(?v)==@a4 & (v_attendPatient(?v, @a5) | v_travelToHsopital(?v, @a5) | v_travelToBase(?v, @a5) ) ) then ( aa_travelTime(@a4, @a5) )
 						else if (v_position(?v)==@a4 & (v_attendPatient(?v, @a6) | v_travelToHsopital(?v, @a6) | v_travelToBase(?v, @a6) ) ) then ( aa_travelTime(@a4, @a6) )
 						else if (v_position(?v)==@a4 & (v_attendPatient(?v, @a7) | v_travelToHsopital(?v, @a7) | v_travelToBase(?v, @a7) ) ) then ( aa_travelTime(@a4, @a7) )
+						else if (v_position(?v)==@a4 & (v_attendPatient(?v, @a8) | v_travelToHsopital(?v, @a8) | v_travelToBase(?v, @a8) ) ) then ( aa_travelTime(@a4, @a8) )
+						else if (v_position(?v)==@a4 & (v_attendPatient(?v, @a9) | v_travelToHsopital(?v, @a9) | v_travelToBase(?v, @a9) ) ) then ( aa_travelTime(@a4, @a9) )
+						else if (v_position(?v)==@a4 & (v_attendPatient(?v, @a10) | v_travelToHsopital(?v, @a10) | v_travelToBase(?v, @a10) ) ) then ( aa_travelTime(@a4, @a10) )
+						else if (v_position(?v)==@a4 & (v_attendPatient(?v, @a11) | v_travelToHsopital(?v, @a11) | v_travelToBase(?v, @a11) ) ) then ( aa_travelTime(@a4, @a11) )
 
 						else if (v_position(?v)==@a5 & (v_attendPatient(?v, @a0) | v_travelToHsopital(?v, @a0) | v_travelToBase(?v, @a0) ) ) then ( aa_travelTime(@a5, @a0) )
 						else if (v_position(?v)==@a5 & (v_attendPatient(?v, @a1) | v_travelToHsopital(?v, @a1) | v_travelToBase(?v, @a1) ) ) then ( aa_travelTime(@a5, @a1) )
@@ -228,6 +260,10 @@ domain ems_mdp {
 						else if (v_position(?v)==@a5 & (v_attendPatient(?v, @a5) | v_travelToHsopital(?v, @a5) | v_travelToBase(?v, @a5) ) ) then ( aa_travelTime(@a5, @a5) )
 						else if (v_position(?v)==@a5 & (v_attendPatient(?v, @a6) | v_travelToHsopital(?v, @a6) | v_travelToBase(?v, @a6) ) ) then ( aa_travelTime(@a5, @a6) )
 						else if (v_position(?v)==@a5 & (v_attendPatient(?v, @a7) | v_travelToHsopital(?v, @a7) | v_travelToBase(?v, @a7) ) ) then ( aa_travelTime(@a5, @a7) )
+						else if (v_position(?v)==@a5 & (v_attendPatient(?v, @a8) | v_travelToHsopital(?v, @a8) | v_travelToBase(?v, @a8) ) ) then ( aa_travelTime(@a5, @a8) )
+						else if (v_position(?v)==@a5 & (v_attendPatient(?v, @a9) | v_travelToHsopital(?v, @a9) | v_travelToBase(?v, @a9) ) ) then ( aa_travelTime(@a5, @a9) )
+						else if (v_position(?v)==@a5 & (v_attendPatient(?v, @a10) | v_travelToHsopital(?v, @a10) | v_travelToBase(?v, @a10) ) ) then ( aa_travelTime(@a5, @a10) )
+						else if (v_position(?v)==@a5 & (v_attendPatient(?v, @a11) | v_travelToHsopital(?v, @a11) | v_travelToBase(?v, @a11) ) ) then ( aa_travelTime(@a5, @a11) )
 
 						else if (v_position(?v)==@a6 & (v_attendPatient(?v, @a0) | v_travelToHsopital(?v, @a0) | v_travelToBase(?v, @a0) ) ) then ( aa_travelTime(@a6, @a0) )
 						else if (v_position(?v)==@a6 & (v_attendPatient(?v, @a1) | v_travelToHsopital(?v, @a1) | v_travelToBase(?v, @a1) ) ) then ( aa_travelTime(@a6, @a1) )
@@ -237,6 +273,10 @@ domain ems_mdp {
 						else if (v_position(?v)==@a6 & (v_attendPatient(?v, @a5) | v_travelToHsopital(?v, @a5) | v_travelToBase(?v, @a5) ) ) then ( aa_travelTime(@a6, @a5) )
 						else if (v_position(?v)==@a6 & (v_attendPatient(?v, @a6) | v_travelToHsopital(?v, @a6) | v_travelToBase(?v, @a6) ) ) then ( aa_travelTime(@a6, @a6) )
 						else if (v_position(?v)==@a6 & (v_attendPatient(?v, @a7) | v_travelToHsopital(?v, @a7) | v_travelToBase(?v, @a7) ) ) then ( aa_travelTime(@a6, @a7) )
+						else if (v_position(?v)==@a6 & (v_attendPatient(?v, @a8) | v_travelToHsopital(?v, @a8) | v_travelToBase(?v, @a8) ) ) then ( aa_travelTime(@a6, @a8) )
+						else if (v_position(?v)==@a6 & (v_attendPatient(?v, @a9) | v_travelToHsopital(?v, @a9) | v_travelToBase(?v, @a9) ) ) then ( aa_travelTime(@a6, @a9) )
+						else if (v_position(?v)==@a6 & (v_attendPatient(?v, @a10) | v_travelToHsopital(?v, @a10) | v_travelToBase(?v, @a10) ) ) then ( aa_travelTime(@a6, @a10) )
+						else if (v_position(?v)==@a6 & (v_attendPatient(?v, @a11) | v_travelToHsopital(?v, @a11) | v_travelToBase(?v, @a11) ) ) then ( aa_travelTime(@a6, @a11) )
 
 						else if (v_position(?v)==@a7 & (v_attendPatient(?v, @a0) | v_travelToHsopital(?v, @a0) | v_travelToBase(?v, @a0) ) ) then ( aa_travelTime(@a7, @a0) )
 						else if (v_position(?v)==@a7 & (v_attendPatient(?v, @a1) | v_travelToHsopital(?v, @a1) | v_travelToBase(?v, @a1) ) ) then ( aa_travelTime(@a7, @a1) )
@@ -246,6 +286,62 @@ domain ems_mdp {
 						else if (v_position(?v)==@a7 & (v_attendPatient(?v, @a5) | v_travelToHsopital(?v, @a5) | v_travelToBase(?v, @a5) ) ) then ( aa_travelTime(@a7, @a5) )
 						else if (v_position(?v)==@a7 & (v_attendPatient(?v, @a6) | v_travelToHsopital(?v, @a6) | v_travelToBase(?v, @a6) ) ) then ( aa_travelTime(@a7, @a6) )
 						else if (v_position(?v)==@a7 & (v_attendPatient(?v, @a7) | v_travelToHsopital(?v, @a7) | v_travelToBase(?v, @a7) ) ) then ( aa_travelTime(@a7, @a7) )
+						else if (v_position(?v)==@a7 & (v_attendPatient(?v, @a8) | v_travelToHsopital(?v, @a8) | v_travelToBase(?v, @a8) ) ) then ( aa_travelTime(@a7, @a8) )
+						else if (v_position(?v)==@a7 & (v_attendPatient(?v, @a9) | v_travelToHsopital(?v, @a9) | v_travelToBase(?v, @a9) ) ) then ( aa_travelTime(@a7, @a9) )
+						else if (v_position(?v)==@a7 & (v_attendPatient(?v, @a10) | v_travelToHsopital(?v, @a10) | v_travelToBase(?v, @a10) ) ) then ( aa_travelTime(@a7, @a10) )
+						else if (v_position(?v)==@a7 & (v_attendPatient(?v, @a11) | v_travelToHsopital(?v, @a11) | v_travelToBase(?v, @a11) ) ) then ( aa_travelTime(@a7, @a11) )
+
+						else if (v_position(?v)==@a8 & (v_attendPatient(?v, @a0) | v_travelToHsopital(?v, @a0) | v_travelToBase(?v, @a0) ) ) then ( aa_travelTime(@a8, @a0) )
+						else if (v_position(?v)==@a8 & (v_attendPatient(?v, @a1) | v_travelToHsopital(?v, @a1) | v_travelToBase(?v, @a1) ) ) then ( aa_travelTime(@a8, @a1) )
+						else if (v_position(?v)==@a8 & (v_attendPatient(?v, @a2) | v_travelToHsopital(?v, @a2) | v_travelToBase(?v, @a2) ) ) then ( aa_travelTime(@a8, @a2) )
+						else if (v_position(?v)==@a8 & (v_attendPatient(?v, @a3) | v_travelToHsopital(?v, @a3) | v_travelToBase(?v, @a3) ) ) then ( aa_travelTime(@a8, @a3) )
+						else if (v_position(?v)==@a8 & (v_attendPatient(?v, @a4) | v_travelToHsopital(?v, @a4) | v_travelToBase(?v, @a4) ) ) then ( aa_travelTime(@a8, @a4) )
+						else if (v_position(?v)==@a8 & (v_attendPatient(?v, @a5) | v_travelToHsopital(?v, @a5) | v_travelToBase(?v, @a5) ) ) then ( aa_travelTime(@a8, @a5) )
+						else if (v_position(?v)==@a8 & (v_attendPatient(?v, @a6) | v_travelToHsopital(?v, @a6) | v_travelToBase(?v, @a6) ) ) then ( aa_travelTime(@a8, @a6) )
+						else if (v_position(?v)==@a8 & (v_attendPatient(?v, @a7) | v_travelToHsopital(?v, @a7) | v_travelToBase(?v, @a7) ) ) then ( aa_travelTime(@a8, @a7) )
+						else if (v_position(?v)==@a8 & (v_attendPatient(?v, @a8) | v_travelToHsopital(?v, @a8) | v_travelToBase(?v, @a8) ) ) then ( aa_travelTime(@a8, @a8) )
+						else if (v_position(?v)==@a8 & (v_attendPatient(?v, @a9) | v_travelToHsopital(?v, @a9) | v_travelToBase(?v, @a9) ) ) then ( aa_travelTime(@a8, @a9) )
+						else if (v_position(?v)==@a8 & (v_attendPatient(?v, @a10) | v_travelToHsopital(?v, @a10) | v_travelToBase(?v, @a10) ) ) then ( aa_travelTime(@a8, @a10) )
+						else if (v_position(?v)==@a8 & (v_attendPatient(?v, @a11) | v_travelToHsopital(?v, @a11) | v_travelToBase(?v, @a11) ) ) then ( aa_travelTime(@a8, @a11) )
+
+						else if (v_position(?v)==@a9 & (v_attendPatient(?v, @a0) | v_travelToHsopital(?v, @a0) | v_travelToBase(?v, @a0) ) ) then ( aa_travelTime(@a9, @a0) )
+						else if (v_position(?v)==@a9 & (v_attendPatient(?v, @a1) | v_travelToHsopital(?v, @a1) | v_travelToBase(?v, @a1) ) ) then ( aa_travelTime(@a9, @a1) )
+						else if (v_position(?v)==@a9 & (v_attendPatient(?v, @a2) | v_travelToHsopital(?v, @a2) | v_travelToBase(?v, @a2) ) ) then ( aa_travelTime(@a9, @a2) )
+						else if (v_position(?v)==@a9 & (v_attendPatient(?v, @a3) | v_travelToHsopital(?v, @a3) | v_travelToBase(?v, @a3) ) ) then ( aa_travelTime(@a9, @a3) )
+						else if (v_position(?v)==@a9 & (v_attendPatient(?v, @a4) | v_travelToHsopital(?v, @a4) | v_travelToBase(?v, @a4) ) ) then ( aa_travelTime(@a9, @a4) )
+						else if (v_position(?v)==@a9 & (v_attendPatient(?v, @a5) | v_travelToHsopital(?v, @a5) | v_travelToBase(?v, @a5) ) ) then ( aa_travelTime(@a9, @a5) )
+						else if (v_position(?v)==@a9 & (v_attendPatient(?v, @a6) | v_travelToHsopital(?v, @a6) | v_travelToBase(?v, @a6) ) ) then ( aa_travelTime(@a9, @a6) )
+						else if (v_position(?v)==@a9 & (v_attendPatient(?v, @a7) | v_travelToHsopital(?v, @a7) | v_travelToBase(?v, @a7) ) ) then ( aa_travelTime(@a9, @a7) )
+						else if (v_position(?v)==@a9 & (v_attendPatient(?v, @a8) | v_travelToHsopital(?v, @a8) | v_travelToBase(?v, @a8) ) ) then ( aa_travelTime(@a9, @a8) )
+						else if (v_position(?v)==@a9 & (v_attendPatient(?v, @a9) | v_travelToHsopital(?v, @a9) | v_travelToBase(?v, @a9) ) ) then ( aa_travelTime(@a9, @a9) )
+						else if (v_position(?v)==@a9 & (v_attendPatient(?v, @a10) | v_travelToHsopital(?v, @a10) | v_travelToBase(?v, @a10) ) ) then ( aa_travelTime(@a9, @a10) )
+						else if (v_position(?v)==@a9 & (v_attendPatient(?v, @a11) | v_travelToHsopital(?v, @a11) | v_travelToBase(?v, @a11) ) ) then ( aa_travelTime(@a9, @a11) )
+
+						else if (v_position(?v)==@a10 & (v_attendPatient(?v, @a0) | v_travelToHsopital(?v, @a0) | v_travelToBase(?v, @a0) ) ) then ( aa_travelTime(@a10, @a0) )
+						else if (v_position(?v)==@a10 & (v_attendPatient(?v, @a1) | v_travelToHsopital(?v, @a1) | v_travelToBase(?v, @a1) ) ) then ( aa_travelTime(@a10, @a1) )
+						else if (v_position(?v)==@a10 & (v_attendPatient(?v, @a2) | v_travelToHsopital(?v, @a2) | v_travelToBase(?v, @a2) ) ) then ( aa_travelTime(@a10, @a2) )
+						else if (v_position(?v)==@a10 & (v_attendPatient(?v, @a3) | v_travelToHsopital(?v, @a3) | v_travelToBase(?v, @a3) ) ) then ( aa_travelTime(@a10, @a3) )
+						else if (v_position(?v)==@a10 & (v_attendPatient(?v, @a4) | v_travelToHsopital(?v, @a4) | v_travelToBase(?v, @a4) ) ) then ( aa_travelTime(@a10, @a4) )
+						else if (v_position(?v)==@a10 & (v_attendPatient(?v, @a5) | v_travelToHsopital(?v, @a5) | v_travelToBase(?v, @a5) ) ) then ( aa_travelTime(@a10, @a5) )
+						else if (v_position(?v)==@a10 & (v_attendPatient(?v, @a6) | v_travelToHsopital(?v, @a6) | v_travelToBase(?v, @a6) ) ) then ( aa_travelTime(@a10, @a6) )
+						else if (v_position(?v)==@a10 & (v_attendPatient(?v, @a7) | v_travelToHsopital(?v, @a7) | v_travelToBase(?v, @a7) ) ) then ( aa_travelTime(@a10, @a7) )
+						else if (v_position(?v)==@a10 & (v_attendPatient(?v, @a8) | v_travelToHsopital(?v, @a8) | v_travelToBase(?v, @a8) ) ) then ( aa_travelTime(@a10, @a8) )
+						else if (v_position(?v)==@a10 & (v_attendPatient(?v, @a9) | v_travelToHsopital(?v, @a9) | v_travelToBase(?v, @a9) ) ) then ( aa_travelTime(@a10, @a9) )
+						else if (v_position(?v)==@a10 & (v_attendPatient(?v, @a10) | v_travelToHsopital(?v, @a10) | v_travelToBase(?v, @a10) ) ) then ( aa_travelTime(@a10, @a10) )
+						else if (v_position(?v)==@a10 & (v_attendPatient(?v, @a11) | v_travelToHsopital(?v, @a11) | v_travelToBase(?v, @a11) ) ) then ( aa_travelTime(@a10, @a11) )
+
+						else if (v_position(?v)==@a11 & (v_attendPatient(?v, @a0) | v_travelToHsopital(?v, @a0) | v_travelToBase(?v, @a0) ) ) then ( aa_travelTime(@a11, @a0) )
+						else if (v_position(?v)==@a11 & (v_attendPatient(?v, @a1) | v_travelToHsopital(?v, @a1) | v_travelToBase(?v, @a1) ) ) then ( aa_travelTime(@a11, @a1) )
+						else if (v_position(?v)==@a11 & (v_attendPatient(?v, @a2) | v_travelToHsopital(?v, @a2) | v_travelToBase(?v, @a2) ) ) then ( aa_travelTime(@a11, @a2) )
+						else if (v_position(?v)==@a11 & (v_attendPatient(?v, @a3) | v_travelToHsopital(?v, @a3) | v_travelToBase(?v, @a3) ) ) then ( aa_travelTime(@a11, @a3) )
+						else if (v_position(?v)==@a11 & (v_attendPatient(?v, @a4) | v_travelToHsopital(?v, @a4) | v_travelToBase(?v, @a4) ) ) then ( aa_travelTime(@a11, @a4) )
+						else if (v_position(?v)==@a11 & (v_attendPatient(?v, @a5) | v_travelToHsopital(?v, @a5) | v_travelToBase(?v, @a5) ) ) then ( aa_travelTime(@a11, @a5) )
+						else if (v_position(?v)==@a11 & (v_attendPatient(?v, @a6) | v_travelToHsopital(?v, @a6) | v_travelToBase(?v, @a6) ) ) then ( aa_travelTime(@a11, @a6) )
+						else if (v_position(?v)==@a11 & (v_attendPatient(?v, @a7) | v_travelToHsopital(?v, @a7) | v_travelToBase(?v, @a7) ) ) then ( aa_travelTime(@a11, @a7) )
+						else if (v_position(?v)==@a11 & (v_attendPatient(?v, @a8) | v_travelToHsopital(?v, @a8) | v_travelToBase(?v, @a8) ) ) then ( aa_travelTime(@a11, @a8) )
+						else if (v_position(?v)==@a11 & (v_attendPatient(?v, @a9) | v_travelToHsopital(?v, @a9) | v_travelToBase(?v, @a9) ) ) then ( aa_travelTime(@a11, @a9) )
+						else if (v_position(?v)==@a11 & (v_attendPatient(?v, @a10) | v_travelToHsopital(?v, @a10) | v_travelToBase(?v, @a10) ) ) then ( aa_travelTime(@a11, @a10) )
+						else if (v_position(?v)==@a11 & (v_attendPatient(?v, @a11) | v_travelToHsopital(?v, @a11) | v_travelToBase(?v, @a11) ) ) then ( aa_travelTime(@a11, @a11) )
 
 						
 						//...
@@ -340,6 +436,12 @@ domain ems_mdp {
 		//An ambulance waiting in a base can not be redeployed in the same base
 		( forall_{?a : area} [	 (forall_{?v : vehicle} [v_travelToBase(?v, ?a) => (v_position(?v)~=?a) ]) ] ); 
 		
+		//Benchmark
+		((exists_{?a : area} [a_patientActive(?a) 
+					& (~(exists_{?v : vehicle} [v_assignedPatient(?v)==?a & (v_attendingPatient(?v) | v_waitingHospitalAssign(?v) | v_travelingToHospital(?v)) ]))
+					& (exists_{?v : vehicle} [v_waiting(?v)])
+					]) => (exists_{?v : vehicle} [exists_{?a : area} [v_attendPatient(?v, ?a)]])
+		);
 	
 	};
 	

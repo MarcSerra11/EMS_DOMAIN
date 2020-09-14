@@ -228,7 +228,7 @@ domain ems_mdp {
 		( forall_{?a : area} [	 (sum_{?v : vehicle} [v_attendPatient(?v, ?a)]) <=1  ] );
 		
 		//If an ambulance is assigned to a patient, another can not be assigned in the future
-		( forall_{?a : area} [	 (exists_{?v : vehicle} [v_attendPatient(?v, ?a)]) =>  ~(exists_{?v : vehicle} [v_assignedPatient(?v)==?a & v_attendingPatient(?v) ]) ] );
+		( forall_{?a : area} [	 (exists_{?v : vehicle} [v_attendPatient(?v, ?a)]) =>  ~(exists_{?v : vehicle} [v_assignedPatient(?v)==?a & (v_attendingPatient(?v) | v_waitingHospitalAssign(?v) | v_travelingToHospital(?v)) ]) ] );
 		
 		//Once a patient is stabilised must be trasferred to a hospital
 		( forall_{?v : vehicle} [ v_waitingHospitalAssign(?v) => (exists_{?a : area} [v_travelToHsopital(?v, ?a)]) ]);	

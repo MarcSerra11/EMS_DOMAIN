@@ -18,7 +18,7 @@ int main () {
 	
 	//INPUT VARIABLES
 	x=4;
-	y=4;
+	y=2;
 
 	number=10;
 	vehicle=3;

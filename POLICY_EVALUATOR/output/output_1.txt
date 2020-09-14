@@ -1,0 +1,9 @@
+The computed metrics for the simulation are: 
+
+P1 average wait: 15 over 1 emergencies.
+P1 90 percentile: 15.
+
+No P2 cases.
+
+No P3 cases.
+

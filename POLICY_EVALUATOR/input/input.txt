@@ -1,849 +1,425 @@
--------------------------------------------
->>> STARTING ROUND 12 -- REMAINING TIME -309s
+arsing...
+...finished (0.00160813s).
+instantiating...
+    Instantiating variables...
+    ...finished (0.000315905)
+    Instantiating CPFs...
+    ...finished (0.01001)
+    Instantiating preconditions...
+    ...finished (0.000394106)
+...finished (0.01088s).
+preprocessing...
+    Preparing evaluatables...
+    ...finished (0.00195384)
+    Preparing actions...
+    ...finished (0.00405097)
+    Calculating CPF domain...
+State-fluent v_assignedBase(v0) has a domain size of 3 and a max val of 7
+Inserting values into domain of state-fluent v_assignedBase(v0)
+State-fluent v_assignedHospital(v0) has a domain size of 3 and a max val of 5
+Inserting values into domain of state-fluent v_assignedHospital(v0)
+    ...finished (0.0408771)
+    Finalizing evaluatables...
+    ...finished (0.00141907)
+    Computing determinization...
+    ...finished (7.89165e-05)
+    Determining task properties...
+    ...finished (2.81334e-05)
+    Preparing hash keys...
+    ...finished (0.00064683)
+    Precomputing evaluatables...
+    ...finished (0.195927)
+    Calculating min and max reward...
+    ...finished (0.000499964)
+...finished (0.247445s).
+analyzing task...
+Creating training set with 914 candidates.
+...finished (0.208048s).
+writing output for instance ems_inst to ./parser_out_2754 ...
+...finished (0.48506s).
+PROST parser complete running time: 0.955492s
 --------------------------------------------
-Planning step 1/40 in round 12/30
-Current state: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 0 0 0 11 5 11 0 0 0 0 0 0 0 0 0 1 1 1 0 0 0 | 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-Used RAM: 2663504
+>>> STARTING ROUND 1 -- REMAINING TIME 1078s
+--------------------------------------------
+Planning step 1/40 in round 1/1
+Current state: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 0 0 0 0 0 1 0 | 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Used RAM: 584380
 
 THTS step statistics:
-  Performed trials: 1926
-  Created search nodes: 15068
-  Search time: 4.000511
+  Performed trials: 7942
+  Created search nodes: 45348
+  Search time: 2.000005
 Submitted actiones: noop()
 Immediate reward: 0.000000
 --------------------------------------------
-Planning step 2/40 in round 12/30
-Current state: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 0 0 0 11 5 11 0 0 0 0 0 0 0 0 0 1 1 1 0 0 0 | 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-Used RAM: 2663504
+Planning step 2/40 in round 1/1
+Current state: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 0 0 0 0 0 1 0 | 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Used RAM: 887980
 
 THTS step statistics:
-  Performed trials: 2024
-  Created search nodes: 16915
-  Search time: 4.001162
+  Performed trials: 7813
+  Created search nodes: 45780
+  Search time: 2.000081
 Submitted actiones: noop()
 Immediate reward: 0.000000
 --------------------------------------------
-Planning step 3/40 in round 12/30
-Current state: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 0 0 0 11 5 11 0 0 0 0 0 0 0 0 0 1 1 1 0 0 0 | 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-Used RAM: 2663504
+Planning step 3/40 in round 1/1
+Current state: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 0 0 0 0 0 1 0 | 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Used RAM: 1180656
 
 THTS step statistics:
-  Performed trials: 2082
-  Created search nodes: 14857
-  Search time: 4.000669
+  Performed trials: 7728
+  Created search nodes: 45060
+  Search time: 2.000049
 Submitted actiones: noop()
 Immediate reward: 0.000000
 --------------------------------------------
-Planning step 4/40 in round 12/30
-Current state: 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 0 0 0 11 5 11 0 0 0 0 0 0 0 0 0 1 1 1 0 0 0 | 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 2 0 0 0 0 0 0 0 0 
-Used RAM: 2663504
+Planning step 4/40 in round 1/1
+Current state: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 0 0 0 0 0 1 0 | 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Used RAM: 1481088
 
 THTS step statistics:
-  Performed trials: 2097
-  Created search nodes: 17734
-  Search time: 4.001157
+  Performed trials: 8492
+  Created search nodes: 49816
+  Search time: 2.000064
 Submitted actiones: noop()
-Immediate reward: -4724.464026
+Immediate reward: 0.000000
 --------------------------------------------
-Planning step 5/40 in round 12/30
-Current state: 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 0 0 0 11 5 11 0 0 0 0 0 0 0 0 0 1 1 1 0 0 0 | 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 0 0 0 0 0 
-Used RAM: 2663504
+Planning step 5/40 in round 1/1
+Current state: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 0 0 0 0 0 1 0 | 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Used RAM: 1761800
 
 THTS step statistics:
-  Performed trials: 2164
-  Created search nodes: 16351
-  Search time: 4.000907
+  Performed trials: 8056
+  Created search nodes: 46972
+  Search time: 2.000101
 Submitted actiones: noop()
-Immediate reward: -19815847809.358234
+Immediate reward: 0.000000
 --------------------------------------------
-Planning step 6/40 in round 12/30
-Current state: 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 0 0 1 0 0 1 1 1 1 1 1 1 1 1 0 0 0 11 5 11 0 0 0 0 0 0 0 0 0 1 1 1 0 0 0 | 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 0 0 0 0 0 
-Used RAM: 2663504
+Planning step 6/40 in round 1/1
+Current state: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 0 0 0 0 0 1 0 | 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Used RAM: 2045376
 
 THTS step statistics:
-  Performed trials: 2240
-  Created search nodes: 16867
-  Search time: 4.000996
+  Performed trials: 7830
+  Created search nodes: 42165
+  Search time: 2.000175
 Submitted actiones: noop()
-Immediate reward: -39631695618.716469
+Immediate reward: 0.000000
 --------------------------------------------
-Planning step 7/40 in round 12/30
-Current state: 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 3 0 0 0 0 0 2 0 0 1 1 1 1 1 1 1 1 1 0 0 0 11 5 11 0 0 0 0 0 0 0 0 0 1 1 1 0 0 0 | 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 0 0 0 0 0 
-Used RAM: 2663504
+Planning step 7/40 in round 1/1
+Current state: 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 0 0 0 0 0 1 0 | 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 
+Used RAM: 2320992
 
 THTS step statistics:
-  Performed trials: 2272
-  Created search nodes: 17444
-  Search time: 4.001383
-Submitted actiones: v_attendPatient(v1, @a7) 
-Immediate reward: -79263391237.432938
---------------------------------------------
-Planning step 8/40 in round 12/30
-Current state: 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4 0 0 0 0 0 3 0 0 1 1 1 1 1 1 1 7 1 0 1 0 11 5 11 0 5 0 0 0 0 0 0 0 1 0 1 0 0 0 | 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 2 0 0 0 0 0 0 0 0 
-Used RAM: 2663504
-
-THTS step statistics:
-  Performed trials: 2357
-  Created search nodes: 14893
-  Search time: 4.000132
+  Performed trials: 8376
+  Created search nodes: 44234
+  Search time: 2.000014
 Submitted actiones: noop()
-Immediate reward: -158526782474.865875
+Immediate reward: -9675702.324429
 --------------------------------------------
-Planning step 9/40 in round 12/30
-Current state: 0 0 0 1 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 5 0 0 0 0 0 4 0 0 1 1 1 1 1 1 1 7 1 0 1 0 11 5 11 0 4 0 0 0 0 0 0 0 1 0 1 0 0 0 | 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 2 0 0 0 0 0 0 0 0 
-Used RAM: 2663504
+Planning step 8/40 in round 1/1
+CACHING ABORTED IN STEP 8 OF ROUND 1
+Current state: 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 1 1 0 0 0 0 0 1 0 | 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 
+Used RAM: 2322048
 
 THTS step statistics:
-  Performed trials: 2466
-  Created search nodes: 15575
-  Search time: 4.000419
+  Performed trials: 10401
+  Created search nodes: 55774
+  Search time: 2.000180
 Submitted actiones: noop()
-Immediate reward: -336869403310.161926
+Immediate reward: -19351404.648858
 --------------------------------------------
-Planning step 10/40 in round 12/30
-Current state: 0 0 0 1 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 6 0 0 0 0 0 5 0 0 1 1 1 1 1 1 1 7 1 0 1 0 11 5 11 0 3 0 0 0 0 0 0 0 1 0 1 0 0 0 | 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 1 0 0 0 0 0 
-Used RAM: 2663504
+Planning step 9/40 in round 1/1
+Current state: 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 0 0 0 0 1 1 1 0 0 0 0 0 1 0 | 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 
+Used RAM: 2322312
 
 THTS step statistics:
-  Performed trials: 2643
-  Created search nodes: 17484
-  Search time: 4.000971
-Submitted actiones: noop()
-Immediate reward: -634116805601.787964
+  Performed trials: 10960
+  Created search nodes: 58414
+  Search time: 2.000145
+Submitted actiones: v_travelToBase(v0, @a7) 
+Immediate reward: -38702809.297715
 --------------------------------------------
-Planning step 11/40 in round 12/30
-Current state: 0 0 0 1 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 7 0 0 1 0 0 6 0 0 1 1 1 1 1 1 1 7 1 0 1 0 11 5 11 0 2 0 0 0 0 0 0 0 1 0 1 0 0 0 | 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 1 0 0 0 0 0 
-Used RAM: 2663504
-
-THTS step statistics:
-  Performed trials: 2545
-  Created search nodes: 17029
-  Search time: 4.000072
-Submitted actiones: noop()
-Immediate reward: -1268233611203.575928
---------------------------------------------
-Planning step 12/40 in round 12/30
-Current state: 0 0 0 1 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 8 0 0 2 0 0 7 0 0 1 1 1 1 1 1 1 7 1 0 1 0 11 5 11 0 1 0 0 0 0 0 0 0 1 0 1 0 0 0 | 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 1 0 0 0 0 0 
-Used RAM: 2663504
-
-THTS step statistics:
-  Performed trials: 2689
-  Created search nodes: 18942
-  Search time: 4.000862
-Submitted actiones: noop()
-Immediate reward: -2536467222407.151855
---------------------------------------------
-Planning step 13/40 in round 12/30
-Current state: 0 0 0 1 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 9 0 0 3 0 0 8 0 0 1 1 1 1 1 1 1 7 1 0 1 0 11 5 11 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 | 0 1 0 0 0 0 0 0 1 0 0 0 0 0 0 2 0 0 1 0 0 0 0 0 
-Used RAM: 2663504
-
-THTS step statistics:
-  Performed trials: 2714
-  Created search nodes: 26098
-  Search time: 4.001236
-Submitted actiones: noop()
-Immediate reward: -5072934444814.303711
---------------------------------------------
-Planning step 14/40 in round 12/30
-Current state: 0 1 0 1 0 0 1 0 1 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 9 0 0 4 0 0 9 0 0 1 1 1 1 1 1 1 7 1 0 0 0 11 7 11 0 0 0 0 0 0 0 0 0 1 0 1 0 1 0 | 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 1 0 0 0 0 0 
-Used RAM: 2663504
-
-THTS step statistics:
-  Performed trials: 2843
-  Created search nodes: 17444
-  Search time: 4.001757
-Submitted actiones: v_attendPatient(v0, @a1) v_attendPatient(v2, @a6) v_travelToHsopital(v1, @a5) 
-Immediate reward: -39788908064.748337
---------------------------------------------
-Planning step 15/40 in round 12/30
-Current state: 0 1 0 1 0 0 1 0 1 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 9 0 0 5 0 1 9 0 0 1 1 1 1 5 1 1 7 6 1 0 1 11 7 11 7 5 6 0 0 0 0 1 0 0 0 0 0 0 0 | 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 2 0 0 1 0 0 0 0 0 
-Used RAM: 2663504
+Planning step 10/40 in round 1/1
+Current state: 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 3 0 0 0 0 0 0 0 7 1 1 0 0 7 1 0 0 0 | 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 
+Used RAM: 2322312
 
 Policy unique due to single reasonable action
 Submitted actiones: noop()
-Immediate reward: -79575396022.799561
+Immediate reward: -77405618.595430
 --------------------------------------------
-Planning step 16/40 in round 12/30
-Current state: 0 1 0 1 0 1 1 0 1 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 2 0 9 0 0 6 0 2 9 0 0 1 1 1 1 5 1 1 7 6 1 0 1 11 7 11 6 4 5 0 0 0 0 1 0 0 0 0 0 0 0 | 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 1 0 0 0 0 0 
-Used RAM: 2663504
+Planning step 11/40 in round 1/1
+Current state: 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4 0 0 0 0 0 0 0 7 1 1 0 0 6 1 0 0 0 | 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 
+Used RAM: 2322312
 
 Policy unique due to single reasonable action
 Submitted actiones: noop()
-Immediate reward: -178964210299.332184
+Immediate reward: -154811237.190861
 --------------------------------------------
-Planning step 17/40 in round 12/30
-Current state: 0 1 0 1 0 1 1 0 1 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 3 0 9 0 1 7 0 3 9 0 0 1 1 1 1 5 1 1 7 6 1 0 1 11 7 11 5 3 4 0 0 0 0 1 0 0 0 0 0 0 0 | 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 1 0 0 0 0 0 
-Used RAM: 2663504
+Planning step 12/40 in round 1/1
+Current state: 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 5 0 0 0 0 0 0 0 7 1 1 0 0 5 1 0 0 0 | 0 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 
+Used RAM: 2322312
 
 Policy unique due to single reasonable action
 Submitted actiones: noop()
-Immediate reward: -357926000491.967285
+Immediate reward: -309622474.381722
 --------------------------------------------
-Planning step 18/40 in round 12/30
-Current state: 0 1 0 1 0 1 1 0 1 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 4 0 9 0 2 8 0 4 9 0 0 1 1 1 1 5 1 1 7 6 1 0 1 11 7 11 4 2 3 0 0 0 0 1 0 0 0 0 0 0 0 | 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 1 0 0 0 0 0 
-Used RAM: 2663504
+Planning step 13/40 in round 1/1
+Current state: 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 6 0 0 0 0 0 0 0 7 1 1 0 0 4 1 0 0 0 | 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 
+Used RAM: 2322312
 
 Policy unique due to single reasonable action
 Submitted actiones: noop()
-Immediate reward: -715849580877.237305
+Immediate reward: -20435083309.193626
 --------------------------------------------
-Planning step 19/40 in round 12/30
-Current state: 0 1 0 1 0 1 1 0 1 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 5 0 9 0 3 9 0 5 9 0 0 1 1 1 1 5 1 1 7 6 1 0 1 11 7 11 3 1 2 0 0 0 0 1 0 0 0 0 0 0 0 | 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 1 0 0 0 0 0 
-Used RAM: 2663504
+Planning step 14/40 in round 1/1
+Current state: 1 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 7 1 0 0 0 0 0 0 7 1 1 0 0 3 1 0 0 0 | 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 
+Used RAM: 2322312
 
 Policy unique due to single reasonable action
 Submitted actiones: noop()
-Immediate reward: -1431696741647.777588
+Immediate reward: -60686004978.817436
 --------------------------------------------
-Planning step 20/40 in round 12/30
-Current state: 0 1 0 1 0 1 1 0 1 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 6 0 9 0 4 9 0 6 9 0 0 1 1 1 1 5 1 1 7 6 1 0 1 11 7 11 2 0 1 0 0 0 0 1 0 0 0 0 0 0 0 | 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 1 0 0 0 0 0 
-Used RAM: 2663504
+Planning step 15/40 in round 1/1
+Current state: 1 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 8 2 0 0 0 1 0 0 7 1 1 0 0 2 1 0 0 0 | 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 
+Used RAM: 2322312
 
 Policy unique due to single reasonable action
 Submitted actiones: noop()
-Immediate reward: -2858437103598.750977
+Immediate reward: -121372009957.634872
 --------------------------------------------
-Planning step 21/40 in round 12/30
-Current state: 0 1 0 1 0 1 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 7 0 9 0 5 9 0 7 9 0 0 1 1 1 1 5 1 1 7 6 1 0 1 11 5 11 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 | 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 1 0 0 0 0 0 
-Used RAM: 2663504
+Planning step 16/40 in round 1/1
+Current state: 1 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 9 3 0 0 0 2 0 0 7 1 1 0 0 1 1 0 0 0 | 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 
+Used RAM: 2322312
+
+Policy unique due to single reasonable action
+Submitted actiones: noop()
+Immediate reward: -242744019915.269745
+--------------------------------------------
+Planning step 17/40 in round 1/1
+Current state: 1 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 9 4 0 0 0 3 0 0 7 1 1 0 0 0 1 0 0 0 | 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 
+Used RAM: 2322312
+
+Policy unique due to single reasonable action
+Submitted actiones: noop()
+Immediate reward: -480534080240.431946
+--------------------------------------------
+Planning step 18/40 in round 1/1
+Current state: 1 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 9 5 0 0 0 4 0 0 7 1 1 0 7 0 0 0 1 0 | 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 
+Used RAM: 2323104
 
 THTS step statistics:
-  Performed trials: 4003
-  Created search nodes: 22946
-  Search time: 4.000788
-Submitted actiones: v_attendPatient(v1, @a3) 
-Immediate reward: -5711917826319.581055
+  Performed trials: 15226
+  Created search nodes: 64549
+  Search time: 2.000060
+Submitted actiones: v_attendPatient(v0, @a5) 
+Immediate reward: -956114200890.756348
 --------------------------------------------
-Planning step 22/40 in round 12/30
-Current state: 0 1 0 1 0 1 1 0 1 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 8 0 9 0 6 9 0 8 9 0 0 1 1 1 1 5 1 1 3 6 1 1 0 11 5 6 0 5 0 0 0 0 0 0 0 0 0 0 0 0 1 | 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 1 0 0 0 0 0 
-Used RAM: 2663504
+Planning step 19/40 in round 1/1
+Current state: 1 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 9 6 0 0 0 5 0 0 7 1 5 1 7 4 0 0 0 0 | 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 
+Used RAM: 2323104
+
+Policy unique due to single reasonable action
+Submitted actiones: noop()
+Immediate reward: -1907274442191.405273
+--------------------------------------------
+Planning step 20/40 in round 1/1
+Current state: 1 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 9 7 0 0 0 6 0 0 7 1 5 1 7 3 0 0 0 0 | 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 
+Used RAM: 2323104
+
+Policy unique due to single reasonable action
+Submitted actiones: noop()
+Immediate reward: -3809594924792.702637
+--------------------------------------------
+Planning step 21/40 in round 1/1
+Current state: 1 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 9 8 0 0 0 7 0 0 7 1 5 1 7 2 0 0 0 0 | 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 
+Used RAM: 2323104
+
+Policy unique due to single reasonable action
+Submitted actiones: noop()
+Immediate reward: -7614235889995.297852
+--------------------------------------------
+Planning step 22/40 in round 1/1
+Current state: 1 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 9 9 0 0 0 8 0 0 7 1 5 1 7 1 0 0 0 0 | 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 
+Used RAM: 2323104
+
+Policy unique due to single reasonable action
+Submitted actiones: noop()
+Immediate reward: -15223517820400.488281
+--------------------------------------------
+Planning step 23/40 in round 1/1
+Current state: 1 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 9 9 0 0 0 9 0 0 7 1 5 1 7 0 0 0 0 0 | 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 
+Used RAM: 2323104
+
+Policy unique due to single reasonable action
+Submitted actiones: noop()
+Immediate reward: -20296372440670.617188
+--------------------------------------------
+Planning step 24/40 in round 1/1
+Current state: 1 1 0 0 1 1 0 0 0 0 0 0 0 1 0 0 9 9 0 0 0 9 0 0 7 1 5 0 5 0 0 0 0 1 | 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 
+Used RAM: 2326008
 
 THTS step statistics:
-  Performed trials: 3810
-  Created search nodes: 23150
-  Search time: 4.000592
-Submitted actiones: v_travelToHsopital(v2, @a5) 
-Immediate reward: -6346024654443.904297
---------------------------------------------
-Planning step 23/40 in round 12/30
-Current state: 0 1 0 1 0 1 1 0 1 0 0 0 0 1 0 0 0 0 0 0 1 1 0 0 0 9 0 9 0 7 9 0 9 9 0 0 1 1 1 1 5 5 1 3 6 0 1 0 1 5 6 0 4 6 0 0 0 0 0 1 0 0 0 1 0 0 | 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 1 0 0 0 0 0 
-Used RAM: 2663504
-
-THTS step statistics:
-  Performed trials: 4361
-  Created search nodes: 28770
-  Search time: 4.000920
+  Performed trials: 23280
+  Created search nodes: 89545
+  Search time: 2.000052
 Submitted actiones: v_travelToHsopital(v0, @a5) 
-Immediate reward: -2541383691012.984375
+Immediate reward: -10150672877013.800781
 --------------------------------------------
-Planning step 24/40 in round 12/30
-Current state: 0 1 1 1 0 1 1 0 1 0 0 0 0 1 0 0 0 0 0 0 1 1 0 0 0 9 0 9 0 8 9 0 9 9 0 0 1 1 1 5 5 5 1 3 6 0 1 0 1 5 6 5 3 5 0 0 0 1 0 1 0 0 0 0 0 0 | 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 1 0 0 0 0 0 
-Used RAM: 2663504
+Planning step 25/40 in round 1/1
+Current state: 1 1 0 0 1 1 0 0 0 0 0 0 0 1 0 0 9 9 0 0 1 9 0 0 7 5 5 0 5 3 0 1 0 0 | 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 
+Used RAM: 2326008
 
 Policy unique due to single reasonable action
 Submitted actiones: noop()
-Immediate reward: -5097626839508.478516
+Immediate reward: -10150682552716.125000
 --------------------------------------------
-Planning step 25/40 in round 12/30
-Current state: 0 1 1 1 0 1 1 0 1 0 0 0 0 1 0 0 0 0 0 0 1 1 0 0 0 9 1 9 0 9 9 0 9 9 0 0 1 1 1 5 5 5 1 3 6 0 1 0 1 5 6 4 2 4 0 0 0 1 0 1 0 0 0 0 0 0 | 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 1 0 0 0 0 0 
-Used RAM: 2663504
+Planning step 26/40 in round 1/1
+Current state: 1 1 0 0 1 1 0 0 0 0 0 0 0 1 0 0 9 9 0 0 2 9 0 0 7 5 5 0 5 2 0 1 0 0 | 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 
+Used RAM: 2326008
 
 Policy unique due to single reasonable action
 Submitted actiones: noop()
-Immediate reward: -10190297298139.035156
+Immediate reward: -10150701904120.773438
 --------------------------------------------
-Planning step 26/40 in round 12/30
-Current state: 0 1 1 1 0 1 1 0 1 0 0 0 0 1 0 0 0 0 0 0 1 1 0 0 0 9 2 9 0 9 9 0 9 9 0 0 1 1 1 5 5 5 1 3 6 0 1 0 1 5 6 3 1 3 0 0 0 1 0 1 0 0 0 0 0 0 | 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 1 0 0 0 0 0 
-Used RAM: 2663504
+Planning step 27/40 in round 1/1
+Current state: 1 1 0 0 1 1 0 0 0 0 0 0 0 1 0 0 9 9 0 0 3 9 0 0 7 5 5 0 5 1 0 1 0 0 | 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 
+Used RAM: 2326008
 
 Policy unique due to single reasonable action
 Submitted actiones: noop()
-Immediate reward: -10229928974859.894531
+Immediate reward: -10150740606930.072266
 --------------------------------------------
-Planning step 27/40 in round 12/30
-Current state: 0 1 1 1 0 1 1 0 1 0 0 0 0 1 0 0 0 0 0 0 1 1 0 0 0 9 3 9 0 9 9 0 9 9 0 0 1 1 1 5 5 5 1 3 6 0 1 0 1 5 6 2 0 2 0 0 0 1 0 1 0 0 0 0 0 0 | 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 1 0 0 0 0 0 
-Used RAM: 2663504
+Planning step 28/40 in round 1/1
+Current state: 1 1 0 0 1 1 0 0 0 0 0 0 0 1 0 0 9 9 0 0 4 9 0 0 7 5 5 0 5 0 0 1 0 0 | 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 
+Used RAM: 2326008
 
 Policy unique due to single reasonable action
 Submitted actiones: noop()
-Immediate reward: -10309192328301.615234
+Immediate reward: -10150818012548.667969
 --------------------------------------------
-Planning step 28/40 in round 12/30
-Current state: 0 1 1 1 0 1 1 0 1 0 0 0 0 1 0 0 0 1 0 0 1 1 0 0 0 9 4 9 0 9 9 0 9 9 0 0 1 1 1 5 5 5 1 3 6 0 0 0 1 3 6 1 0 1 0 0 0 1 0 1 0 0 0 0 1 0 | 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 1 0 0 0 0 0 
-Used RAM: 2663504
+Planning step 29/40 in round 1/1
+Current state: 1 1 0 0 1 0 0 0 0 0 0 0 0 1 0 0 9 9 0 0 5 9 0 0 7 5 5 0 5 0 0 0 1 0 | 0 0 0 0 0 0 1 0 1 0 0 0 1 0 0 0 
+Used RAM: 2326272
 
 THTS step statistics:
-  Performed trials: 6511
-  Created search nodes: 50655
-  Search time: 4.001560
-Submitted actiones: v_travelToHsopital(v1, @a5) 
-Immediate reward: -322009795825.919617
+  Performed trials: 42108
+  Created search nodes: 87275
+  Search time: 2.000024
+Submitted actiones: v_attendPatient(v0, @a1) 
+Immediate reward: -10150972822604.742188
 --------------------------------------------
-Planning step 29/40 in round 12/30
-Current state: 0 1 1 1 0 1 1 0 1 0 0 0 0 1 0 0 0 1 0 0 1 1 0 0 0 9 5 9 0 9 9 0 9 9 0 0 1 1 1 5 5 5 1 3 6 0 0 0 1 3 6 0 5 0 0 0 0 1 1 1 0 0 0 0 0 0 | 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 1 0 0 0 0 0 
-Used RAM: 2663504
+Planning step 30/40 in round 1/1
+Current state: 1 1 0 0 1 0 1 0 0 0 0 0 0 1 0 0 9 9 0 0 6 9 0 0 7 5 1 1 5 5 0 0 0 0 | 0 0 0 0 0 1 1 0 1 0 0 0 1 0 1 0 
+Used RAM: 2326272
 
 Policy unique due to single reasonable action
 Submitted actiones: noop()
-Immediate reward: -639063209592.802490
+Immediate reward: -10151292120781.449219
 --------------------------------------------
-Planning step 30/40 in round 12/30
-Current state: 0 0 1 1 0 1 1 0 0 0 0 0 0 1 0 0 0 1 0 0 1 1 0 0 0 9 6 9 0 9 9 0 9 9 0 0 1 1 1 5 5 5 1 3 6 0 0 0 5 3 5 0 4 0 0 0 0 0 1 0 1 0 1 0 0 0 | 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 1 0 0 0 0 0 
-Used RAM: 2663504
+Planning step 31/40 in round 1/1
+Current state: 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 9 9 0 0 7 0 0 0 7 5 1 1 5 4 0 0 0 0 | 0 0 0 0 0 0 0 0 1 0 0 0 1 1 0 0 
+Used RAM: 2326272
 
-THTS step statistics:
-  Performed trials: 8381
-  Created search nodes: 52605
-  Search time: 4.000338
-Submitted actiones: v_attendPatient(v0, @a10) 
-Immediate reward: -1273170034764.336426
---------------------------------------------
-Planning step 31/40 in round 12/30
-Current state: 0 0 1 1 0 1 1 0 0 0 0 0 0 1 0 0 0 1 0 0 1 1 0 0 0 9 7 9 0 9 9 0 9 9 0 0 1 1 1 5 5 5 10 3 6 1 0 0 5 3 5 6 3 0 0 0 0 0 1 0 0 0 1 0 0 0 | 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 1 0 0 0 0 0 
-Used RAM: 2663504
-
-THTS step statistics:
-  Performed trials: 10347
-  Created search nodes: 62959
-  Search time: 4.000689
+Policy unique due to single reasonable action
 Submitted actiones: noop()
-Immediate reward: -2541383689831.868164
+Immediate reward: -10171727204090.642578
 --------------------------------------------
-Planning step 32/40 in round 12/30
-Current state: 0 0 1 1 0 1 1 0 0 0 0 0 0 1 0 0 0 1 0 0 1 1 0 0 0 9 8 9 0 9 9 0 9 9 0 0 1 1 1 5 5 5 10 3 6 1 0 0 5 3 5 5 2 0 0 0 0 0 1 0 0 0 1 0 0 0 | 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 1 0 0 0 0 0 
-Used RAM: 2663504
+Planning step 32/40 in round 1/1
+Current state: 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 9 9 0 0 8 1 1 0 7 5 1 1 5 3 0 0 0 0 | 0 0 0 0 0 0 0 0 1 0 0 0 1 1 0 0 
+Used RAM: 2326272
 
-THTS step statistics:
-  Performed trials: 11458
-  Created search nodes: 69690
-  Search time: 4.000305
+Policy unique due to single reasonable action
 Submitted actiones: noop()
-Immediate reward: -5077810999966.931641
+Immediate reward: -10192791208050.925781
 --------------------------------------------
-Planning step 33/40 in round 12/30
-Current state: 0 0 1 1 0 1 1 0 0 0 0 0 0 1 0 0 0 1 0 0 1 1 0 0 0 9 9 9 0 9 9 0 9 9 0 0 1 1 1 5 5 5 10 3 6 1 0 0 5 3 5 4 1 0 0 0 0 0 1 0 0 0 1 0 0 0 | 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 2 0 0 1 0 0 0 0 0 
-Used RAM: 2663504
+Planning step 33/40 in round 1/1
+Current state: 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 9 9 0 0 9 2 2 0 7 5 1 1 5 2 0 0 0 0 | 0 0 0 0 0 0 0 0 1 0 0 0 1 1 0 0 
+Used RAM: 2326272
 
-THTS step statistics:
-  Performed trials: 12772
-  Created search nodes: 73541
-  Search time: 4.000249
+Policy unique due to single reasonable action
 Submitted actiones: noop()
-Immediate reward: -10150665620237.058594
+Immediate reward: -10234919215971.486328
 --------------------------------------------
-Planning step 34/40 in round 12/30
-Current state: 0 0 1 1 0 1 1 0 1 0 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 9 9 9 0 9 9 0 0 9 0 0 1 1 1 5 5 5 10 3 6 1 0 0 5 3 5 3 0 0 0 0 0 0 1 0 0 0 1 0 0 0 | 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 1 0 0 0 0 0 
-Used RAM: 2663504
+Planning step 34/40 in round 1/1
+Current state: 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 9 9 0 0 9 3 3 0 7 5 1 1 5 1 0 0 0 0 | 0 0 0 0 0 0 0 0 1 0 0 0 1 1 0 0 
+Used RAM: 2326272
 
-THTS step statistics:
-  Performed trials: 15753
-  Created search nodes: 81012
-  Search time: 4.000115
+Policy unique due to single reasonable action
 Submitted actiones: noop()
-Immediate reward: -10170481458597.490234
+Immediate reward: -10314221272222.505859
 --------------------------------------------
-Planning step 35/40 in round 12/30
-Current state: 0 0 1 1 0 0 1 0 1 0 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 9 9 9 0 9 9 0 1 9 0 0 1 1 1 5 5 5 10 3 6 1 0 0 5 5 5 2 0 0 0 0 0 0 0 0 0 1 1 0 0 0 | 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 1 0 0 0 0 0 
-Used RAM: 2663504
+Planning step 35/40 in round 1/1
+Current state: 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 9 9 0 0 9 4 4 0 7 5 1 1 5 0 0 0 0 0 | 0 0 0 0 0 0 0 0 1 0 0 0 1 1 0 0 
+Used RAM: 2326272
 
-THTS step statistics:
-  Performed trials: 17102
-  Created search nodes: 81094
-  Search time: 4.000136
+Policy unique due to single reasonable action
 Submitted actiones: noop()
-Immediate reward: -10190297295776.804688
+Immediate reward: -10472825384724.542969
 --------------------------------------------
-Planning step 36/40 in round 12/30
-Current state: 0 0 1 1 0 0 1 0 1 0 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 9 9 9 0 9 9 0 2 9 0 0 1 1 1 5 5 5 10 3 6 1 0 0 5 5 5 1 0 0 0 0 0 0 0 0 0 1 1 0 0 0 | 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 1 0 0 0 0 0 
-Used RAM: 2668784
+Planning step 36/40 in round 1/1
+Current state: 1 1 0 0 1 1 1 0 0 1 0 0 0 0 0 0 9 9 0 0 9 5 5 0 7 5 1 0 1 0 0 0 0 1 | 0 0 0 0 0 0 0 0 1 0 0 0 1 1 0 0 
+Used RAM: 2326272
 
 THTS step statistics:
-  Performed trials: 27353
-  Created search nodes: 102924
-  Search time: 4.000141
+  Performed trials: 178379
+  Created search nodes: 5282
+  Search time: 2.000006
+Submitted actiones: v_travelToHsopital(v0, @a5) 
+Immediate reward: -644324370369.478638
+--------------------------------------------
+Planning step 37/40 in round 1/1
+Current state: 1 1 0 0 1 1 1 0 0 1 0 0 0 0 0 0 9 9 0 0 9 6 6 0 7 5 1 0 1 5 0 1 0 0 | 0 0 0 0 0 0 0 0 1 0 0 0 1 1 0 0 
+Used RAM: 2326272
+
+Policy unique due to single reasonable action
 Submitted actiones: noop()
-Immediate reward: -10229928972497.664062
+Immediate reward: -1278740820377.626221
 --------------------------------------------
-Planning step 37/40 in round 12/30
-Current state: 0 0 1 1 0 0 1 0 1 0 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 9 9 9 0 9 9 0 3 9 0 0 1 1 1 5 5 5 10 3 6 1 0 0 5 5 5 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 | 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 1 0 0 0 0 0 
-Used RAM: 2668784
+Planning step 38/40 in round 1/1
+Current state: 1 1 0 0 1 1 1 0 0 1 0 0 0 0 0 0 9 9 0 0 9 7 7 0 7 5 1 0 1 4 0 1 0 0 | 0 0 0 0 0 0 0 0 1 0 0 0 1 1 0 0 
+Used RAM: 2326272
 
-THTS step statistics:
-  Performed trials: 37602
-  Created search nodes: 93411
-  Search time: 4.000027
+Policy unique due to single reasonable action
 Submitted actiones: noop()
-Immediate reward: -10309192325939.384766
+Immediate reward: -2547573720393.921387
 --------------------------------------------
-Planning step 38/40 in round 12/30
-Current state: 0 0 1 1 0 0 1 0 1 0 0 0 0 1 1 0 0 1 0 0 0 1 0 0 0 9 9 9 0 9 9 0 4 9 0 0 1 1 1 5 5 5 10 3 6 0 0 0 10 5 5 0 0 0 0 0 0 0 0 0 0 1 1 1 0 0 | 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 1 0 0 0 0 0 
-Used RAM: 2668784
+Planning step 39/40 in round 1/1
+Current state: 1 1 0 0 1 1 1 0 0 1 0 0 0 0 0 0 9 9 0 0 9 8 8 0 7 5 1 0 1 3 0 1 0 0 | 0 0 0 0 0 0 0 0 1 0 0 0 1 1 0 0 
+Used RAM: 2326272
 
-THTS step statistics:
-  Performed trials: 49104
-  Created search nodes: 57531
-  Search time: 4.000005
-Submitted actiones: v_travelToHsopital(v0, @a2) 
-Immediate reward: -322009793463.687622
+Policy unique due to single reasonable action
+Submitted actiones: noop()
+Immediate reward: -5085239520426.511719
 --------------------------------------------
-Planning step 39/40 in round 12/30
-Current state: 0 0 1 1 0 0 1 0 1 0 0 0 0 1 1 0 0 1 0 0 0 1 0 0 0 9 9 9 0 9 9 0 5 9 0 0 1 1 1 2 5 5 10 3 6 0 0 0 10 5 5 7 0 0 0 0 0 1 0 0 0 1 1 0 0 0 | 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 1 0 0 0 0 0 
-Used RAM: 2668784
-
-THTS step statistics:
-  Performed trials: 69856
-  Created search nodes: 4474
-  Search time: 4.000028
-Submitted actiones: v_attendPatient(v2, @a11) 
-Immediate reward: -639063207230.570435
---------------------------------------------
-Planning step 40/40 in round 12/30
-Current state: 0 0 1 1 0 0 1 0 1 0 0 0 0 1 1 0 0 1 0 0 0 1 0 0 0 9 9 9 0 9 9 0 6 9 0 0 1 1 1 2 5 5 10 3 11 0 0 1 10 5 5 6 0 5 0 0 0 1 0 0 0 1 0 0 0 0 | 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 1 0 0 0 0 0 
-Used RAM: 2668784
+Planning step 40/40 in round 1/1
+Current state: 1 1 0 0 1 1 1 0 0 1 0 0 0 0 0 0 9 9 0 0 9 9 9 0 7 5 1 0 1 2 0 1 0 0 | 0 0 0 0 0 0 0 0 1 0 0 0 1 1 0 0 
+Used RAM: 2326272
 
 Policy unique due to optimal last action
 Submitted actiones: noop()
-Immediate reward: -1273170034764.336426
+Immediate reward: -10160571120491.693359
 
 --------------------------------------------
->>> END OF ROUND 12 -- REWARD RECEIVED: -129372715201278.781250
+>>> END OF ROUND 1 -- REWARD RECEIVED: -192892305220424.000000
 ----------------------
 THTS round statistics:
   Entries in probabilistic state value cache: 0
   Buckets in probabilistic state value cache: 62233
-  Entries in probabilistic applicable actions cache: 99602
-  Buckets in probabilistic applicable actions cache: 520241
+  Entries in probabilistic applicable actions cache: 1635134
+  Buckets in probabilistic applicable actions cache: 2144977
   Number of remaining steps in first solved state: 1
-  Number of trials in first relevant state: 1926
-  Number of search nodes in first relevant state: 15068
+  Number of trials in first relevant state: 7942
+  Number of search nodes in first relevant state: 45348
   Number of reward lock states: 0
-  Number of states with only one applicable action: 11
+  Number of states with only one applicable action: 26
   UCB1 action selection round statistics:
-    Percentage exploration in first relevant state: 0.587747
+    Percentage exploration in first relevant state: 0.017754
+
 
 --------------------------------------------
->>> STARTING ROUND 13 -- REMAINING TIME -422s
---------------------------------------------
-Planning step 1/40 in round 13/30
-Current state: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 0 0 0 11 5 11 0 0 0 0 0 0 0 0 0 1 1 1 0 0 0 | 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-Used RAM: 2668784
-
-THTS step statistics:
-  Performed trials: 2035
-  Created search nodes: 16712
-  Search time: 4.000431
-Submitted actiones: noop()
-Immediate reward: 0.000000
---------------------------------------------
-Planning step 2/40 in round 13/30
-Current state: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 0 0 0 11 5 11 0 0 0 0 0 0 0 0 0 1 1 1 0 0 0 | 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-Used RAM: 2668784
-
-THTS step statistics:
-  Performed trials: 2027
-  Created search nodes: 14111
-  Search time: 4.001270
-Submitted actiones: noop()
-Immediate reward: 0.000000
---------------------------------------------
-Planning step 3/40 in round 13/30
-Current state: 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 0 0 0 11 5 11 0 0 0 0 0 0 0 0 0 1 1 1 0 0 0 | 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-Used RAM: 2668784
-
-THTS step statistics:
-  Performed trials: 2049
-  Created search nodes: 15948
-  Search time: 4.001167
-Submitted actiones: v_attendPatient(v1, @a5) 
-Immediate reward: -19815838360.430183
---------------------------------------------
-Planning step 4/40 in round 13/30
-Current state: 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 1 1 1 1 1 1 5 1 0 1 0 11 5 11 0 3 0 0 0 0 0 0 0 1 0 1 0 0 0 | 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 
-Used RAM: 2668784
-
-THTS step statistics:
-  Performed trials: 2193
-  Created search nodes: 14916
-  Search time: 4.000113
-Submitted actiones: noop()
-Immediate reward: -59457190783.614975
---------------------------------------------
-Planning step 5/40 in round 13/30
-Current state: 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 2 0 0 0 0 1 1 1 1 1 1 1 5 1 0 1 0 11 5 11 0 2 0 0 0 0 0 0 0 1 0 1 0 0 0 | 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 
-Used RAM: 2668784
-
-THTS step statistics:
-  Performed trials: 2277
-  Created search nodes: 15451
-  Search time: 4.001354
-Submitted actiones: noop()
-Immediate reward: -118914381567.229950
---------------------------------------------
-Planning step 6/40 in round 13/30
-Current state: 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 2 0 3 0 0 0 0 1 1 1 1 1 1 1 5 1 0 1 0 11 5 11 0 1 0 0 0 0 0 0 0 1 0 1 0 0 0 | 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 
-Used RAM: 2668784
-
-THTS step statistics:
-  Performed trials: 2349
-  Created search nodes: 15924
-  Search time: 4.000413
-Submitted actiones: noop()
-Immediate reward: -237828763134.459900
---------------------------------------------
-Planning step 7/40 in round 13/30
-Current state: 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 3 3 0 4 0 0 0 0 1 1 1 1 1 1 1 5 1 0 1 0 11 5 11 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 | 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 
-Used RAM: 2668784
-
-THTS step statistics:
-  Performed trials: 2422
-  Created search nodes: 16691
-  Search time: 4.000734
-Submitted actiones: v_attendPatient(v2, @a2) 
-Immediate reward: -475657526268.919800
---------------------------------------------
-Planning step 8/40 in round 13/30
-Current state: 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 4 4 0 5 0 0 0 0 1 1 1 1 1 1 1 5 2 0 0 1 11 5 11 0 0 6 0 0 0 0 0 0 1 0 0 0 1 0 | 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 
-Used RAM: 2668784
-
-THTS step statistics:
-  Performed trials: 2521
-  Created search nodes: 17128
-  Search time: 4.000833
-Submitted actiones: v_travelToHsopital(v1, @a5) 
-Immediate reward: -317208225077.893555
---------------------------------------------
-Planning step 9/40 in round 13/30
-Current state: 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 5 5 0 6 0 0 0 0 1 1 1 1 5 1 1 5 2 0 0 1 11 5 11 0 3 5 0 0 0 0 1 0 1 0 0 0 0 0 | 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 
-Used RAM: 2668784
-
-THTS step statistics:
-  Performed trials: 2606
-  Created search nodes: 17162
-  Search time: 4.001247
-Submitted actiones: v_travelToBase(v0, @a5) 
-Immediate reward: -634416450155.787109
---------------------------------------------
-Planning step 10/40 in round 13/30
-Current state: 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 6 6 0 7 0 0 0 0 5 1 1 1 5 1 1 5 2 0 0 1 11 5 11 5 2 4 1 0 0 0 1 0 0 0 0 0 0 0 | 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 
-Used RAM: 2668784
-
-Policy unique due to single reasonable action
-Submitted actiones: noop()
-Immediate reward: -1268832900311.574219
---------------------------------------------
-Planning step 11/40 in round 13/30
-Current state: 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 7 7 0 8 0 0 0 0 5 1 1 1 5 1 1 5 2 0 0 1 11 5 11 4 1 3 1 0 0 0 1 0 0 0 0 0 0 0 | 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 
-Used RAM: 2668784
-
-Policy unique due to single reasonable action
-Submitted actiones: noop()
-Immediate reward: -2537665800623.148438
---------------------------------------------
-Planning step 12/40 in round 13/30
-Current state: 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 8 8 0 9 0 0 0 0 5 1 1 1 5 1 1 5 2 0 0 1 11 5 11 3 0 2 1 0 0 0 1 0 0 0 0 0 0 0 | 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 
-Used RAM: 2668784
-
-Policy unique due to single reasonable action
-Submitted actiones: noop()
-Immediate reward: -5075331601246.296875
---------------------------------------------
-Planning step 13/40 in round 13/30
-Current state: 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 9 9 0 9 0 0 0 0 5 1 1 1 5 1 1 5 2 0 0 1 11 5 11 2 0 1 1 0 0 0 0 0 0 1 0 0 0 0 | 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 
-Used RAM: 2668784
-
-THTS step statistics:
-  Performed trials: 2855
-  Created search nodes: 17375
-  Search time: 4.000051
-Submitted actiones: noop()
-Immediate reward: -10150663200130.361328
---------------------------------------------
-Planning step 14/40 in round 13/30
-Current state: 1 0 0 0 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 9 9 0 9 0 0 0 0 5 1 1 1 5 1 1 5 2 0 0 1 11 5 11 1 0 0 1 0 0 0 0 0 0 1 0 0 0 0 | 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 1 2 0 0 0 0 0 
-Used RAM: 2668784
-
-THTS step statistics:
-  Performed trials: 2979
-  Created search nodes: 19875
-  Search time: 4.000166
-Submitted actiones: noop()
-Immediate reward: -10150672880557.150391
---------------------------------------------
-Planning step 15/40 in round 13/30
-Current state: 1 0 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 1 0 0 0 9 9 0 9 0 0 0 0 5 1 1 1 5 1 1 5 2 0 0 0 11 5 2 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 | 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 1 0 0 0 0 0 
-Used RAM: 2668784
-
-THTS step statistics:
-  Performed trials: 3057
-  Created search nodes: 19246
-  Search time: 4.000149
-Submitted actiones: v_travelToHsopital(v2, @a2) 
-Immediate reward: -4982987878.196838
---------------------------------------------
-Planning step 16/40 in round 13/30
-Current state: 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 2 0 0 0 9 9 1 9 0 0 0 0 5 1 1 1 5 2 1 5 2 0 0 0 5 5 2 0 0 3 0 0 0 0 0 1 1 1 0 0 0 0 | 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 1 1 0 0 0 0 0 
-Used RAM: 2668784
-
-THTS step statistics:
-  Performed trials: 3128
-  Created search nodes: 18057
-  Search time: 4.000419
-Submitted actiones: noop()
-Immediate reward: -5021690687.494554
---------------------------------------------
-Planning step 17/40 in round 13/30
-Current state: 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 3 1 0 0 9 9 2 9 0 0 0 0 5 1 1 1 5 2 1 5 2 0 0 0 5 5 2 0 0 2 0 0 0 0 0 1 1 1 0 0 0 0 | 0 0 0 0 0 0 0 0 0 0 1 0 1 1 0 0 0 1 1 0 0 0 0 0 
-Used RAM: 2668784
-
-THTS step statistics:
-  Performed trials: 3182
-  Created search nodes: 19595
-  Search time: 4.000567
-Submitted actiones: noop()
-Immediate reward: -5089420603.765555
---------------------------------------------
-Planning step 18/40 in round 13/30
-Current state: 1 1 0 0 1 1 1 0 0 0 1 0 0 0 0 0 1 0 0 1 0 0 0 0 4 2 0 0 9 9 3 9 0 0 0 0 5 1 1 1 5 2 1 5 2 0 0 0 5 5 2 0 0 1 0 0 0 0 0 1 1 1 0 0 0 0 | 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 1 1 0 0 0 2 0 
-Used RAM: 2668784
-
-THTS step statistics:
-  Performed trials: 3272
-  Created search nodes: 20926
-  Search time: 4.000307
-Submitted actiones: noop()
-Immediate reward: -5224885160.771585
---------------------------------------------
-Planning step 19/40 in round 13/30
-Current state: 1 1 0 0 1 1 1 0 0 0 1 0 0 0 0 0 1 0 0 1 0 0 0 0 5 3 0 0 9 9 4 9 0 0 1 0 5 1 1 1 5 2 1 5 2 0 0 0 5 5 2 0 0 0 0 0 0 0 0 1 1 1 0 0 0 0 | 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 1 1 0 0 0 2 0 
-Used RAM: 2668784
-
-THTS step statistics:
-  Performed trials: 3047
-  Created search nodes: 23592
-  Search time: 4.000980
-Submitted actiones: noop()
-Immediate reward: -5495809550.319615
---------------------------------------------
-Planning step 20/40 in round 13/30
-Current state: 1 1 0 0 0 1 1 0 0 0 1 0 0 0 0 0 1 0 0 1 0 0 0 0 6 4 0 0 9 9 5 9 0 0 2 0 5 1 1 1 5 2 1 5 2 0 0 0 5 5 2 0 0 0 0 0 0 0 0 0 1 1 1 0 0 0 | 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 1 1 0 0 0 2 0 
-Used RAM: 2668784
-
-THTS step statistics:
-  Performed trials: 3193
-  Created search nodes: 22413
-  Search time: 4.000358
-Submitted actiones: v_travelToBase(v2, @a11) 
-Immediate reward: -6037657148.299673
---------------------------------------------
-Planning step 21/40 in round 13/30
-Current state: 1 1 0 0 0 1 1 0 0 0 1 0 0 0 0 0 1 0 0 1 0 0 0 0 7 5 0 0 9 9 6 9 0 0 3 0 5 1 11 1 5 2 1 5 2 0 0 0 5 5 2 0 0 6 0 0 1 0 0 0 1 1 0 0 0 0 | 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 1 1 0 0 0 2 0 
-Used RAM: 2668784
-
-THTS step statistics:
-  Performed trials: 3805
-  Created search nodes: 23514
-  Search time: 4.000794
-Submitted actiones: noop()
-Immediate reward: -7121354706.491801
---------------------------------------------
-Planning step 22/40 in round 13/30
-Current state: 1 1 0 0 0 1 1 0 0 0 1 0 0 0 0 0 1 0 0 1 0 0 0 0 8 6 0 0 9 9 7 9 0 0 4 0 5 1 11 1 5 2 1 5 2 0 0 0 5 5 2 0 0 5 0 0 1 0 0 0 1 1 0 0 0 0 | 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 1 1 0 0 0 2 0 
-Used RAM: 2668784
-
-THTS step statistics:
-  Performed trials: 3641
-  Created search nodes: 21024
-  Search time: 4.001125
-Submitted actiones: v_attendPatient(v1, @a4) 
-Immediate reward: -9288749822.876059
---------------------------------------------
-Planning step 23/40 in round 13/30
-Current state: 1 1 0 0 0 1 1 0 0 0 1 0 0 0 0 0 1 0 0 1 0 0 0 0 9 7 0 0 9 9 8 9 0 0 5 0 5 1 11 1 5 2 1 4 2 0 1 0 5 5 2 0 4 4 0 0 1 0 0 0 1 0 0 0 0 0 | 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 1 1 0 0 0 2 0 
-Used RAM: 2668784
-
-THTS step statistics:
-  Performed trials: 4539
-  Created search nodes: 28725
-  Search time: 4.000065
-Submitted actiones: noop()
-Immediate reward: -13623540055.644569
---------------------------------------------
-Planning step 24/40 in round 13/30
-Current state: 1 1 0 0 0 1 1 0 0 0 1 0 0 0 0 0 1 0 0 1 0 0 0 0 9 8 0 0 9 9 9 9 0 0 6 0 5 1 11 1 5 2 1 4 2 0 1 0 5 5 2 0 3 3 0 0 1 0 0 0 1 0 0 0 0 0 | 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 1 1 0 0 0 2 0 
-Used RAM: 2668784
-
-THTS step statistics:
-  Performed trials: 4928
-  Created search nodes: 30413
-  Search time: 4.000232
-Submitted actiones: noop()
-Immediate reward: -17339160931.074051
---------------------------------------------
-Planning step 25/40 in round 13/30
-Current state: 1 1 0 0 0 1 1 0 0 0 1 0 0 0 0 0 1 0 0 1 0 0 0 0 9 9 0 0 9 9 9 9 0 0 7 0 5 1 11 1 5 2 1 4 2 0 1 0 5 5 2 0 2 2 0 0 1 0 0 0 1 0 0 0 0 0 | 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 1 1 0 0 0 2 0 
-Used RAM: 2668784
-
-THTS step statistics:
-  Performed trials: 5464
-  Created search nodes: 33343
-  Search time: 4.000106
-Submitted actiones: v_attendPatient(v0, @a1) 
-Immediate reward: -19816443091.825459
---------------------------------------------
-Planning step 26/40 in round 13/30
-Current state: 1 1 0 0 0 1 1 0 0 0 1 0 0 0 0 0 1 0 0 1 0 0 0 0 9 9 0 0 9 9 9 9 0 0 8 0 5 1 11 1 5 2 1 4 2 1 1 0 5 5 2 5 1 1 0 0 1 0 0 0 0 0 0 0 0 0 | 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 1 1 0 0 0 2 0 
-Used RAM: 2668784
-
-Policy unique due to single reasonable action
-Submitted actiones: noop()
-Immediate reward: -19817047823.220737
---------------------------------------------
-Planning step 27/40 in round 13/30
-Current state: 1 1 0 0 0 1 1 0 0 0 1 0 0 0 0 0 1 0 0 1 0 0 0 0 9 9 0 0 9 9 9 9 0 0 9 0 5 1 11 1 5 2 1 4 2 1 1 0 5 5 2 4 0 0 0 0 1 0 0 0 0 0 0 0 0 0 | 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 1 1 0 0 0 2 0 
-Used RAM: 2668784
-
-Policy unique due to single reasonable action
-Submitted actiones: noop()
-Immediate reward: -19818257286.011292
---------------------------------------------
-Planning step 28/40 in round 13/30
-Current state: 1 1 0 0 0 1 1 0 0 0 1 0 0 0 0 0 1 0 1 1 0 0 0 0 9 9 0 0 9 9 9 9 0 0 9 0 5 1 11 1 5 2 1 4 2 1 0 0 5 4 11 3 0 0 0 0 0 0 0 0 0 0 1 0 1 0 | 0 0 0 0 0 0 0 0 1 1 0 0 1 1 0 0 0 1 1 0 0 0 2 0 
-Used RAM: 2668784
-
-THTS step statistics:
-  Performed trials: 5786
-  Created search nodes: 27362
-  Search time: 4.001033
-Submitted actiones: v_travelToHsopital(v1, @a5) 
-Immediate reward: -14864297696.480461
---------------------------------------------
-Planning step 29/40 in round 13/30
-Current state: 1 1 0 0 0 1 1 0 1 1 1 0 0 0 0 0 1 0 1 1 0 0 0 0 9 9 0 0 9 9 9 9 0 0 9 0 5 1 11 1 5 2 1 4 2 1 0 0 5 4 11 2 4 0 0 0 0 0 1 0 0 0 1 0 0 0 | 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 1 1 0 1 1 2 0 
-Used RAM: 2668784
-
-THTS step statistics:
-  Performed trials: 6498
-  Created search nodes: 30493
-  Search time: 4.000213
-Submitted actiones: noop()
-Immediate reward: -14883649101.129318
---------------------------------------------
-Planning step 30/40 in round 13/30
-Current state: 1 1 0 0 0 1 1 0 1 1 1 0 0 0 0 0 1 0 1 1 0 0 0 0 9 9 0 0 9 9 9 9 1 1 9 0 5 1 11 1 5 2 1 4 2 1 0 0 5 4 11 1 3 0 0 0 0 0 1 0 0 0 1 0 0 0 | 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 1 1 0 1 1 2 0 
-Used RAM: 2668784
-
-THTS step statistics:
-  Performed trials: 7874
-  Created search nodes: 39714
-  Search time: 4.001130
-Submitted actiones: noop()
-Immediate reward: -14903000505.778175
---------------------------------------------
-Planning step 31/40 in round 13/30
-Current state: 1 1 0 0 0 1 1 0 1 1 1 0 0 0 0 0 1 0 1 1 0 0 0 0 9 9 0 0 9 9 9 9 2 2 9 0 5 1 11 1 5 2 1 4 2 1 0 0 5 4 11 0 2 0 0 0 0 0 1 0 0 0 1 0 0 0 | 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 1 1 0 1 1 2 0 
-Used RAM: 2668784
-
-THTS step statistics:
-  Performed trials: 9694
-  Created search nodes: 50508
-  Search time: 4.000053
-Submitted actiones: noop()
-Immediate reward: -14941703315.075890
---------------------------------------------
-Planning step 32/40 in round 13/30
-Current state: 1 1 0 0 0 1 1 0 1 1 1 0 0 1 0 0 1 0 1 1 0 0 0 0 9 9 0 0 9 9 9 9 3 3 9 0 5 1 11 1 5 2 1 4 2 0 0 0 1 4 11 0 1 0 0 0 0 0 1 0 0 0 1 1 0 0 | 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 1 1 0 1 1 2 0 
-Used RAM: 2668784
-
-THTS step statistics:
-  Performed trials: 9465
-  Created search nodes: 49735
-  Search time: 4.000188
-Submitted actiones: v_travelToHsopital(v0, @a5) 
-Immediate reward: -10065149344.140493
---------------------------------------------
-Planning step 33/40 in round 13/30
-Current state: 1 1 0 0 0 1 1 0 1 1 1 0 0 1 0 0 1 0 1 1 0 0 0 0 9 9 0 0 9 9 9 9 4 4 9 0 5 1 11 5 5 2 1 4 2 0 0 0 1 4 11 5 0 0 0 0 0 1 1 0 0 0 1 0 0 0 | 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 1 1 0 1 1 2 0 
-Used RAM: 2668784
-
-THTS step statistics:
-  Performed trials: 11578
-  Created search nodes: 57584
-  Search time: 4.000060
-Submitted actiones: noop()
-Immediate reward: -10219960581.331354
---------------------------------------------
-Planning step 34/40 in round 13/30
-Current state: 1 1 0 0 0 1 0 0 1 1 1 0 0 1 0 0 1 0 1 1 0 0 0 0 9 9 0 0 9 9 9 9 5 5 9 0 5 1 11 5 5 2 1 4 2 0 0 0 1 5 11 4 0 0 0 0 0 1 0 0 0 1 1 0 0 0 | 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 1 1 0 1 1 2 0 
-Used RAM: 2668784
-
-THTS step statistics:
-  Performed trials: 14036
-  Created search nodes: 69764
-  Search time: 4.000110
-Submitted actiones: noop()
-Immediate reward: -10529583055.136358
---------------------------------------------
-Planning step 35/40 in round 13/30
-Current state: 1 1 0 0 0 1 0 0 1 1 1 0 0 1 0 0 1 0 1 1 0 0 0 0 9 9 0 0 9 9 9 9 6 6 9 0 5 1 11 5 5 2 1 4 2 0 0 0 1 5 11 3 0 0 0 0 0 1 0 0 0 1 1 0 0 0 | 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 1 1 0 1 1 2 0 
-Used RAM: 2668784
-
-THTS step statistics:
-  Performed trials: 14827
-  Created search nodes: 70480
-  Search time: 4.000006
-Submitted actiones: noop()
-Immediate reward: -11148828003.899801
---------------------------------------------
-Planning step 36/40 in round 13/30
-Current state: 1 1 0 0 0 1 0 0 1 1 1 0 0 1 0 0 1 0 1 1 0 0 0 0 9 9 0 0 9 9 9 9 7 7 9 0 5 1 11 5 5 2 1 4 2 0 0 0 1 5 11 2 0 0 0 0 0 1 0 0 0 1 1 0 0 0 | 0 0 0 0 0 0 1 1 0 0 0 0 1 1 0 0 0 1 1 0 1 1 2 0 
-Used RAM: 2668784
-
-THTS step statistics:
-  Performed trials: 18069
-  Created search nodes: 84871
-  Search time: 4.000083
-Submitted actiones: noop()
-Immediate reward: -12387317901.426687
---------------------------------------------
-Planning step 37/40 in round 13/30
-Current state: 1 1 0 0 0 1 1 1 1 1 1 0 0 1 0 0 1 0 0 0 0 0 0 0 9 9 0 0 9 9 0 0 8 8 9 0 5 1 11 5 5 2 1 4 2 0 0 0 1 5 11 1 0 0 0 0 0 1 0 0 0 1 1 0 0 0 | 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 1 0 0 1 1 2 0 
-Used RAM: 2668784
-
-THTS step statistics:
-  Performed trials: 30125
-  Created search nodes: 104284
-  Search time: 4.000058
-Submitted actiones: noop()
-Immediate reward: -54495974417.340828
---------------------------------------------
-Planning step 38/40 in round 13/30
-Current state: 1 1 0 0 0 1 1 1 1 1 1 0 0 1 0 0 1 0 0 0 0 0 0 0 9 9 0 0 9 9 1 1 9 9 9 0 5 1 11 5 5 2 1 4 2 0 0 0 1 5 11 0 0 0 0 0 0 1 0 0 0 1 1 0 0 0 | 0 0 1 0 0 0 0 0 0 0 0 0 1 1 0 0 0 1 0 0 1 1 2 0 
-Used RAM: 2668784
-
-THTS step statistics:
-  Performed trials: 39302
-  Created search nodes: 112622
-  Search time: 4.000004
-Submitted actiones: noop()
-Immediate reward: -99081610728.308731
---------------------------------------------
-Planning step 39/40 in round 13/30
-Current state: 1 0 1 0 0 1 1 1 1 1 1 0 0 1 0 0 1 0 0 0 0 0 0 0 9 9 0 0 9 9 2 2 9 9 9 0 5 1 11 5 5 2 1 4 2 0 0 0 5 5 11 0 0 0 0 0 0 0 0 0 1 1 1 0 0 0 | 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 0 0 1 0 0 1 1 2 0 
-Used RAM: 2668784
-
-THTS step statistics:
-  Performed trials: 51154
-  Created search nodes: 11717
-  Search time: 4.000015
-Submitted actiones: v_attendPatient(v0, @a0) v_attendPatient(v1, @a4) v_attendPatient(v2, @a5) 
-Immediate reward: -178354639871.777191
---------------------------------------------
-Planning step 40/40 in round 13/30
-Current state: 1 0 1 0 0 1 1 1 1 1 1 0 0 1 0 0 1 0 0 0 0 0 0 0 9 9 1 0 9 9 3 3 9 9 9 0 5 1 11 5 5 2 0 4 5 1 1 1 5 5 11 6 4 5 0 0 0 0 0 0 0 0 0 0 0 0 | 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 0 0 1 0 0 1 1 2 0 
-Used RAM: 2668784
-
-Policy unique due to optimal last action
-Submitted actiones: noop()
-Immediate reward: -336891022457.543091
-
+>>> END OF SESSION  -- TOTAL REWARD: -192892305220424.000000
+>>> END OF SESSION  -- AVERAGE REWARD: -192892305220424.000000
+PROST complete running time: 29.051736
 

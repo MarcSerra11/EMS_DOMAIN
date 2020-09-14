@@ -1,0 +1,52 @@
+Basic EMS_DOMAIN installation and invocation
+============================================
+
+EMS_DOMAIN/ provides the following subdirectories:
+
+	POLICY_EVALUATOR	A C++ program for evaluating a simulation of the EMS_DOMAIN. 
+	INSTANCES		All the instances used to make experiments. 
+	INSTANCE_GENERATOR	A C++ program to create new random EMS_DOMAIN instances following the requirements of RDDL and PROST. 
+		
+
+To execute simulations it is necessary to install rddlsim and prostplanner:
+
+	rddlsim (https://github.com/ssanner/rddlsim)
+	prostplanner (https://github.com/prost-planner/prost)
+	
+	
+Once the two components are installed, simulations can be executed using the client/server mode with the following commands: 
+
+Server:
+	cd ../Prost/testbed
+	./run-server.py -b ../EMS_DOMAIN/INSTANCES/ALGORITHMS_COMPARISON -r 30 
+
+Client:
+	cd ../Prost
+	And one of the following algorithms:
+	[UCT]
+	./prost.py ems_inst "[Prost -s 1 -se [UCT -t 6.0 -init [Single -h [RandomWalk]]]]"
+	[PROST2014]
+	./prost.py ems_inst "[Prost -s 1 -se [THTS -act [UCB1] -out [UMC] -t 4.0 -backup [PB] -init [Expand -h [IDS]]]]"
+	[PROST2011]
+	./prost.py ems_inst "[Prost -s 1 -se [THTS -act [UCB1] -out [MC] -t 4.0 -backup [MC] -init [Expand -h [IDS -sd 15] -iv 5 -hw 1.0] -ndn H -sd 15]]"
+
+More information about the use of RDDL and PROST can be found in their respectives repositories. The variables -r and -t specify the number of rounds and the time-out respectively.
+
+
+
+Use of POLICY_EVALUATOR
+=======================
+
+The program parses the logs found in the INPUT folder and extracts EMS metrics, that are deposited in the OUTPUT file. Compile and execute the file evaluator.cpp.
+
+
+
+Use of INSTANCE_GENERATOR
+=========================
+
+This program creates new instances of the EMS domain. In the file generator.cpp, in the input variables block, are all the variables that allow to modify instances. To execute the program, compile it first. The resulting mdp and instance files are created in the file ../OUTPUT.
+  
+
+
+
+
